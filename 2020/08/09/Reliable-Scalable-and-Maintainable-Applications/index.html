@@ -1,0 +1,950 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="DDIA,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="A data-intensive application is typically built from standard building blocks that provide commonly needed functionality. For example, many applications need to:  Store data so that they, or another">
+<meta name="keywords" content="DDIA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reliable, Scalable, and Maintainable Applications">
+<meta property="og:url" content="http://yoursite.com/2020/08/09/Reliable-Scalable-and-Maintainable-Applications/index.html">
+<meta property="og:site_name" content="DevPrepares">
+<meta property="og:description" content="A data-intensive application is typically built from standard building blocks that provide commonly needed functionality. For example, many applications need to:  Store data so that they, or another">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/DDIA/01.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/DDIA/02.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/DDIA/03.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/DDIA/04.png">
+<meta property="og:updated_time" content="2020-11-20T15:44:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Reliable, Scalable, and Maintainable Applications">
+<meta name="twitter:description" content="A data-intensive application is typically built from standard building blocks that provide commonly needed functionality. For example, many applications need to:  Store data so that they, or another">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/DDIA/01.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/08/09/Reliable-Scalable-and-Maintainable-Applications/">
+
+
+
+
+
+  <title> Reliable, Scalable, and Maintainable Applications | DevPrepares </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">DevPrepares</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/09/Reliable-Scalable-and-Maintainable-Applications/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="was48i">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DevPrepares">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Reliable, Scalable, and Maintainable Applications
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-09T22:27:01+08:00">
+                2020-08-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://raw.githubusercontent.com/was48i/mPOST/master/DDIA/01.png" alt></p>
+<p>A data-intensive application is typically built from standard building blocks that provide commonly needed functionality. For example, many applications need to:</p>
+<ul>
+<li>Store data so that they, or another application, can find it again later (<code>databases</code>);</li>
+<li>Remember the result of an expensive operation, to speed up reads (<code>caches</code>);</li>
+<li>Allow users to search data by keyword or filter it in various ways (<code>search indexes</code>);</li>
+<li>Send a message to another process, to be handled asynchronously (<code>stream processing</code>);</li>
+<li>Periodically crunch a large amount of accumulated data (<code>batch processing</code>);</li>
+</ul>
+<a id="more"></a>
+<h2 id="Thinking-About-Data-Systems"><a href="#Thinking-About-Data-Systems" class="headerlink" title="Thinking About Data Systems"></a>Thinking About Data Systems</h2><p>Many new tools for data storage and processing have emerged in recent years. They are optimized for a variety of different use cases, and they no longer neatly fit into traditional categories. For example, there are datastores that are also used as message queues (Redis), and there are message queues with database-like durability guarantees (Apache Kafka). <strong>The boundaries between the categories are becoming blurred</strong>.</p>
+<p>Secondly, increasingly many applications now have such demanding or wide-ranging requirements that a single tool can no longer meet all of its data processing and storage needs. Instead, the work is broken down into tasks that can be performed efficiently on a single tool, and <strong>those different tools are stitched together using application code</strong>.</p>
+<p>In this book, we focus on three concerns that are important in most software systems:</p>
+<ul>
+<li><code>Reliability</code>: The system should continue to work correctly (performing the correct function at the desired level of performance) even in the face of adversity (hardware or software faults, and even human error);</li>
+<li><code>Scalability</code>: As the system grows (in data volume, traffic volume, or complexity), there should be reasonable ways of dealing with that growth;</li>
+<li><code>Maintainability</code>: Over time, many different people will work on the system (engineering and operations, both maintaining current behavior and adapting the system to new use cases), and they should all be able to work on it productively;</li>
+</ul>
+<h2 id="Reliability"><a href="#Reliability" class="headerlink" title="Reliability"></a>Reliability</h2><p>Note that a <code>fault</code> is not the same as a <code>failure</code>. A fault is usually defined as one component of the system deviating from its spec, whereas a failure is when the system as a whole stops providing the required service to the user. It is impossible to reduce the probability of a fault to zero; therefore it is usually best to <strong>design fault-tolerance mechanisms</strong> that prevent faults from causing failures. In this book we cover several techniques for building reliable systems from unreliable parts.</p>
+<h3 id="Hardware-Faults"><a href="#Hardware-Faults" class="headerlink" title="Hardware Faults"></a>Hardware Faults</h3><p>Hard disks are reported as having a mean time to failure (<code>MTTF</code>) of about 10 to 50 years. Thus, on a storage cluster with 10,000 disks, we should expect on average one disk to die per day.</p>
+<p>Until recently, <strong>redundancy of hardware components was sufficient for most applications</strong>, since it makes total failure of a single machine fairly rare. As long as you can restore a backup onto a new machine fairly quickly, the downtime in case of failure is not catastrophic in most applications. Thus, multi-machine redundancy was only required by a small number of applications for which high availability was absolutely essential.</p>
+<p>Hence there is a move toward systems that can tolerate the loss of entire machines, <strong>by using software fault-tolerance techniques in preference or in addition to hardware redundancy</strong>. Such systems also have operational advantages: a single-server system requires planned downtime if you need to reboot the machine (to apply operating system security patches, for example), whereas a system that can tolerate machine failure can be patched one node at a time, without downtime of the entire system.</p>
+<h3 id="Software-Errors"><a href="#Software-Errors" class="headerlink" title="Software Errors"></a>Software Errors</h3><p>Another class of fault is a systematic error within the system. Such faults are harder to anticipate, and because they are correlated across nodes, <strong>they tend to cause many more system failures than uncorrelated hardware faults</strong>.</p>
+<p>There is no quick solution to the problem of systematic faults in software. <strong>Lots of small things can help:</strong> carefully thinking about assumptions and interactions in the system; thorough testing; process isolation; allowing processes to crash and restart; measuring, monitoring, and analyzing system behavior in production. If a system is expected to provide some guarantee (for example, in a message queue, that the number of incoming messages equals the number of outgoing messages), it can constantly check itself while it is running and raise an alert if a discrepancy is found.</p>
+<h3 id="Human-Errors"><a href="#Human-Errors" class="headerlink" title="Human Errors"></a>Human Errors</h3><p>Humans design and build software systems, and the operators who keep the systems running are also human. Even when they have the best intentions, <strong>humans are known to be unreliable</strong>. For example, one study of large internet services found that configuration errors by operators were the leading cause of outages, whereas hardware faults (servers or network) played a role in only 10–25% of outages.</p>
+<h3 id="How-Important-Is-Reliability"><a href="#How-Important-Is-Reliability" class="headerlink" title="How Important Is Reliability?"></a>How Important Is Reliability?</h3><p>There are situations in which we may choose to sacrifice reliability in order to reduce development cost (e.g., when developing a prototype product for an unproven market) or operational cost (e.g., for a service with a very narrow profit margin)—but <strong>we should be very conscious of when we are cutting corners</strong>.</p>
+<h2 id="Scalability"><a href="#Scalability" class="headerlink" title="Scalability"></a>Scalability</h2><p>Even if a system is working reliably today, that doesn’t mean it will necessarily work reliably in the future. <strong>One common reason for degradation is increased load</strong>: perhaps the system has grown from 10,000 concurrent users to 100,000 concurrent users, or from 1 million to 10 million. Perhaps it is processing much larger volumes of data than it did before.</p>
+<h3 id="Describing-Load"><a href="#Describing-Load" class="headerlink" title="Describing Load"></a>Describing Load</h3><p>First, we need to succinctly describe the current load on the system; only then can we discuss growth questions (what happens if our load doubles?). Load can be described with a few numbers which we call <code>load parameters</code>. The best choice of parameters depends on the architecture of your system: it may be requests per second to a web server, the ratio of reads to writes in a database, the number of simultaneously active users in a chat room, the hit rate on a cache, or something else. Perhaps the average case is what matters for you, or perhaps your bottleneck is dominated by a small number of extreme cases.</p>
+<p>To make this idea more concrete, let’s consider Twitter as an example, using data published in November 2012. Two of Twitter’s main operations are:</p>
+<ul>
+<li><strong>Post tweet</strong>: A user can publish a new message to their followers (4.6k requests/sec on average, over 12k requests/sec at peak);</li>
+<li><strong>Home timeline</strong>: A user can view tweets posted by the people they follow (300k requests/sec);</li>
+</ul>
+<blockquote>
+<p><strong>fan-out</strong>: A term borrowed from electronic engineering, where it describes the number of logic gate inputs that are attached to another gate’s output. The output needs to supply enough current to drive all the attached inputs. In transaction processing systems, we use it to describe the number of requests to other services that we need to make in order to serve one incoming request.</p>
+</blockquote>
+<p>Simply handling 12,000 writes per second (the peak rate for posting tweets) would be fairly easy. However, Twitter’s scaling challenge is not primarily due to tweet volume, but due to <code>fan-out</code>—each user follows many people, and each user is followed by many people. There are broadly two ways of implementing these two operations:</p>
+<ol>
+<li><p>Posting a tweet simply inserts the new tweet into a global collection of tweets. When a user requests their home timeline, <strong>look up all the people they follow, find all the tweets for each of those users</strong>, and merge them (sorted by time). In a relational database like in Figure 1-2, you could write a query such as:</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT tweets.*, users.* </span><br><span class="line"><span class="keyword">FROM</span> tweets</span><br><span class="line">    JOIN<span class="built_in"> users </span>ON tweets.sender_id = users.id </span><br><span class="line">    JOIN follows ON follows.followee_id = users.id </span><br><span class="line">WHERE follows.follower_id = current_user</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Maintain a cache for each user’s home timeline—like a mailbox of tweets for each recipient user (see Figure 1-3). When a user posts a tweet, <strong>look up all the people who follow that user, and insert the new tweet into each of their home timeline caches</strong>. The request to read the home timeline is then cheap, because its result has been computed ahead of time.</p>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/was48i/mPOST/master/DDIA/02.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/was48i/mPOST/master/DDIA/03.png" alt></p>
+<p>The first version of Twitter used approach 1, but the systems struggled to keep up with the load of home timeline queries, so the company switched to approach 2. This works better because the average rate of published tweets is almost two orders of magnitude lower than the rate of home timeline reads, and so in this case <strong>it’s preferable to do more work at write time and less at read time</strong>.</p>
+<p>The final twist of the Twitter anecdote: now that approach 2 is robustly implemented, Twitter is moving to a hybrid of both approaches. Most users’ tweets continue to be fanned out to home timelines at the time when they are posted, but a small number of users with a very large number of followers (i.e., celebrities) are excepted from this fan-out. <strong>Tweets from any celebrities that a user may follow are fetched separately and merged with that user’s home timeline when it is read, like in approach 1</strong>. This hybrid approach is able to deliver consistently good performance.</p>
+<h3 id="Describing-Performance"><a href="#Describing-Performance" class="headerlink" title="Describing Performance"></a>Describing Performance</h3><p>Once you have described the load on your system, you can investigate what happens when the load increases. You can look at it in two ways:</p>
+<ul>
+<li>When you increase a load parameter and keep the system resources (CPU, memory, network bandwidth, etc.) unchanged, how is the performance of your system affected?</li>
+<li>When you increase a load parameter, how much do you need to increase the resources if you want to keep performance unchanged?</li>
+</ul>
+<p>In a batch processing system such as Hadoop, we usually care about <code>throughput</code>—the number of records we can process per second, or the total time it takes to run a job on a dataset of a certain size. In online systems, what’s usually more important is the service’s <code>response time</code>—that is, the time between a client sending a request and receiving a response.</p>
+<blockquote>
+<p><strong>Latency</strong> and <strong>response time</strong> are often used synonymously, but they are not the same. The response time is what the client sees: besides the actual time to process the request (the service time), it includes network delays and queueing delays. Latency is the duration that a request is waiting to be handled—during which it is latent, awaiting service.</p>
+</blockquote>
+<p>Even if you only make the same request over and over again, you’ll get a slightly different response time on every try. In practice, in a system handling a variety of requests, the response time can vary a lot. We therefore need to think of response time not as a single number, but as <strong>a distribution of values that you can measure</strong>.</p>
+<p><img src="https://raw.githubusercontent.com/was48i/mPOST/master/DDIA/04.png" alt></p>
+<p>Usually it is better to use <code>percentiles</code>. If you take your list of response times and sort it from fastest to slowest, then the <code>median</code> is the halfway point: for example, if your median response time is 200 ms, that means half your requests return in less than 200 ms, and half your requests take longer than that.</p>
+<p>High percentiles of response times, also known as <code>tail latencies</code>, are important because they <strong>directly affect users’ experience of the service</strong>. For example, Amazon describes response time requirements for internal services in terms of the 99.9th percentile, even though it only affects 1 in 1,000 requests. This is because the customers with the slowest requests are often those who have the most data on their accounts because they have made many purchases—that is, they’re the most valuable customers.</p>
+<p>For example, percentiles are often used in <code>service level objectives</code> (SLOs) and <code>service level agreements</code> (SLAs), contracts that define the expected performance and availability of a service. An SLA may state that the service is considered to be up if it has a median response time of less than 200 ms and a 99th percentile under 1 s (if the response time is longer, it might as well be down).</p>
+<p>Queueing delays often account for a large part of the response time at high percentiles. As <strong>a server can only process a small number of things in parallel</strong> (limited, for example, by its number of CPU cores), it only takes a small number of slow requests to hold up the processing of subsequent requests—an effect sometimes known as <code>head-of-line blocking</code>. Even if those subsequent requests are fast to process on the server, the client will see a slow overall response time due to the time waiting for the prior request to complete. Due to this effect, <strong>it is important to measure response times on the client side</strong>.</p>
+<p>The naïve implementation is to keep a list of response times for all requests within the time window and to sort that list every minute. If that is too inefficient for you, there are algorithms that can calculate a good approximation of percentiles at minimal CPU and memory cost, such as <code>forward decay</code>, <code>t-digest</code>, or <code>HdrHistogram</code>. Beware that <strong>averaging percentiles</strong>, e.g., to reduce the time resolution or to combine data from several machines, <strong>is mathematically meaningless</strong>—the right way of aggregating response time data is to add the histograms.</p>
+<h3 id="Approaches-for-Coping-with-Load"><a href="#Approaches-for-Coping-with-Load" class="headerlink" title="Approaches for Coping with Load"></a>Approaches for Coping with Load</h3><p>People often talk of a dichotomy between <strong>scaling up (vertical scaling, moving to a more powerful machine)</strong> and <strong>scaling out (horizontal scaling, distributing the load across multiple smaller machines)</strong>. Distributing load across multiple machines is also known as a <code>shared-nothing</code> architecture. A system that can run on a single machine is often simpler, but high-end machines can become very expensive, so very intensive workloads often can’t avoid scaling out. In reality, <strong>good architectures usually involve a pragmatic mixture of approaches</strong>: for example, using several fairly powerful machines can still be simpler and cheaper than a large number of small virtual machines.</p>
+<p>Some systems are <code>elastic</code>, meaning that they can automatically add computing resources when they detect a load increase, whereas other systems are scaled manually (a human analyzes the capacity and decides to add more machines to the system). <strong>An elastic system can be useful if load is highly unpredictable, but manually scaled systems are simpler and may have fewer operational surprises</strong>.</p>
+<p>While distributing stateless services across multiple machines is fairly straightforward, taking stateful data systems from a single node to a distributed setup can introduce a lot of additional complexity. For this reason, common wisdom until recently was <strong>to keep your database on a single node (scale up) until scaling cost or high availability requirements forced you to make it distributed</strong>.</p>
+<p><strong>An architecture that scales well for a particular application is built around assumptions</strong> of which operations will be common and which will be rare—the load parameters. If those assumptions turn out to be wrong, the engineering effort for scaling is at best wasted, and at worst counterproductive.</p>
+<blockquote>
+<p>Even though they are specific to a particular application, scalable architectures are nevertheless usually built from <strong>general-purpose building blocks</strong>, arranged in <strong>familiar patterns</strong>.</p>
+</blockquote>
+<h2 id="Maintainability"><a href="#Maintainability" class="headerlink" title="Maintainability"></a>Maintainability</h2><p>It is well known that the majority of the cost of software is not in its initial development, but in <strong>its ongoing maintenance</strong>—fixing bugs, keeping its systems operational, investigating failures, adapting it to new platforms, modifying it for new use cases, repaying technical debt, and adding new features.</p>
+<p>However, we can and should design software in such a way that it will hopefully minimize pain during maintenance, and thus avoid creating <code>legacy software</code> ourselves. To this end, we will pay particular attention to three design principles for software systems:</p>
+<ul>
+<li><strong>Operability</strong>: Make it easy for operations teams to keep the system running smoothly;</li>
+<li><strong>Simplicity</strong>: Make it easy for new engineers to understand the system, by removing as much complexity as possible from the system. (Note this is not the same as simplicity of the user interface.);</li>
+<li><strong>Evolvability</strong>: Make it easy for engineers to make changes to the system in the future, adapting it for unanticipated use cases as requirements change. Also known as <code>extensibility</code>, <code>modifiability</code>, or <code>plasticity</code>;</li>
+</ul>
+<h3 id="Operability-Making-Life-Easy-for-Operations"><a href="#Operability-Making-Life-Easy-for-Operations" class="headerlink" title="Operability: Making Life Easy for Operations"></a>Operability: Making Life Easy for Operations</h3><p>It has been suggested that “good operations can often work around the limitations of bad (or incomplete) software, but good software cannot run reliably with bad operations”. While some aspects of operations can and should be automated, <strong>it is still up to humans to set up that automation in the first place</strong> and to make sure it’s working correctly.</p>
+<p>Operations teams are vital to keeping a software system running smoothly. <strong>A good operations team typically is responsible for the following</strong>, and more:</p>
+<ul>
+<li>Monitoring the health of the system and quickly restoring service if it goes into a bad state;</li>
+<li>Tracking down the cause of problems, such as system failures or degraded performance;</li>
+<li>Keeping software and platforms up to date, including security patches;</li>
+<li>Keeping tabs on how different systems affect each other, so that a problematic change can be avoided before it causes damage;</li>
+<li>Anticipating future problems and solving them before they occur (e.g., capacity planning);</li>
+<li>Establishing good practices and tools for deployment, configuration management, and more;</li>
+<li>Performing complex maintenance tasks, such as moving an application from one platform to another;</li>
+<li>Maintaining the security of the system as configuration changes are made;</li>
+<li>Defining processes that make operations predictable and help keep the production environment stable;</li>
+<li>Preserving the organization’s knowledge about the system, even as individual people come and go;</li>
+</ul>
+<p>Good operability means making routine tasks easy, allowing the operations team to focus their efforts on high-value activities. <strong>Data systems can do various things to make routine tasks easy</strong>, including:</p>
+<ul>
+<li>Providing visibility into the runtime behavior and internals of the system, with good monitoring;</li>
+<li>Providing good support for automation and integration with standard tools;</li>
+<li>Avoiding dependency on individual machines (allowing machines to be taken down for maintenance while the system as a whole continues running uninterrupted);</li>
+<li>Providing good documentation and an easy-to-understand operational model (“If I do X, Y will happen”);</li>
+<li>Providing good default behavior, but also giving administrators the freedom to override defaults when needed;</li>
+<li>Self-healing where appropriate, but also giving administrators manual control over the system state when needed;</li>
+<li>Exhibiting predictable behavior, minimizing surprises;</li>
+</ul>
+<h3 id="Simplicity-Managing-Complexity"><a href="#Simplicity-Managing-Complexity" class="headerlink" title="Simplicity: Managing Complexity"></a>Simplicity: Managing Complexity</h3><p>Small software projects can have delightfully simple and expressive code, but <strong>as projects get larger, they often become very complex and difficult to understand</strong>. This complexity slows down everyone who needs to work on the system, further increasing the cost of maintenance. A software project mired in complexity is sometimes described as a <code>big ball of mud</code>.</p>
+<p>Making a system simpler does not necessarily mean reducing its functionality; it can also mean removing <code>accidental complexity</code>. Moseley and Marks define complexity as accidental if it is not inherent in the problem that the software solves (as seen by the users) but <strong>arises only from the implementation</strong>.</p>
+<p>One of the best tools we have for removing accidental complexity is <code>abstraction</code>. A good abstraction can hide a great deal of implementation detail behind a clean, simple-to-understand façade. A good abstraction can also be used for a wide range of different applications. Not only is this reuse more efficient than reimplementing a similar thing multiple times, but <strong>it also leads to higher-quality software</strong>, as quality improvements in the abstracted component benefit all applications that use it.</p>
+<p>However, finding good abstractions is very hard. In the field of distributed systems, although there are many good algorithms, <strong>it is much less clear how we should be packaging them into abstractions</strong> that help us keep the complexity of the system at a manageable level.</p>
+<h3 id="Evolvability-Making-Change-Easy"><a href="#Evolvability-Making-Change-Easy" class="headerlink" title="Evolvability: Making Change Easy"></a>Evolvability: Making Change Easy</h3><p><strong>It’s extremely unlikely that your system’s requirements will remain unchanged forever</strong>. They are much more likely to be in constant flux: you learn new facts, previously unanticipated use cases emerge, business priorities change, users request new features, new platforms replace old platforms, legal or regulatory requirements change, growth of the system forces architectural changes, etc.</p>
+<p>Most discussions of these <code>Agile</code> techniques focus on a fairly small, local scale (a couple of source code files within the same application). In this book, <strong>we search for ways of increasing agility on the level of a larger data system</strong>, perhaps consisting of several different applications or services with different characteristics. For example, how would you “refactor” Twitter’s architecture for assembling home timelines from approach 1 to approach 2?</p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>In this chapter, we have explored <strong>some fundamental ways of thinking about data-intensive applications</strong>. These principles will guide us through the rest of the book, where we dive into deep technical detail.</p>
+<p>An application has to meet various requirements in order to be useful. There are <code>functional requirements</code> (what it should do, such as allowing data to be stored, retrieved, searched, and processed in various ways), and some <code>nonfunctional requirements</code> (general properties like security, reliability, compliance, scalability, compatibility, and maintainability). In this chapter we discussed reliability, scalability, and maintainability in detail.</p>
+<p><code>Reliability</code> means making systems work correctly, even when faults occur. Faults can be in hardware (typically random and uncorrelated), software (bugs are typically systematic and hard to deal with), and humans (who inevitably make mistakes from time to time). Fault-tolerance techniques can hide certain types of faults from the end user.</p>
+<p><code>Scalability</code> means having strategies for keeping performance good, even when load increases. In order to discuss scalability, we first need ways of describing load and performance quantitatively. We briefly looked at Twitter’s home timelines as an example of describing load, and response time percentiles as a way of measuring performance. In a scalable system, you can add processing capacity in order to remain reliable under high load.</p>
+<p><code>Maintainability</code> has many facets, but in essence it’s about making life better for the engineering and operations teams who need to work with the system. Good abstractions can help reduce complexity and make the system easier to modify and adapt for new use cases. Good operability means having good visibility into the system’s health, and having effective ways of managing it.</p>
+<p>There is unfortunately no easy fix for making applications reliable, scalable, or maintainable. However, <strong>there are certain patterns and techniques that keep reappearing in different kinds of applications</strong>. In the next few chapters we will take a look at some examples of data systems and analyze how they work toward those goals.</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/DDIA/" rel="tag"># DDIA</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/26/缓存/" rel="next" title="缓存">
+                <i class="fa fa-chevron-left"></i> 缓存
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/08/20/设计模式学习导读/" rel="prev" title="设计模式学习导读">
+                设计模式学习导读 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="was48i">
+          <p class="site-author-name" itemprop="name">was48i</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">96</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/was48i" target="_blank" title="GitHub">
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/was48i" target="_blank" title="LinkedIn">
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Thinking-About-Data-Systems"><span class="nav-number">1.</span> <span class="nav-text">Thinking About Data Systems</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reliability"><span class="nav-number">2.</span> <span class="nav-text">Reliability</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hardware-Faults"><span class="nav-number">2.1.</span> <span class="nav-text">Hardware Faults</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Software-Errors"><span class="nav-number">2.2.</span> <span class="nav-text">Software Errors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Human-Errors"><span class="nav-number">2.3.</span> <span class="nav-text">Human Errors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-Important-Is-Reliability"><span class="nav-number">2.4.</span> <span class="nav-text">How Important Is Reliability?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scalability"><span class="nav-number">3.</span> <span class="nav-text">Scalability</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Describing-Load"><span class="nav-number">3.1.</span> <span class="nav-text">Describing Load</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Describing-Performance"><span class="nav-number">3.2.</span> <span class="nav-text">Describing Performance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Approaches-for-Coping-with-Load"><span class="nav-number">3.3.</span> <span class="nav-text">Approaches for Coping with Load</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maintainability"><span class="nav-number">4.</span> <span class="nav-text">Maintainability</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Operability-Making-Life-Easy-for-Operations"><span class="nav-number">4.1.</span> <span class="nav-text">Operability: Making Life Easy for Operations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Simplicity-Managing-Complexity"><span class="nav-number">4.2.</span> <span class="nav-text">Simplicity: Managing Complexity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Evolvability-Making-Change-Easy"><span class="nav-number">4.3.</span> <span class="nav-text">Evolvability: Making Change Easy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Summary"><span class="nav-number">5.</span> <span class="nav-text">Summary</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">was48i</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="local-search-pop-overlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
