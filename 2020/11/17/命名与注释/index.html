@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="DevPrepares">
 <meta property="og:description" content="命名大到项目名、模块名、包名、对外暴露的接口，小到类名、函数名、变量名、参数名，只要是做开发，我们就逃不过“起名字”这一关。命名的好坏，对于代码的可读性来说非常重要，甚至可以说是起决定性作用的。除此之外，命名能力也体现了一个程序员的基本编程素养。这也是我把“命名”放到第一个来讲解的原因。 实际上，命名这件事说难也不难，关键还是看你重不重视，愿不愿意花时间。对于影响范围比较大的命名，比如包名、接口、">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-11-20T15:44:39.000Z">
+<meta property="og:updated_time" content="2020-11-21T10:17:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="命名与注释">
 <meta name="twitter:description" content="命名大到项目名、模块名、包名、对外暴露的接口，小到类名、函数名、变量名、参数名，只要是做开发，我们就逃不过“起名字”这一关。命名的好坏，对于代码的可读性来说非常重要，甚至可以说是起决定性作用的。除此之外，命名能力也体现了一个程序员的基本编程素养。这也是我把“命名”放到第一个来讲解的原因。 实际上，命名这件事说难也不难，关键还是看你重不重视，愿不愿意花时间。对于影响范围比较大的命名，比如包名、接口、">
@@ -386,7 +386,7 @@
 </ul>
 <h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>命名很重要，注释跟命名同等重要。命名再好，毕竟有长度限制，不可能足够详尽，而这个时候，<strong>注释就是一个很好的补充</strong>。</p>
 <h3 id="注释到底该写什么？"><a href="#注释到底该写什么？" class="headerlink" title="注释到底该写什么？"></a>注释到底该写什么？</h3><p>注释的目的就是让代码更容易看懂。只要符合这个要求的内容，你就可以将它写到注释里。总结一下，注释的内容主要包含这样三个方面：<strong>做什么、为什么、怎么做</strong>。我来举一个例子给你具体解释一下：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * (what) Bean factory to create beans. </span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * (why) The class likes Spring IoC framework, but is more lightweight. </span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * (how) Create objects from different sources sequentially:</span></span><br><span class="line"><span class="comment"> * user specified object &gt; SPI &gt; configuration &gt; default object.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BeansFactory</span> </span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="markdown">/**</span></span></span><br><span class="line"><span class="comment"><span class="markdown"><span class="bullet"> * </span>(what) Bean factory to create beans. </span></span></span><br><span class="line"><span class="comment"><span class="markdown"><span class="bullet"> * </span></span></span></span><br><span class="line"><span class="comment"><span class="markdown"><span class="bullet"> * </span>(why) The class likes Spring IoC framework, </span>but<span class="markdown"> is </span>more<span class="markdown"> lightweight. </span></span></span><br><span class="line"><span class="comment"><span class="markdown"> *</span></span></span><br><span class="line"><span class="comment"><span class="markdown"><span class="bullet"> * </span>(how) Create objects from different sources sequentially:</span></span></span><br><span class="line"><span class="comment"><span class="markdown"><span class="bullet"> * </span>user specified object &gt; SPI &gt; configuration &gt; default object.</span></span></span><br><span class="line"><span class="comment"><span class="markdown"> */</span></span></span><br><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">BeansFactory</span> </span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>注释比代码承载的信息更多<br>命名的主要目的是解释“做什么”。比如，void increaseWalletAvailableBalance(BigDecimal amount) 表明这个函数用来增加钱包的可用余额。函数和变量如果命名得好，确实可以不用再在注释中解释它是做什么的。但是，<strong>对于类来说，包含的信息比较多，一个简单的命名就不够全面详尽了</strong>。这个时候，在注释中写明“做什么”就合情合理了；</li>
@@ -515,7 +515,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">96</span>
+                <span class="site-state-item-count">97</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
