@@ -280,6 +280,136 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/09/Reliable-Scalable-and-Maintainable-Applications/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="was48i">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DevPrepares">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2020/08/09/Reliable-Scalable-and-Maintainable-Applications/" itemprop="url">
+                  Reliable, Scalable, and Maintainable Applications
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-09T22:27:01+08:00">
+                2020-08-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="https://raw.githubusercontent.com/was48i/mPOST/master/DDIA/01.png" alt></p>
+<p>A data-intensive application is typically built from standard building blocks that provide commonly needed functionality. For example, many applications need to:</p>
+<ul>
+<li>Store data so that they, or another application, can find it again later (<code>databases</code>);</li>
+<li>Remember the result of an expensive operation, to speed up reads (<code>caches</code>);</li>
+<li>Allow users to search data by keyword or filter it in various ways (<code>search indexes</code>);</li>
+<li>Send a message to another process, to be handled asynchronously (<code>stream processing</code>);</li>
+<li>Periodically crunch a large amount of accumulated data (<code>batch processing</code>);</li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/08/09/Reliable-Scalable-and-Maintainable-Applications/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/26/缓存/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -795,139 +925,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/25/负载均衡器/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="was48i">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DevPrepares">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2019/12/25/负载均衡器/" itemprop="url">
-                  负载均衡器
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-25T17:56:19+08:00">
-                2019-12-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><code>Load Balancer</code> 将传入的请求分发到应用服务器和数据库等计算资源。无论哪种情况，负载均衡器将来自计算资源的响应，返回给恰当的客户端。负载均衡器的效用在于:</p>
-<ul>
-<li>防止请求进入不好的服务器</li>
-<li>防止资源过载</li>
-<li><strong>帮助消除单一的故障点</strong></li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/04/00.jpg" alt></p>
-<p>负载均衡器可以通过硬件（昂贵）或 HAProxy 等软件来实现。 增加的好处包括：</p>
-<ul>
-<li>SSL 终结：<strong>解密传入的请求并加密服务器响应</strong>，这样的话后端服务器就不必再执行这些潜在高消耗运算了（不需要再每台服务器上安装 <code>X.509</code>）；</li>
-<li>Session 留存：当 <strong>Web 应用程序不追踪 session</strong> 时，发出 <code>cookie</code> 并将特定客户端的请求，路由到同一实例。</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/12/25/负载均衡器/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -975,7 +972,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">98</span>
+                <span class="site-state-item-count">99</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
