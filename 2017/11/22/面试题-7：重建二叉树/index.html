@@ -87,19 +87,19 @@
 
 
 
-<meta name="description" content="输入某二叉树的前序遍历和中序遍历的结果，请重建该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如，输入前序遍历序列 {1, 2, 4, 7, 3, 5, 6, 8} 和中序遍历序列 {4, 7, 2, 1, 5, 3, 8, 6}，则重建二叉树并输出它的头节点。二叉树节点的定义如下：  12345struct BinaryTreeNode &amp;#123;    int m_nVa">
+<meta name="description" content="输入某二叉树的前序遍历和中序遍历的结果，请重建该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如，输入前序遍历序列 {1, 2, 4, 7, 3, 5, 6, 8} 和中序遍历序列 {4, 7, 2, 1, 5, 3, 8, 6}，则重建二叉树并输出它的头节点。二叉树节点的定义如下：  123456struct BinaryTreeNode &amp;#123;    int m_nV">
 <meta name="keywords" content="CodingInterview">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试题 7：重建二叉树">
 <meta property="og:url" content="http://yoursite.com/2017/11/22/面试题-7：重建二叉树/index.html">
 <meta property="og:site_name" content="DevPrepares">
-<meta property="og:description" content="输入某二叉树的前序遍历和中序遍历的结果，请重建该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如，输入前序遍历序列 {1, 2, 4, 7, 3, 5, 6, 8} 和中序遍历序列 {4, 7, 2, 1, 5, 3, 8, 6}，则重建二叉树并输出它的头节点。二叉树节点的定义如下：  12345struct BinaryTreeNode &amp;#123;    int m_nVa">
+<meta property="og:description" content="输入某二叉树的前序遍历和中序遍历的结果，请重建该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如，输入前序遍历序列 {1, 2, 4, 7, 3, 5, 6, 8} 和中序遍历序列 {4, 7, 2, 1, 5, 3, 8, 6}，则重建二叉树并输出它的头节点。二叉树节点的定义如下：  123456struct BinaryTreeNode &amp;#123;    int m_nV">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CodingInterview/07.jpeg">
-<meta property="og:updated_time" content="2020-11-20T15:44:39.000Z">
+<meta property="og:updated_time" content="2020-12-01T16:36:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试题 7：重建二叉树">
-<meta name="twitter:description" content="输入某二叉树的前序遍历和中序遍历的结果，请重建该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如，输入前序遍历序列 {1, 2, 4, 7, 3, 5, 6, 8} 和中序遍历序列 {4, 7, 2, 1, 5, 3, 8, 6}，则重建二叉树并输出它的头节点。二叉树节点的定义如下：  12345struct BinaryTreeNode &amp;#123;    int m_nVa">
+<meta name="twitter:description" content="输入某二叉树的前序遍历和中序遍历的结果，请重建该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如，输入前序遍历序列 {1, 2, 4, 7, 3, 5, 6, 8} 和中序遍历序列 {4, 7, 2, 1, 5, 3, 8, 6}，则重建二叉树并输出它的头节点。二叉树节点的定义如下：  123456struct BinaryTreeNode &amp;#123;    int m_nV">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CodingInterview/07.jpeg">
 
 
@@ -360,7 +360,7 @@
         <blockquote>
 <p>输入某二叉树的前序遍历和中序遍历的结果，请重建该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如，输入前序遍历序列 {1, 2, 4, 7, 3, 5, 6, 8} 和中序遍历序列 {4, 7, 2, 1, 5, 3, 8, 6}，则重建二叉树并输出它的头节点。二叉树节点的定义如下：</p>
 </blockquote>
-<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct </span><span class="keyword">BinaryTreeNode </span>&#123;</span><br><span class="line">    int m_nValue<span class="comment">;</span></span><br><span class="line">    <span class="keyword">BinaryTreeNode </span>*m_pLeft<span class="comment">;</span></span><br><span class="line">    <span class="keyword">BinaryTreeNode </span>*m_pRight<span class="comment">;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">BinaryTreeNode</span> </span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> m_nValue;</span><br><span class="line">    BinaryTreeNode *m_pLeft;</span><br><span class="line">    BinaryTreeNode *m_pRight;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>由于树的操作会涉及大量的指针，因此与树有关的面试题都不太容易。</li>

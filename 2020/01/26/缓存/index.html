@@ -100,7 +100,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/07/02.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/07/03.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/07/04.jpg">
-<meta property="og:updated_time" content="2020-11-20T15:44:39.000Z">
+<meta property="og:updated_time" content="2020-12-01T16:31:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="缓存">
 <meta name="twitter:description" content="Cache 可以提高页面加载速度，并可以减少服务器和数据库的负载。在这个模型中，Dispatcher 先查看请求之前是否被响应过，如果有则将之前的结果直接返回，来省去真正的处理。 数据库因分区（Partition）读写而获益，但是热数据会导致读写不均，造成瓶颈。如果在数据库前加个缓存，就会减轻不均匀的负载和突发流量对数据库的影响。">
@@ -410,7 +410,7 @@
 <li>将查找到的结果存储到缓存中；</li>
 <li>返回所需内容；</li>
 </ol>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def get_user(self, user_id):</span><br><span class="line">   <span class="built_in"> user </span>= cache.<span class="builtin-name">get</span>(<span class="string">"user.&#123;0&#125;"</span>, user_id)</span><br><span class="line">    <span class="keyword">if</span><span class="built_in"> user </span>is None:</span><br><span class="line">       <span class="built_in"> user </span>= db.query(<span class="string">"SELECT * FROM users WHERE user_id=&#123;0&#125;"</span>, user_id)</span><br><span class="line">        <span class="keyword">if</span><span class="built_in"> user </span>is <span class="keyword">not</span> None:</span><br><span class="line">            key = <span class="string">"user.&#123;0&#125;"</span>.format(user_id)</span><br><span class="line">            cache.<span class="builtin-name">set</span>(key, json.dumps(user))</span><br><span class="line">    return user</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_user</span><span class="params">(self, user_id)</span>:</span></span><br><span class="line">    user = cache.get(<span class="string">"user.&#123;0&#125;"</span>, user_id)</span><br><span class="line">    <span class="keyword">if</span> user <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        user = db.query(<span class="string">"SELECT * FROM users WHERE user_id=&#123;0&#125;"</span>, user_id)</span><br><span class="line">        <span class="keyword">if</span> user <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            key = <span class="string">"user.&#123;0&#125;"</span>.format(user_id)</span><br><span class="line">            cache.set(key, json.dumps(user))</span><br><span class="line">    <span class="keyword">return</span> user</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>Memcached 通常用这种方式使用。</p>
@@ -429,10 +429,10 @@
 <li>返回所需内容；</li>
 </ul>
 <p>应用代码：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">set_user</span><span class="params">(<span class="number">1234</span>, &#123;<span class="string">"foo"</span>:<span class="string">"bar"</span>&#125;)</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set_user(<span class="number">1234</span>, &#123;<span class="string">"foo"</span>:<span class="string">"bar"</span>&#125;)</span><br></pre></td></tr></table></figure>
 
 <p>缓存代码：</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def set_user(user_id, values):</span><br><span class="line">   <span class="built_in"> user </span>= db.query(<span class="string">"UPDATE users WHERE id=&#123;0&#125;"</span>, user_id, values)</span><br><span class="line">    caches.<span class="builtin-name">set</span>(user_id, user)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">set_user</span><span class="params">(user_id, values)</span>:</span></span><br><span class="line">    user = db.query(<span class="string">"UPDATE users WHERE id=&#123;0&#125;"</span>, user_id, values)</span><br><span class="line">    caches.set(user_id, user)</span><br></pre></td></tr></table></figure>
 
 <p>由于写入操作，直写模式整体是一种很慢的操作，但读取刚写入的数据很快。相比读取数据，<strong>用户通常比较能接受更新数据时速度较慢</strong>；缓存中的数据不会过时。</p>
 <h4 id="缺陷：直写模式"><a href="#缺陷：直写模式" class="headerlink" title="缺陷：直写模式"></a>缺陷：直写模式</h4><ul>

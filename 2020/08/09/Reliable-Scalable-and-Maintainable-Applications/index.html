@@ -99,7 +99,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/DDIA/02.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/DDIA/03.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/DDIA/04.png">
-<meta property="og:updated_time" content="2020-11-20T15:44:39.000Z">
+<meta property="og:updated_time" content="2020-12-01T16:11:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Reliable, Scalable, and Maintainable Applications">
 <meta name="twitter:description" content="A data-intensive application is typically built from standard building blocks that provide commonly needed functionality. For example, many applications need to:  Store data so that they, or another">
@@ -399,7 +399,7 @@
 <p>Simply handling 12,000 writes per second (the peak rate for posting tweets) would be fairly easy. However, Twitter’s scaling challenge is not primarily due to tweet volume, but due to <code>fan-out</code>—each user follows many people, and each user is followed by many people. There are broadly two ways of implementing these two operations:</p>
 <ol>
 <li><p>Posting a tweet simply inserts the new tweet into a global collection of tweets. When a user requests their home timeline, <strong>look up all the people they follow, find all the tweets for each of those users</strong>, and merge them (sorted by time). In a relational database like in Figure 1-2, you could write a query such as:</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT tweets.*, users.* </span><br><span class="line"><span class="keyword">FROM</span> tweets</span><br><span class="line">    JOIN<span class="built_in"> users </span>ON tweets.sender_id = users.id </span><br><span class="line">    JOIN follows ON follows.followee_id = users.id </span><br><span class="line">WHERE follows.follower_id = current_user</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> tweets.*, users.* </span><br><span class="line"><span class="keyword">FROM</span> tweets</span><br><span class="line">    <span class="keyword">JOIN</span> <span class="keyword">users</span> <span class="keyword">ON</span> tweets.sender_id = users.id </span><br><span class="line">    <span class="keyword">JOIN</span> <span class="keyword">follows</span> <span class="keyword">ON</span> follows.followee_id = users.id </span><br><span class="line"><span class="keyword">WHERE</span> follows.follower_id = <span class="keyword">current_user</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Maintain a cache for each user’s home timeline—like a mailbox of tweets for each recipient user (see Figure 1-3). When a user posts a tweet, <strong>look up all the people who follow that user, and insert the new tweet into each of their home timeline caches</strong>. The request to read the home timeline is then cheap, because its result has been computed ahead of time.</p>
 </li>

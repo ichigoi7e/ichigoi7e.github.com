@@ -110,7 +110,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/02/13.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/02/14.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/02/15.jpg">
-<meta property="og:updated_time" content="2020-11-20T15:44:39.000Z">
+<meta property="og:updated_time" content="2020-12-01T16:29:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据抽象">
 <meta name="twitter:description" content="数据类型指的是一组值和一组对这些值的操作的集合。原则上所有程序都只需要使用原始数据类型即可，但为了在更高层次的抽象上编写程序更加方便，重点学习定义和使用数据类型，这个过程也被称为数据抽象。 Java 编程的基础主要是使用 class 关键字构造被称为引用类型的数据类型。这种编程风格称为面向对象编程，因为它的核心概念是对象，即保存了某个数据类型的值的实体。 抽象数据类型（ADT）是一种能够对使用者隐">
@@ -407,7 +407,7 @@
 <h3 id="用例代码"><a href="#用例代码" class="headerlink" title="用例代码"></a>用例代码</h3><p>将程序组织为独立模块的机制可以应用于所有的 Java 类，因此它对基于抽象数据类型的模块化编程与静态函数库一样有效。</p>
 <p>通过将实现某种数据类型的全部代码封装在一个 Java 类中，我们可以将用例代码推向<strong>更高的抽象层次</strong>。这种方式<strong>和原始数据的使用方式非常不同</strong>。</p>
 <h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><p>可以声明一个变量 heads 并将它通过以下代码和 Counter 类型的数据关联起来：</p>
-<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Counter heads<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Counter heads;</span><br></pre></td></tr></table></figure>
 
 <p>对象是能够承载数据类型的值的实体，所有对象都有三大重要特性：<code>状态</code>、<code>标识</code>和<code>行为</code>：</p>
 <ul>
@@ -443,7 +443,7 @@
 <p>你需要<strong>从引用而非值的角度</strong>去考虑问题才能理解这些用法的行为。</p>
 </blockquote>
 <h3 id="赋值语句"><a href="#赋值语句" class="headerlink" title="赋值语句"></a>赋值语句</h3><p>使用引用类型的赋值语句将会创建该引用的一个<code>副本</code>。赋值语句不会创建新的对象，而只是创建另一个指向某个已经存在的对象的引用。这种情况被称为<code>别名</code>：两个变量同时指向同一个对象。如下例所示：</p>
-<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Counter <span class="keyword">c</span><span class="number">1</span> = new Counter(<span class="string">"ones"</span>)<span class="comment">;</span></span><br><span class="line"><span class="comment">c1.increment();</span></span><br><span class="line"><span class="comment">Counter c2 = c1;</span></span><br><span class="line"><span class="comment">c2.increment();</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Counter c1 = <span class="keyword">new</span> Counter(<span class="string">"ones"</span>);</span><br><span class="line">c1.increment();</span><br><span class="line">Counter c2 = c1;</span><br><span class="line">c2.increment();</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/02/04.jpg" alt></p>
 <blockquote>
@@ -637,7 +637,7 @@
 </ul>
 <p>可以使用下面的实现，作为实现任意数据类型的 toString() 和 equals() 方法的模版：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/02/14.jpg" alt></p>
 <h3 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h3><p>如下所示的三行赋值语句：</p>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Date a</span> = new Date(12, 31, 1999);</span><br><span class="line"><span class="attribute">Date b</span> = new Date(1, 1, 2011);</span><br><span class="line"><span class="attribute">a</span> = b;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Date a = <span class="keyword">new</span> Date(<span class="number">12</span>, <span class="number">31</span>, <span class="number">1999</span>);</span><br><span class="line">Date b = <span class="keyword">new</span> Date(<span class="number">1</span>, <span class="number">1</span>, <span class="number">2011</span>);</span><br><span class="line">a = b;</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/02/15.jpg" alt></p>
 <p>本来该对象的唯一引用就是变量 a，但是<strong>该引用被赋值语句覆盖了</strong>，这样的对象被称为<code>孤儿</code>。</p>

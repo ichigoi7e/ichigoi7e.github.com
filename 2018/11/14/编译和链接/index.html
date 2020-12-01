@@ -98,7 +98,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/DevPrepares/2-1.jpeg">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/DevPrepares/2-2.jpeg">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/DevPrepares/2-3.jpeg">
-<meta property="og:updated_time" content="2020-11-20T15:44:39.000Z">
+<meta property="og:updated_time" content="2020-12-01T16:32:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编译和链接">
 <meta name="twitter:description" content="集成开发环境（IDE）一般都将编译和链接的过程一步完成，将这种编译和链接合并到一起的过程称为构建（Build）。我们看到的是这些问题的现象，但是却很难看清本质，所有这些问题的本质就是软件运行背后的机理及支撑软件运行的各种平台和工具。 被隐藏了的过程分解为 4 个步骤，分别是：预处理（Preprocessing）、编译（Compilation）、汇编（Assembly）和链接（Linking）。">
@@ -362,15 +362,15 @@
         <p>集成开发环境（IDE）一般都将编译和链接的过程一步完成，将这种编译和链接合并到一起的过程称为<code>构建（Build）</code>。<br>我们看到的是这些问题的现象，但是却很难看清本质，所有这些问题的本质就是软件运行背后的机理及支撑软件运行的各种平台和工具。</p>
 <h2 id="被隐藏了的过程"><a href="#被隐藏了的过程" class="headerlink" title="被隐藏了的过程"></a>被隐藏了的过程</h2><p>分解为 4 个步骤，分别是：<strong>预处理</strong>（Preprocessing）、<strong>编译</strong>（Compilation）、<strong>汇编</strong>（Assembly）和<strong>链接</strong>（Linking）。<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/DevPrepares/2-1.jpeg" alt></p>
 <a id="more"></a>
-<h3 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h3><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>gcc -E hello.c -o hello.i</span><br></pre></td></tr></table></figure>
+<h3 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gcc -E hello.c -o hello.i</span><br></pre></td></tr></table></figure>
 
 <p>经过预处理后的 *.i 文件不包含任何宏定义，因为所有的宏已经被展开，并且包含的文件也已经被插入到 *.i 文件中。<br>当我们无法判断宏定义是否正确或头文件包含是否正确时，可以查看预编译后的文件来确定问题。</p>
 <h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><p>编译过程就是把预处理完的文件进行一系列的词法分析、语法分析、语义分析及优化后生成相应的汇编代码文件。</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>gcc -S hello.i -o hello.s</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gcc -S hello.i -o hello.s</span><br></pre></td></tr></table></figure>
 
 <p>现在版本的 GCC 把预编译和编译两个步骤合并成一个步骤，实际上 <code>gcc 命令</code>只是这些后台程序的包装，它会根据<strong>不同参数</strong>去调用编译器 cc1、汇编器 as、链接器 ld。</p>
 <h3 id="汇编"><a href="#汇编" class="headerlink" title="汇编"></a>汇编</h3><p>汇编器是将汇编代码转变成机器可以执行的指令，每一个汇编语句几乎对应一条机器指令。</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">as</span> hello.s -o hello.o</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ as hello.s -o hello.o</span><br></pre></td></tr></table></figure>
 
 <h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>要将一大堆文件链接起来才可以得到“a.out”，即最终的可执行文件。</p>
 <h2 id="编译器做了什么"><a href="#编译器做了什么" class="headerlink" title="编译器做了什么"></a>编译器做了什么</h2><p>编译器就是将高级语言翻译成机器语言的一个工具。高级编程语言的出现使得程序开发的效率大大提高，高级语言的可移植性也使得它在多种计算机平台下能够游刃有余。<br>编译过程一般可以分为 6 步：词法分析、语法分析、语义分析、源代码优化、代码生成和目标代码优化，即从<strong>源代码</strong>（Source Code）到<strong>最终目标代码</strong>（Final Target Code）的过程。<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/DevPrepares/2-2.jpeg" alt></p>
