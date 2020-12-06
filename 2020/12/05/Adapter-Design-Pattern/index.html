@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="DevPrepares">
 <meta property="og:description" content="适配器模式的原理与实现适配器模式（Adapter Design Pattern）是用来做适配的，它将不兼容的接口转换为可兼容的接口，让原本由于接口不兼容而不能一起工作的类可以一起工作。对于这个模式，有一个经常被拿来解释它的例子，就是 USB 转接头充当适配器，把两种不兼容的接口，通过转接变得可以一起工作。 适配器模式有两种实现方式：类适配器和对象适配器。其中，类适配器使用继承关系来实现，对象适配器">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-12-05T14:35:01.000Z">
+<meta property="og:updated_time" content="2020-12-05T14:59:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Adapter Design Pattern">
 <meta name="twitter:description" content="适配器模式的原理与实现适配器模式（Adapter Design Pattern）是用来做适配的，它将不兼容的接口转换为可兼容的接口，让原本由于接口不兼容而不能一起工作的类可以一起工作。对于这个模式，有一个经常被拿来解释它的例子，就是 USB 转接头充当适配器，把两种不兼容的接口，通过转接变得可以一起工作。 适配器模式有两种实现方式：类适配器和对象适配器。其中，类适配器使用继承关系来实现，对象适配器">
@@ -366,7 +366,7 @@
 <li>如果 Adaptee 接口很多，而且 Adaptee 和 ITarget 接口定义大部分都相同，那我们推荐使用类适配器，因为 Adaptor 复用父类 Adaptee 的接口，<strong>比起对象适配器的实现方式，Adaptor 的代码量要少一些</strong>；</li>
 <li>如果 Adaptee 接口很多，而且 Adaptee 和 ITarget 接口定义大部分都不相同，那我们推荐使用对象适配器，因为<strong>组合结构相对于继承更加灵活</strong>；</li>
 </ul>
-<h2 id="适配器模式应用场景总结"><a href="#适配器模式应用场景总结" class="headerlink" title="适配器模式应用场景总结"></a>适配器模式应用场景总结</h2><h2 id="剖析适配器模式在-Java-日志中的应用"><a href="#剖析适配器模式在-Java-日志中的应用" class="headerlink" title="剖析适配器模式在 Java 日志中的应用"></a>剖析适配器模式在 Java 日志中的应用</h2><h2 id="代理、桥接、装饰器、适配器设计模式的区别"><a href="#代理、桥接、装饰器、适配器设计模式的区别" class="headerlink" title="代理、桥接、装饰器、适配器设计模式的区别"></a>代理、桥接、装饰器、适配器设计模式的区别</h2>
+<h2 id="适配器模式应用场景总结"><a href="#适配器模式应用场景总结" class="headerlink" title="适配器模式应用场景总结"></a>适配器模式应用场景总结</h2><h3 id="封装有缺陷的接口设计"><a href="#封装有缺陷的接口设计" class="headerlink" title="封装有缺陷的接口设计"></a>封装有缺陷的接口设计</h3><h3 id="统一多个类的接口设计"><a href="#统一多个类的接口设计" class="headerlink" title="统一多个类的接口设计"></a>统一多个类的接口设计</h3><h3 id="替换依赖的外部系统"><a href="#替换依赖的外部系统" class="headerlink" title="替换依赖的外部系统"></a>替换依赖的外部系统</h3><h3 id="兼容老版本接口"><a href="#兼容老版本接口" class="headerlink" title="兼容老版本接口"></a>兼容老版本接口</h3><h3 id="适配不同格式的数据"><a href="#适配不同格式的数据" class="headerlink" title="适配不同格式的数据"></a>适配不同格式的数据</h3><h2 id="剖析适配器模式在-Java-日志中的应用"><a href="#剖析适配器模式在-Java-日志中的应用" class="headerlink" title="剖析适配器模式在 Java 日志中的应用"></a>剖析适配器模式在 Java 日志中的应用</h2><h2 id="代理、桥接、装饰器、适配器设计模式的区别"><a href="#代理、桥接、装饰器、适配器设计模式的区别" class="headerlink" title="代理、桥接、装饰器、适配器设计模式的区别"></a>代理、桥接、装饰器、适配器设计模式的区别</h2>
       
     </div>
 
@@ -542,7 +542,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#适配器模式的原理与实现"><span class="nav-number">1.</span> <span class="nav-text">适配器模式的原理与实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#适配器模式应用场景总结"><span class="nav-number">2.</span> <span class="nav-text">适配器模式应用场景总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#剖析适配器模式在-Java-日志中的应用"><span class="nav-number">3.</span> <span class="nav-text">剖析适配器模式在 Java 日志中的应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代理、桥接、装饰器、适配器设计模式的区别"><span class="nav-number">4.</span> <span class="nav-text">代理、桥接、装饰器、适配器设计模式的区别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#适配器模式的原理与实现"><span class="nav-number">1.</span> <span class="nav-text">适配器模式的原理与实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#适配器模式应用场景总结"><span class="nav-number">2.</span> <span class="nav-text">适配器模式应用场景总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#封装有缺陷的接口设计"><span class="nav-number">2.1.</span> <span class="nav-text">封装有缺陷的接口设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#统一多个类的接口设计"><span class="nav-number">2.2.</span> <span class="nav-text">统一多个类的接口设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#替换依赖的外部系统"><span class="nav-number">2.3.</span> <span class="nav-text">替换依赖的外部系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#兼容老版本接口"><span class="nav-number">2.4.</span> <span class="nav-text">兼容老版本接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#适配不同格式的数据"><span class="nav-number">2.5.</span> <span class="nav-text">适配不同格式的数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#剖析适配器模式在-Java-日志中的应用"><span class="nav-number">3.</span> <span class="nav-text">剖析适配器模式在 Java 日志中的应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代理、桥接、装饰器、适配器设计模式的区别"><span class="nav-number">4.</span> <span class="nav-text">代理、桥接、装饰器、适配器设计模式的区别</span></a></li></ol></div>
             
 
           </div>
