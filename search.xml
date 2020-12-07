@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Facade Design Pattern</title>
+      <link href="2020/12/07/Facade-Design-Pattern/"/>
+      <url>2020/12/07/Facade-Design-Pattern/</url>
+      
+        <content type="html"><![CDATA[<h2 id="门面模式的原理与实现"><a href="#门面模式的原理与实现" class="headerlink" title="门面模式的原理与实现"></a>门面模式的原理与实现</h2><h2 id="门面模式的应用场景举例"><a href="#门面模式的应用场景举例" class="headerlink" title="门面模式的应用场景举例"></a>门面模式的应用场景举例</h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> GoF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Adapter Design Pattern</title>
       <link href="2020/12/05/Adapter-Design-Pattern/"/>
       <url>2020/12/05/Adapter-Design-Pattern/</url>
