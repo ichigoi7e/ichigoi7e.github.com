@@ -87,18 +87,18 @@
 
 
 
-<meta name="description" content="OOP 与 OOPL面向对象编程的英文缩写是 OOP，全称是 Object Oriented Programming。对应地，面向对象编程语言的英文缩写是 OOPL，全称是 Object Oriented Programming Language。 面向对象编程中有两个非常重要、非常基础的概念，那就是类（class）和对象（object）。这两个概念最早出现在 1960 年，在 Simula 这种">
+<meta name="description" content="模板模式的原理与实现模板模式作用一：复用模板模式作用二：扩展">
 <meta name="keywords" content="GoF">
 <meta property="og:type" content="article">
-<meta property="og:title" content="面向对象">
-<meta property="og:url" content="http://yoursite.com/2020/08/20/面向对象/index.html">
+<meta property="og:title" content="Template Method Design Pattern">
+<meta property="og:url" content="http://yoursite.com/2020/12/16/Template-Method-Design-Pattern/index.html">
 <meta property="og:site_name" content="DevPrepares">
-<meta property="og:description" content="OOP 与 OOPL面向对象编程的英文缩写是 OOP，全称是 Object Oriented Programming。对应地，面向对象编程语言的英文缩写是 OOPL，全称是 Object Oriented Programming Language。 面向对象编程中有两个非常重要、非常基础的概念，那就是类（class）和对象（object）。这两个概念最早出现在 1960 年，在 Simula 这种">
+<meta property="og:description" content="模板模式的原理与实现模板模式作用一：复用模板模式作用二：扩展">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-11-20T15:44:39.000Z">
+<meta property="og:updated_time" content="2020-12-16T15:26:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="面向对象">
-<meta name="twitter:description" content="OOP 与 OOPL面向对象编程的英文缩写是 OOP，全称是 Object Oriented Programming。对应地，面向对象编程语言的英文缩写是 OOPL，全称是 Object Oriented Programming Language。 面向对象编程中有两个非常重要、非常基础的概念，那就是类（class）和对象（object）。这两个概念最早出现在 1960 年，在 Simula 这种">
+<meta name="twitter:title" content="Template Method Design Pattern">
+<meta name="twitter:description" content="模板模式的原理与实现模板模式作用一：复用模板模式作用二：扩展">
 
 
 
@@ -126,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/08/20/面向对象/">
+  <link rel="canonical" href="http://yoursite.com/2020/12/16/Template-Method-Design-Pattern/">
 
 
 
 
 
-  <title> 面向对象 | DevPrepares </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> Template Method Design Pattern | DevPrepares </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -283,7 +283,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/20/面向对象/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/16/Template-Method-Design-Pattern/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="was48i">
@@ -304,7 +304,7 @@
             
             
               
-                面向对象
+                Template Method Design Pattern
               
             
           </h1>
@@ -319,8 +319,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-20T17:17:54+08:00">
-                2020-08-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-12-16T23:24:34+08:00">
+                2020-12-16
               </time>
             
 
@@ -355,21 +355,7 @@
       
 
       
-        <h2 id="OOP-与-OOPL"><a href="#OOP-与-OOPL" class="headerlink" title="OOP 与 OOPL"></a>OOP 与 OOPL</h2><p><code>面向对象编程</code>的英文缩写是 OOP，全称是 Object Oriented Programming。对应地，<code>面向对象编程语言</code>的英文缩写是 OOPL，全称是 Object Oriented Programming Language。</p>
-<p>面向对象编程中有两个非常重要、非常基础的概念，那就是<code>类</code>（class）和<code>对象</code>（object）。这两个概念最早出现在 1960 年，在 Simula 这种编程语言中第一次使用。而面向对象编程这个概念第一次被使用是在 Smalltalk 这种编程语言中。Smalltalk 被认为是第一个真正意义上的面向对象编程语言。</p>
-<p>一般来讲， 面向对象编程都是通过使用面向对象编程语言来进行的，但是，不用面向对象编程语言，我们照样可以进行面向对象编程。反过来讲，即便我们使用面向对象编程语言，写出来的代码也不一定是面向对象编程风格的，也有可能是面向过程编程风格的：</p>
-<ul>
-<li>面向对象编程是一种编程范式或编程风格。它以类或对象作为组织代码的基本单元，并将<strong>封装、抽象、继承、多态</strong>四个特性，作为代码设计和实现的基石；</li>
-<li>面向对象编程语言是支持类或对象的语法机制，并有现成的语法机制，能方便地实现面向对象编程四大特性（封装、抽象、继承、多态）的编程语言；</li>
-</ul>
-<p>实际上，我个人觉得，只要某种编程语言支持类或对象的语法概念，并且以此作为组织代码的基本单元，那就可以被粗略地认为它就是面向对象编程语言了。至于是否有现成的语法机制，完全地支持了面向对象编程的四大特性、是否对四大特性有所取舍和优化，可以不作为判定的标准。</p>
-<a id="more"></a>
-
-<h2 id="OOA-与-OOD"><a href="#OOA-与-OOD" class="headerlink" title="OOA 与 OOD"></a>OOA 与 OOD</h2><p><code>面向对象分析</code>英文缩写是 OOA，全称是 Object Oriented Analysis；<code>面向对象设计</code>的英文缩写是 OOD，全称是 Object Oriented Design。OOA、OOD、OOP 三个连在一起就是面向对象分析、设计、编程（实现），正好是面向对象软件开发要经历的三个阶段。</p>
-<p>之所以在前面加“面向对象”这几个字，是因为我们是围绕着对象或类来做需求分析和设计的。分析和设计两个阶段最终的产出是类的设计，包括程序被拆解为哪些类，每个类有哪些属性方法，类与类之间如何交互等等。它们比其他的分析和设计更加具体、更加落地、更加贴近编码，更能够顺利地过渡到面向对象编程环节。这也是面向对象分析和设计，与其他分析和设计最大的不同点。</p>
-<h2 id="UML"><a href="#UML" class="headerlink" title="UML"></a>UML</h2><p>讲到面向对象分析、设计、编程，我们就不得不提到另外一个概念，那就是 <code>UML</code>（Unified Model Language），统一建模语言。很多讲解面向对象或设计模式的书籍，常用它来画图表达面向对象或设计模式的设计思路。</p>
-<p>所以，从我的开发经验来说，UML 在互联网公司的项目开发中，用处可能并不大。为了文档化软件设计或者方便讨论软件设计，大部分情况下，我们随手画个不那么规范的草图，能够达意，方便沟通就够了，而完全按照 UML 规范来将草图标准化，所付出的代价是不值得的。</p>
-
+        <h2 id="模板模式的原理与实现"><a href="#模板模式的原理与实现" class="headerlink" title="模板模式的原理与实现"></a>模板模式的原理与实现</h2><h2 id="模板模式作用一：复用"><a href="#模板模式作用一：复用" class="headerlink" title="模板模式作用一：复用"></a>模板模式作用一：复用</h2><h2 id="模板模式作用二：扩展"><a href="#模板模式作用二：扩展" class="headerlink" title="模板模式作用二：扩展"></a>模板模式作用二：扩展</h2>
       
     </div>
 
@@ -405,8 +391,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/08/20/设计模式学习导读/" rel="next" title="设计模式学习导读">
-                <i class="fa fa-chevron-left"></i> 设计模式学习导读
+              <a href="/2020/12/13/Observer-Design-Pattern/" rel="next" title="Observer Design Pattern">
+                <i class="fa fa-chevron-left"></i> Observer Design Pattern
               </a>
             
           </div>
@@ -414,10 +400,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/08/20/封装、抽象、继承与多态/" rel="prev" title="封装、抽象、继承与多态">
-                封装、抽象、继承与多态 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -549,7 +531,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#OOP-与-OOPL"><span class="nav-number">1.</span> <span class="nav-text">OOP 与 OOPL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OOA-与-OOD"><span class="nav-number">2.</span> <span class="nav-text">OOA 与 OOD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UML"><span class="nav-number">3.</span> <span class="nav-text">UML</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#模板模式的原理与实现"><span class="nav-number">1.</span> <span class="nav-text">模板模式的原理与实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模板模式作用一：复用"><span class="nav-number">2.</span> <span class="nav-text">模板模式作用一：复用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模板模式作用二：扩展"><span class="nav-number">3.</span> <span class="nav-text">模板模式作用二：扩展</span></a></li></ol></div>
             
 
           </div>
