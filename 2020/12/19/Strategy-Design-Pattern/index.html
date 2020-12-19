@@ -87,20 +87,18 @@
 
 
 
-<meta name="description" content="解耦为何如此重要？软件设计与开发最重要的工作之一就是应对复杂性。人处理复杂性的能力是有限的。过于复杂的代码往往在可读性、可维护性上都不友好。那如何来控制代码的复杂性呢？手段有很多，我个人认为，最关键的就是解耦，保证代码松耦合、高内聚。如果说重构是保证代码质量不至于腐化到无可救药地步的有效手段，那么利用解耦的方法对代码重构，就是保证代码不至于复杂到无法控制的有效手段。 实际上，“高内聚、松耦合”是一">
+<meta name="description" content="策略模式的原理与实现策略模式，英文全称是 Strategy Design Pattern。它是这样定义的：  Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients t">
 <meta name="keywords" content="GoF">
 <meta property="og:type" content="article">
-<meta property="og:title" content="解耦">
-<meta property="og:url" content="http://yoursite.com/2020/11/17/解耦/index.html">
+<meta property="og:title" content="Strategy Design Pattern">
+<meta property="og:url" content="http://yoursite.com/2020/12/19/Strategy-Design-Pattern/index.html">
 <meta property="og:site_name" content="DevPrepares">
-<meta property="og:description" content="解耦为何如此重要？软件设计与开发最重要的工作之一就是应对复杂性。人处理复杂性的能力是有限的。过于复杂的代码往往在可读性、可维护性上都不友好。那如何来控制代码的复杂性呢？手段有很多，我个人认为，最关键的就是解耦，保证代码松耦合、高内聚。如果说重构是保证代码质量不至于腐化到无可救药地步的有效手段，那么利用解耦的方法对代码重构，就是保证代码不至于复杂到无法控制的有效手段。 实际上，“高内聚、松耦合”是一">
+<meta property="og:description" content="策略模式的原理与实现策略模式，英文全称是 Strategy Design Pattern。它是这样定义的：  Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients t">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/GoF/01.png">
-<meta property="og:updated_time" content="2020-11-20T15:44:39.000Z">
+<meta property="og:updated_time" content="2020-12-19T07:51:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="解耦">
-<meta name="twitter:description" content="解耦为何如此重要？软件设计与开发最重要的工作之一就是应对复杂性。人处理复杂性的能力是有限的。过于复杂的代码往往在可读性、可维护性上都不友好。那如何来控制代码的复杂性呢？手段有很多，我个人认为，最关键的就是解耦，保证代码松耦合、高内聚。如果说重构是保证代码质量不至于腐化到无可救药地步的有效手段，那么利用解耦的方法对代码重构，就是保证代码不至于复杂到无法控制的有效手段。 实际上，“高内聚、松耦合”是一">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/GoF/01.png">
+<meta name="twitter:title" content="Strategy Design Pattern">
+<meta name="twitter:description" content="策略模式的原理与实现策略模式，英文全称是 Strategy Design Pattern。它是这样定义的：  Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients t">
 
 
 
@@ -128,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/11/17/解耦/">
+  <link rel="canonical" href="http://yoursite.com/2020/12/19/Strategy-Design-Pattern/">
 
 
 
 
 
-  <title> 解耦 | DevPrepares </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> Strategy Design Pattern | DevPrepares </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -285,7 +283,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/17/解耦/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/19/Strategy-Design-Pattern/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="was48i">
@@ -306,7 +304,7 @@
             
             
               
-                解耦
+                Strategy Design Pattern
               
             
           </h1>
@@ -321,8 +319,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-11-17T00:02:15+08:00">
-                2020-11-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-12-19T15:40:31+08:00">
+                2020-12-19
               </time>
             
 
@@ -357,36 +355,24 @@
       
 
       
-        <h2 id="解耦为何如此重要？"><a href="#解耦为何如此重要？" class="headerlink" title="解耦为何如此重要？"></a>解耦为何如此重要？</h2><p>软件设计与开发最重要的工作之一就是<code>应对复杂性</code>。人处理复杂性的能力是有限的。过于复杂的代码往往在可读性、可维护性上都不友好。那如何来控制代码的复杂性呢？手段有很多，我个人认为，最关键的就是解耦，保证代码松耦合、高内聚。如果说<strong>重构是保证代码质量不至于腐化到无可救药地步的有效手段</strong>，那么利用解耦的方法对代码重构，就是<strong>保证代码不至于复杂到无法控制的有效手段</strong>。</p>
-<p>实际上，“高内聚、松耦合”是一个比较通用的设计思想，不仅可以指导细粒度的类和类之间关系的设计，还能指导粗粒度的系统、架构、模块的设计。相对于编码规范，它<strong>能够在更高层次上提高代码的可读性和可维护性</strong>。</p>
-<p>除此之外，代码“高内聚、松耦合”，也就意味着，代码结构清晰、分层和模块化合理、依赖关系简单、模块或类之间的耦合小，那<strong>代码整体的质量就不会差</strong>。即便某个具体的类或者模块设计得不怎么合理，代码质量不怎么高，影响的范围是非常有限的。我们可以<strong>聚焦于这个模块或者类，做相应的小型重构</strong>。而相对于代码结构的调整，这种改动范围比较集中的小型重构的难度就容易多了。</p>
-<h2 id="代码是否需要解耦？"><a href="#代码是否需要解耦？" class="headerlink" title="代码是否需要解耦？"></a>代码是否需要解耦？</h2><p>间接的衡量标准有很多，前面我们讲到了一些，比如，<strong>看修改代码会不会牵一发而动全身</strong>。除此之外，还有一个直接的衡量标准，也是我在阅读源码的时候经常会用到的，那就是把模块与模块之间、类与类之间的依赖关系画出来，<strong>根据依赖关系图的复杂性来判断是否需要解耦重构</strong>。</p>
-<p>当然，这种判断还是有<strong>比较强的主观色彩</strong>，但是可以作为一种参考和梳理依赖的手段，配合间接的衡量标准一块来使用。</p>
+        <h2 id="策略模式的原理与实现"><a href="#策略模式的原理与实现" class="headerlink" title="策略模式的原理与实现"></a>策略模式的原理与实现</h2><p><code>策略模式</code>，英文全称是 Strategy Design Pattern。它是这样定义的：</p>
+<blockquote>
+<p>Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it.</p>
+</blockquote>
+<p>翻译成中文就是：定义一族算法类，将每个算法分别封装起来，让它们可以互相替换。策略模式可以使算法的变化独立于使用它们的客户端。工厂模式是解耦对象的创建和使用，观察者模式是解耦观察者和被观察者。策略模式跟两者类似，也能起到解耦的作用，不过，它<strong>解耦的是策略的定义、创建、使用</strong>这三部分。</p>
+<h3 id="策略的定义"><a href="#策略的定义" class="headerlink" title="策略的定义"></a>策略的定义</h3><p>策略类的定义比较简单，<strong>包含一个策略接口和一组实现这个接口的策略类</strong>。因为所有的策略类都实现相同的接口，所以，客户端代码基于接口而非实现编程，可以灵活地替换不同的策略。示例代码如下所示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Strategy</span> </span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">algorithmInterface</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteStrategyA</span> <span class="keyword">implements</span> <span class="title">Strategy</span> </span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span>  <span class="title">algorithmInterface</span><span class="params">()</span> </span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// 具体的算法...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteStrategyB</span> <span class="keyword">implements</span> <span class="title">Strategy</span> </span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span>  <span class="title">algorithmInterface</span><span class="params">()</span> </span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// 具体的算法...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
 
-<h2 id="如何给代码解耦？"><a href="#如何给代码解耦？" class="headerlink" title="如何给代码解耦？"></a>如何给代码解耦？</h2><h3 id="封装与抽象"><a href="#封装与抽象" class="headerlink" title="封装与抽象"></a>封装与抽象</h3><p>封装和抽象作为两个非常通用的设计思想，可以应用在很多设计场景中，比如系统、模块、lib、组件、接口、类等等的设计。封装和抽象可以<strong>有效地隐藏实现的复杂性，隔离实现的易变性</strong>，给依赖的模块提供稳定且易用的抽象接口。</p>
-<p>比如，Unix 系统提供的 open() 文件操作函数，我们用起来非常简单，但是底层实现却非常复杂，涉及权限控制、并发控制、物理存储等等。我们通过将其封装成一个抽象的 open() 函数，能够有效控制代码复杂性的蔓延，将复杂性封装在局部代码中。除此之外，因为 open() 函数基于抽象而非具体的实现来定义，所以我们在<strong>改动 open() 函数的底层实现的时候，并不需要改动依赖它的上层代码</strong>，也符合我们前面提到的“高内聚、松耦合”代码的评判标准。</p>
-<h3 id="中间层"><a href="#中间层" class="headerlink" title="中间层"></a>中间层</h3><p>引入中间层能<strong>简化模块或类之间的依赖关系</strong>。下面这张图是引入中间层前后的依赖关系对比图。在引入数据存储中间层之前，A、B、C 三个模块都要依赖内存一级缓存、Redis 二级缓存、DB 持久化存储三个模块。在引入中间层之后，三个模块只需要依赖数据存储一个模块即可。从图上可以看出，中间层的引入明显地简化了依赖关系，让代码结构更加清晰：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/GoF/01.png" alt></p>
-<p>除此之外，我们在进行重构的时候，<strong>引入中间层可以起到过渡的作用</strong>，能够让开发和重构同步进行，不互相干扰。比如，某个接口设计得有问题，我们需要修改它的定义，同时，所有调用这个接口的代码都要做相应的改动。如果新开发的代码也用到这个接口，那开发就跟重构冲突了。为了让重构能小步快跑，我们可以分下面四个阶段来完成接口的修改：</p>
-<ol>
-<li>引入一个中间层，包裹老的接口，提供新的接口定义；</li>
-<li>新开发的代码依赖中间层提供的新接口；</li>
-<li>将依赖老接口的代码改为调用新接口；</li>
-<li>确保所有的代码都调用新接口之后，删除掉老的接口；</li>
-</ol>
-<p>这样，每个阶段的开发工作量都不会很大，都可以在很短的时间内完成。<strong>重构跟开发冲突的概率也变小了</strong>。</p>
-<h3 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h3><p>模块化是<strong>构建复杂系统常用的手段</strong>。不仅在软件行业，在建筑、机械制造等行业，这个手段也非常有用。对于一个大型复杂系统来说，没有人能掌控所有的细节。之所以我们能搭建出如此复杂的系统，并且能维护得了，最主要的原因就是将系统划分成各个独立的模块，让不同的人负责不同的模块，这样即便在不了解全部细节的情况下，管理者也能协调各个模块，让整个系统有效运转。</p>
-<p>实际上，模块化的思想无处不在，像 SOA、微服务、lib 库、系统内模块划分，甚至是类、函数的设计，都体现了模块化思想。如果追本溯源，<strong>模块化思想更加本质的东西就是分而治之</strong>。</p>
-<h3 id="其他设计思想和原则"><a href="#其他设计思想和原则" class="headerlink" title="其他设计思想和原则"></a>其他设计思想和原则</h3><p>“高内聚、松耦合”是一个非常重要的设计思想，能够有效提高代码的可读性和可维护性，缩小功能改动导致的代码改动范围。很多设计原则都以实现代码的“高内聚、松耦合”为目的。我们来一块总结回顾一下都有哪些原则：</p>
-<ul>
-<li>单一职责原则<br>内聚性和耦合性并非独立的。高内聚会让代码更加松耦合，而<strong>实现高内聚的重要指导原则就是单一职责原则</strong>。模块或者类的职责设计得单一，而不是大而全，那依赖它的类和它依赖的类就会比较少，代码耦合也就相应的降低了；</li>
-<li>基于接口而非实现编程<br><strong>通过接口这样一个中间层，隔离变化和具体的实现</strong>。这样做的好处是，在有依赖关系的两个模块或类之间，一个模块或者类的改动，不会影响到另一个模块或类。实际上，这就相当于<strong>将一种强依赖关系（强耦合）解耦为了弱依赖关系（弱耦合）</strong>；</li>
-<li>依赖注入<br>依赖注入也是将代码之间的强耦合变为弱耦合。尽管依赖注入无法将本应该有依赖关系的两个类，解耦为没有依赖关系，但可以<strong>让耦合关系没那么紧密，容易做到插拔替换</strong>；</li>
-<li>多用组合少用继承<br>继承是一种强依赖关系，父类与子类高度耦合，且这种耦合关系非常脆弱，牵一发而动全身，父类的每一次改动都会影响所有的子类。相反，组合关系是一种弱依赖关系，这种关系更加灵活，所以，对于继承结构比较复杂的代码，<strong>利用组合来替换继承，也是一种解耦的有效手段</strong>；</li>
-<li>迪米特法则<br>迪米特法则讲的是，<strong>不该有直接依赖关系的类之间，不要有依赖；有依赖关系的类之间，尽量只依赖必要的接口</strong>。从定义上，我们明显可以看出，这条原则的目的就是为了实现代码的松耦合；</li>
-</ul>
-<p>除了上面讲到的这些设计思想和原则之外，还有一些设计模式也是为了解耦依赖，比如<code>观察者模式</code>。</p>
+<h3 id="策略的创建"><a href="#策略的创建" class="headerlink" title="策略的创建"></a>策略的创建</h3><p>因为策略模式会包含一组策略，在使用它们的时候，一般会通过类型（type）来判断创建哪个策略来使用。为了封装创建逻辑，我们需要对客户端代码屏蔽创建细节。我们可以<strong>把根据 type 创建策略的逻辑抽离出来，放到工厂类中</strong>。示例代码如下所示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StrategyFactory</span> </span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Map&lt;String, Strategy&gt; strategies = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> </span><br><span class="line">    &#123;</span><br><span class="line">        strategies.put(<span class="string">"A"</span>, <span class="keyword">new</span> ConcreteStrategyA());</span><br><span class="line">        strategies.put(<span class="string">"B"</span>, <span class="keyword">new</span> ConcreteStrategyB());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Strategy <span class="title">getStrategy</span><span class="params">(String type)</span> </span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (type == <span class="keyword">null</span> || type.isEmpty()) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"type should not be empty."</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> strategies.get(type);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>一般来讲，如果策略类是无状态的，不包含成员变量，只是纯粹的算法实现，这样的策略对象是可以被共享使用的，不需要在每次调用 getStrategy() 的时候，都创建一个新的策略对象。针对这种情况，我们可以使用上面这种工厂类的实现方式，事先创建好每个策略对象，缓存到工厂类中，用的时候直接返回。</p>
+<p>相反，<strong>如果策略类是有状态的，根据业务场景的需要，我们希望每次从工厂方法中，获得的都是新创建的策略对象</strong>，而不是缓存好可共享的策略对象，那我们就需要按照如下方式来实现策略工厂类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StrategyFactory</span> </span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Strategy <span class="title">getStrategy</span><span class="params">(String type)</span> </span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (type == <span class="keyword">null</span> || type.isEmpty()) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"type should not be empty."</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (type.equals(<span class="string">"A"</span>)) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ConcreteStrategyA();</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (type.equals(<span class="string">"B"</span>)) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ConcreteStrategyB();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="策略的使用"><a href="#策略的使用" class="headerlink" title="策略的使用"></a>策略的使用</h3><h2 id="如何利用策略模式避免分支判断？"><a href="#如何利用策略模式避免分支判断？" class="headerlink" title="如何利用策略模式避免分支判断？"></a>如何利用策略模式避免分支判断？</h2>
       
     </div>
 
@@ -422,8 +408,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/11/15/代码的可测试性/" rel="next" title="代码的可测试性">
-                <i class="fa fa-chevron-left"></i> 代码的可测试性
+              <a href="/2020/12/16/Template-Method-Design-Pattern/" rel="next" title="Template Method Design Pattern">
+                <i class="fa fa-chevron-left"></i> Template Method Design Pattern
               </a>
             
           </div>
@@ -431,10 +417,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/11/17/命名与注释/" rel="prev" title="命名与注释">
-                命名与注释 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -566,7 +548,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#解耦为何如此重要？"><span class="nav-number">1.</span> <span class="nav-text">解耦为何如此重要？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码是否需要解耦？"><span class="nav-number">2.</span> <span class="nav-text">代码是否需要解耦？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何给代码解耦？"><span class="nav-number">3.</span> <span class="nav-text">如何给代码解耦？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#封装与抽象"><span class="nav-number">3.1.</span> <span class="nav-text">封装与抽象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中间层"><span class="nav-number">3.2.</span> <span class="nav-text">中间层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块化"><span class="nav-number">3.3.</span> <span class="nav-text">模块化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他设计思想和原则"><span class="nav-number">3.4.</span> <span class="nav-text">其他设计思想和原则</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#策略模式的原理与实现"><span class="nav-number">1.</span> <span class="nav-text">策略模式的原理与实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#策略的定义"><span class="nav-number">1.1.</span> <span class="nav-text">策略的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#策略的创建"><span class="nav-number">1.2.</span> <span class="nav-text">策略的创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#策略的使用"><span class="nav-number">1.3.</span> <span class="nav-text">策略的使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何利用策略模式避免分支判断？"><span class="nav-number">2.</span> <span class="nav-text">如何利用策略模式避免分支判断？</span></a></li></ol></div>
             
 
           </div>
