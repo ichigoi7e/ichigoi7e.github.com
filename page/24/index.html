@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="CodingInterview,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -87,18 +87,13 @@
 
 
 
-<meta name="description" content="输入一个链表的头节点，从尾到头反过来打印出每个节点的值。链表节点定义如下：  12345struct ListNode &amp;#123;    int m_mKey;    ListNode *m_pNext;&amp;#125;   内存分配不是在创建链表时一次性完成的，由于没有闲置的内存，链表的空间效率比数组高。 如果我们打算修改输入的数据，最好先问面试官是不是允许修改。 典型的后进先出，可以用栈实现这">
-<meta name="keywords" content="CodingInterview">
-<meta property="og:type" content="article">
-<meta property="og:title" content="面试题 6：从尾到头打印链表">
-<meta property="og:url" content="http://yoursite.com/2017/11/20/面试题-6：从尾到头打印链表/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DevPrepares">
+<meta property="og:url" content="http://yoursite.com/page/24/index.html">
 <meta property="og:site_name" content="DevPrepares">
-<meta property="og:description" content="输入一个链表的头节点，从尾到头反过来打印出每个节点的值。链表节点定义如下：  12345struct ListNode &amp;#123;    int m_mKey;    ListNode *m_pNext;&amp;#125;   内存分配不是在创建链表时一次性完成的，由于没有闲置的内存，链表的空间效率比数组高。 如果我们打算修改输入的数据，最好先问面试官是不是允许修改。 典型的后进先出，可以用栈实现这">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-12-01T16:36:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="面试题 6：从尾到头打印链表">
-<meta name="twitter:description" content="输入一个链表的头节点，从尾到头反过来打印出每个节点的值。链表节点定义如下：  12345struct ListNode &amp;#123;    int m_mKey;    ListNode *m_pNext;&amp;#125;   内存分配不是在创建链表时一次性完成的，由于没有闲置的内存，链表的空间效率比数组高。 如果我们打算修改输入的数据，最好先问面试官是不是允许修改。 典型的后进先出，可以用栈实现这">
+<meta name="twitter:title" content="DevPrepares">
 
 
 
@@ -126,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/20/面试题-6：从尾到头打印链表/">
+  <link rel="canonical" href="http://yoursite.com/page/24/">
 
 
 
 
 
-  <title> 面试题 6：从尾到头打印链表 | DevPrepares </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> DevPrepares </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -157,7 +152,9 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-right page-post-detail ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-right 
+   page-home 
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -272,9 +269,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -283,7 +280,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/20/面试题-6：从尾到头打印链表/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="was48i">
@@ -304,7 +301,10 @@
             
             
               
-                面试题 6：从尾到头打印链表
+                
+                <a class="post-title-link" href="/2017/03/03/hello-world/" itemprop="url">
+                  Hello World
+                </a>
               
             
           </h1>
@@ -319,8 +319,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-20T20:15:24+08:00">
-                2017-11-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T08:00:00+08:00">
+                2017-03-03
               </time>
             
 
@@ -355,83 +355,59 @@
       
 
       
-        <blockquote>
-<p>输入一个链表的头节点，从尾到头反过来打印出每个节点的值。链表节点定义如下：</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span> </span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> m_mKey;</span><br><span class="line">    ListNode *m_pNext;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>内存分配不是在创建链表时一次性完成的，由于没有闲置的内存，链表的空间效率比数组高。</li>
-<li>如果我们打算修改输入的数据，最好先问面试官是不是允许修改。</li>
-<li>典型的<strong>后进先出</strong>，可以用栈实现这种顺序。递归本质上就是一个栈结构，但有可能导致函数调用栈溢出，显然用<strong>栈基于循环</strong>实现的代码的鲁棒性要好一些。</li>
-<li>考查对循环、递归、栈 3 个相互关联的概念的理解。</li>
-</ul>
-<p><a href="https://gist.githubusercontent.com/was48i/39107507d9eb6a1736ee4e8cb98ef35f/raw/3aa2ee894f7880b74a5986bab68f47873f148d9d/06_PrintListInReversedOrder.cpp" target="_blank" rel="noopener">Source Code</a></p>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+          
+        
       
     </div>
 
     <div>
       
-        
-
-      
     </div>
 
     <div>
-      
-        
-
       
     </div>
 
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/CodingInterview/" rel="tag"># CodingInterview</a>
-          
-        </div>
+
       
 
       
-        
-      
 
       
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/11/19/面试题-5：替换空格/" rel="next" title="面试题 5：替换空格">
-                <i class="fa fa-chevron-left"></i> 面试题 5：替换空格
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/22/面试题-7：重建二叉树/" rel="prev" title="面试题 7：重建二叉树">
-                面试题 7：重建二叉树 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
       
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
+    
+  </section>
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/23/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><span class="page-number current">24</span>
+  </nav>
+
 
           
           </div>
@@ -439,10 +415,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -633,10 +605,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
-
 
   
 
