@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>数组</title>
+      <link href="2020/12/25/%E6%95%B0%E7%BB%84/"/>
+      <url>2020/12/25/%E6%95%B0%E7%BB%84/</url>
+      
+        <content type="html"><![CDATA[<h2 id="如何实现随机访问？"><a href="#如何实现随机访问？" class="headerlink" title="如何实现随机访问？"></a>如何实现随机访问？</h2><h2 id="低效的“插入”和“删除”"><a href="#低效的“插入”和“删除”" class="headerlink" title="低效的“插入”和“删除”"></a>低效的“插入”和“删除”</h2><h2 id="警惕数组的访问越界问题"><a href="#警惕数组的访问越界问题" class="headerlink" title="警惕数组的访问越界问题"></a>警惕数组的访问越界问题</h2><h2 id="容器能否完全替代数组？"><a href="#容器能否完全替代数组？" class="headerlink" title="容器能否完全替代数组？"></a>容器能否完全替代数组？</h2><h2 id="为什么从-0-开始编号"><a href="#为什么从-0-开始编号" class="headerlink" title="为什么从 0 开始编号"></a>为什么从 0 开始编号</h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> CLRS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Mediator Design Pattern</title>
       <link href="2020/12/24/Mediator-Design-Pattern/"/>
       <url>2020/12/24/Mediator-Design-Pattern/</url>
@@ -1990,7 +2009,7 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
+            <tag> C++ </tag>
             
         </tags>
       
@@ -2047,7 +2066,7 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
+            <tag> C++ </tag>
             
         </tags>
       
@@ -2161,7 +2180,7 @@
       
         <tags>
             
-            <tag> C/C++ </tag>
+            <tag> C++ </tag>
             
         </tags>
       
