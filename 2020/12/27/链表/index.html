@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="GoF,">
 
 
 
@@ -87,17 +87,24 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="缓存是一种提高数据读取性能的技术，在硬件设计、软件开发中都有着非常广泛的应用，比如常见的 CPU 缓存、数据库缓存、浏览器缓存等等。缓存的大小有限，当缓存被用满时，哪些数据应该被清理出去，哪些数据应该被保留？这就需要缓存淘汰策略来决定。常见的策略有三种：  先进先出策略 FIFO（First In，First Out）； 最少使用策略 LFU（Least Frequently Used）； 最近最">
+<meta name="keywords" content="GoF">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/03/03/hello-world/index.html">
+<meta property="og:title" content="链表">
+<meta property="og:url" content="http://yoursite.com/2020/12/27/链表/index.html">
 <meta property="og:site_name" content="DevPrepares">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="缓存是一种提高数据读取性能的技术，在硬件设计、软件开发中都有着非常广泛的应用，比如常见的 CPU 缓存、数据库缓存、浏览器缓存等等。缓存的大小有限，当缓存被用满时，哪些数据应该被清理出去，哪些数据应该被保留？这就需要缓存淘汰策略来决定。常见的策略有三种：  先进先出策略 FIFO（First In，First Out）； 最少使用策略 LFU（Least Frequently Used）； 最近最">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-12-01T15:38:27.000Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/10.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/11.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/12.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/13.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/14.png">
+<meta property="og:updated_time" content="2020-12-26T17:45:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="链表">
+<meta name="twitter:description" content="缓存是一种提高数据读取性能的技术，在硬件设计、软件开发中都有着非常广泛的应用，比如常见的 CPU 缓存、数据库缓存、浏览器缓存等等。缓存的大小有限，当缓存被用满时，哪些数据应该被清理出去，哪些数据应该被保留？这就需要缓存淘汰策略来决定。常见的策略有三种：  先进先出策略 FIFO（First In，First Out）； 最少使用策略 LFU（Least Frequently Used）； 最近最">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/10.png">
 
 
 
@@ -125,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/03/hello-world/">
+  <link rel="canonical" href="http://yoursite.com/2020/12/27/链表/">
 
 
 
 
 
-  <title> Hello World | DevPrepares </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> 链表 | DevPrepares </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -282,7 +289,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/03/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/27/链表/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="was48i">
@@ -303,7 +310,7 @@
             
             
               
-                Hello World
+                链表
               
             
           </h1>
@@ -318,8 +325,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T08:00:00+08:00">
-                2017-03-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-12-27T01:14:38+08:00">
+                2020-12-27
               </time>
             
 
@@ -354,20 +361,30 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <p><code>缓存</code>是一种提高数据读取性能的技术，在硬件设计、软件开发中都有着非常广泛的应用，比如常见的 CPU 缓存、数据库缓存、浏览器缓存等等。缓存的大小有限，当缓存被用满时，哪些数据应该被清理出去，哪些数据应该被保留？这就需要缓存淘汰策略来决定。常见的策略有三种：</p>
+<ul>
+<li>先进先出策略 FIFO（First In，First Out）；</li>
+<li>最少使用策略 LFU（Least Frequently Used）；</li>
+<li>最近最少使用策略 LRU（Least Recently Used）；</li>
+</ul>
+<h2 id="五花八门的链表结构"><a href="#五花八门的链表结构" class="headerlink" title="五花八门的链表结构"></a>五花八门的链表结构</h2><p>相比数组，链表（Linked List）是一种稍微复杂一点的数据结构。我们先从<strong>底层的存储结构</strong>上来看一看，为了直观地对比，我画了一张图：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/10.png" alt></p>
+<p>从图中我们看到，数组需要一块<strong>连续的内存空间</strong>来存储，对内存的要求比较高。如果我们申请一个 100MB 大小的数组，当内存中没有连续的、足够大的存储空间时，即便内存的剩余总可用空间大于 100MB，仍然会申请失败；而链表恰恰相反，它并不需要一块连续的内存空间，它通过“指针”将一组<strong>零散的内存块</strong>串联起来使用，所以如果我们申请的是 100MB 大小的链表，根本不会有问题。</p>
+<a id="more"></a>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+<h3 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h3><p>我们刚刚讲到，链表通过指针将一组零散的内存块串联在一起。其中，我们把内存块称为链表的<code>结点</code>。为了将所有的结点串起来，每个链表的结点除了存储数据之外，还需要记录链上的下一个结点的地址。如图所示，我们把这个记录下个结点地址的指针叫作<strong>后继指针 next</strong>：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/11.png" alt></p>
+<p>从我画的单链表图中，你应该可以发现，其中有两个结点是比较特殊的，它们分别是第一个结点和最后一个结点。我们习惯性地把第一个结点叫作<code>头结点</code>，把最后一个结点叫作<code>尾结点</code>。其中，头结点用来记录链表的基地址。有了它，我们就可以遍历得到整条链表。而尾结点特殊的地方是：指针不是指向下一个结点，而是指向一个<strong>空地址 NULL</strong>，表示这是链表上最后一个结点。</p>
+<p>在链表中插入或者删除一个数据，我们并不需要为了保持内存的连续性而搬移结点，因为链表的存储空间本身就不是连续的。所以，在链表中插入和删除一个数据是非常快速的。为了方便你理解，我画了一张图，从图中我们可以看出，针对链表的插入和删除操作，我们只需要考虑相邻结点的指针改变，所以对应的<strong>时间复杂度是 O(1)</strong>：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/12.png" alt></p>
+<p>但是，有利就有弊。链表要想随机访问第 k 个元素，就没有数组那么高效了。因为链表中的数据并非连续存储的，所以无法像数组那样，根据首地址和下标，通过寻址公式就能直接计算出对应的内存地址，而是需要根据指针一个结点一个结点地依次遍历，直到找到相应的结点。<strong>需要 O(n) 的时间复杂度</strong>。</p>
+<h3 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h3><p><strong>循环链表是一种特殊的单链表</strong>。实际上，循环链表也很简单。它跟单链表唯一的区别就在尾结点。我们知道，单链表的尾结点指针指向空地址，表示这就是最后的结点了。而循环链表的尾结点指针是指向链表的头结点。从我画的循环链表图中，你应该可以看出来，它像一个环一样首尾相连，所以叫作循环链表：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/13.png" alt></p>
+<p>和单链表相比，循环链表的优点是从链尾到链头比较方便。当要处理的数据具有环型结构特点时，就特别适合采用循环链表。比如著名的<code>约瑟夫问题</code>。尽管用单链表也可以实现，但是用循环链表实现的话，代码就会简洁很多。</p>
+<h3 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h3><p>单向链表只有一个方向，结点只有一个后继指针 next 指向后面的结点。而双向链表，顾名思义，它支持两个方向，每个结点不止有一个后继指针 next 指向后面的结点，还有一个<strong>前驱指针 prev</strong> 指向前面的结点：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/14.png" alt></p>
+<p>从我画的图中可以看出来，双向链表需要额外的两个空间来存储后继结点和前驱结点的地址。所以，如果存储同样多的数据，双向链表要比单链表占用更多的内存空间。虽然两个指针比较浪费存储空间，但可以支持双向遍历，这样也带来了双向链表操作的灵活性。从结构上来看，<strong>双向链表可以支持 O(1) 时间复杂度的情况下找到前驱结点</strong>，正是这样的特点，也使双向链表在某些情况下的插入、删除等操作都要比单链表简单、高效。</p>
+<p>在实际的软件开发中，从链表中删除一个数据无外乎这两种情况：</p>
+<ul>
+<li>删除结点中“值等于某个给定值”的结点；</li>
+<li>删除给定指针指向的结点；</li>
+</ul>
+<h2 id="链表-vs-数组性能大比拼"><a href="#链表-vs-数组性能大比拼" class="headerlink" title="链表 vs. 数组性能大比拼"></a>链表 vs. 数组性能大比拼</h2><h2 id="基于链表实现-LRU-缓存淘汰算法"><a href="#基于链表实现-LRU-缓存淘汰算法" class="headerlink" title="基于链表实现 LRU 缓存淘汰算法"></a>基于链表实现 LRU 缓存淘汰算法</h2>
       
     </div>
 
@@ -388,6 +405,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/GoF/" rel="tag"># GoF</a>
+          
+        </div>
+      
 
       
         
@@ -397,15 +420,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2020/12/25/数组/" rel="next" title="数组">
+                <i class="fa fa-chevron-left"></i> 数组
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/08/医学辅助诊断系统/" rel="prev" title="医学辅助诊断系统">
-                医学辅助诊断系统 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -537,7 +560,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#五花八门的链表结构"><span class="nav-number">1.</span> <span class="nav-text">五花八门的链表结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单链表"><span class="nav-number">1.1.</span> <span class="nav-text">单链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环链表"><span class="nav-number">1.2.</span> <span class="nav-text">循环链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双向链表"><span class="nav-number">1.3.</span> <span class="nav-text">双向链表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链表-vs-数组性能大比拼"><span class="nav-number">2.</span> <span class="nav-text">链表 vs. 数组性能大比拼</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于链表实现-LRU-缓存淘汰算法"><span class="nav-number">3.</span> <span class="nav-text">基于链表实现 LRU 缓存淘汰算法</span></a></li></ol></div>
             
 
           </div>
