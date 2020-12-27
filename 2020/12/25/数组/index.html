@@ -100,7 +100,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/07.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/08.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/09.png">
-<meta property="og:updated_time" content="2020-12-25T17:02:21.000Z">
+<meta property="og:updated_time" content="2020-12-27T15:10:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组">
 <meta name="twitter:description" content="在大部分编程语言中，数组都是从 0 开始编号的，但你是否下意识地想过，为什么数组要从 0 开始编号，而不是从 1 开始呢？ 从 1 开始不是更符合人类的思维习惯吗？ 如何实现随机访问？数组（Array）是一种线性表数据结构。它用一组连续的内存空间，来存储一组具有相同类型的数据。 顾名思义，线性表（Linear List）就是数据排成像一条线一样的结构。每个线性表上的数据最多只有前和后两个方向。其实">
@@ -403,7 +403,7 @@
 <li>还有一个是我个人的喜好，当要表示多维数组时，用数组往往会更加直观。比如 Object[][] array；而用容器的话则需要这样定义：ArrayList&lt;ArrayList&lt;object&gt;&gt; array；</li>
 </ul>
 <p>我总结一下，对于业务开发，直接使用容器就足够了，省时省力。毕竟损耗一丢丢性能，完全不会影响到系统整体的性能。但如果你是做<strong>一些非常底层的开发，比如开发网络框架，性能的优化需要做到极致，这个时候数组就会优于容器</strong>，成为首选。</p>
-<h2 id="为什么从-0-开始编号"><a href="#为什么从-0-开始编号" class="headerlink" title="为什么从 0 开始编号"></a>为什么从 0 开始编号</h2><p>从数组存储的内存模型上来看，“下标”最确切的定义应该是<code>偏移</code>（offset）。前面也讲到，如果用 a 来表示数组的首地址，a[0]就是偏移为 0 的位置，也就是首地址，a[k]就表示偏移 k 个 type_size 的位置，所以计算 a[k]的内存地址只需要用这个公式：</p>
+<h2 id="为什么数组从-0-开始编号"><a href="#为什么数组从-0-开始编号" class="headerlink" title="为什么数组从 0 开始编号"></a>为什么数组从 0 开始编号</h2><p>从数组存储的内存模型上来看，“下标”最确切的定义应该是<code>偏移</code>（offset）。前面也讲到，如果用 a 来表示数组的首地址，a[0]就是偏移为 0 的位置，也就是首地址，a[k]就表示偏移 k 个 type_size 的位置，所以计算 a[k]的内存地址只需要用这个公式：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a[k]_address = base_address + k * type_size</span><br></pre></td></tr></table></figure>
 
 <p>但是，如果数组从 1 开始计数，那我们计算数组元素 a[k]的内存地址就会变为：</p>
@@ -534,7 +534,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">120</span>
+                <span class="site-state-item-count">121</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -596,7 +596,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何实现随机访问？"><span class="nav-number">1.</span> <span class="nav-text">如何实现随机访问？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#低效的“插入”和“删除”"><span class="nav-number">2.</span> <span class="nav-text">低效的“插入”和“删除”</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#插入操作"><span class="nav-number">2.1.</span> <span class="nav-text">插入操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除操作"><span class="nav-number">2.2.</span> <span class="nav-text">删除操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#警惕数组的访问越界问题"><span class="nav-number">3.</span> <span class="nav-text">警惕数组的访问越界问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器能否完全替代数组？"><span class="nav-number">4.</span> <span class="nav-text">容器能否完全替代数组？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么从-0-开始编号"><span class="nav-number">5.</span> <span class="nav-text">为什么从 0 开始编号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LeetCode"><span class="nav-number">6.</span> <span class="nav-text">LeetCode</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何实现随机访问？"><span class="nav-number">1.</span> <span class="nav-text">如何实现随机访问？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#低效的“插入”和“删除”"><span class="nav-number">2.</span> <span class="nav-text">低效的“插入”和“删除”</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#插入操作"><span class="nav-number">2.1.</span> <span class="nav-text">插入操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除操作"><span class="nav-number">2.2.</span> <span class="nav-text">删除操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#警惕数组的访问越界问题"><span class="nav-number">3.</span> <span class="nav-text">警惕数组的访问越界问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器能否完全替代数组？"><span class="nav-number">4.</span> <span class="nav-text">容器能否完全替代数组？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么数组从-0-开始编号"><span class="nav-number">5.</span> <span class="nav-text">为什么数组从 0 开始编号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LeetCode"><span class="nav-number">6.</span> <span class="nav-text">LeetCode</span></a></li></ol></div>
             
 
           </div>
