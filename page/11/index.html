@@ -280,6 +280,129 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/20/封装、抽象、继承与多态/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="was48i">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DevPrepares">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2020/08/20/封装、抽象、继承与多态/" itemprop="url">
+                  封装、抽象、继承与多态
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-20T17:31:06+08:00">
+                2020-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="封装（Encapsulation）"><a href="#封装（Encapsulation）" class="headerlink" title="封装（Encapsulation）"></a>封装（Encapsulation）</h2><p>首先，我们来看封装特性。<strong>封装也叫作信息隐藏或者数据访问保护。</strong>类通过暴露有限的访问接口，授权外部仅能通过类提供的方式（或者叫函数）来访问内部信息或者数据。这句话怎么理解呢？我们通过一个简单的例子来解释一下。</p>
+<p>下面这段代码是金融系统中一个简化版的虚拟钱包的代码实现：</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/08/20/封装、抽象、继承与多态/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/20/面向对象/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -781,138 +904,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/17/异步与通讯/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="was48i">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DevPrepares">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2020/01/17/异步与通讯/" itemprop="url">
-                  异步与通讯
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-17T00:50:01+08:00">
-                2020-01-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="异步（Asynchronism）"><a href="#异步（Asynchronism）" class="headerlink" title="异步（Asynchronism）"></a>异步（Asynchronism）</h2><p><img src="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/08/00.jpg" alt></p>
-<p>异步工作流有助于减少那些原本顺序执行的请求时间。它们可以通过<strong>提前进行一些耗时的工作</strong>来帮助减少请求时间，比如定期汇总数据。</p>
-<h3 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h3><p>消息队列接收、保留和传递消息。如果<strong>按顺序执行操作太慢</strong>的话，你可以使用有以下工作流的消息队列：</p>
-<ul>
-<li>应用程序将作业发布到队列，然后通知用户作业状态；</li>
-<li>一个 worker 从队列中取出该作业，对其进行处理，然后显示该作业完成；</li>
-</ul>
-<p>不去阻塞用户操作，作业在后台处理。在此期间，客户端可能会进行一些处理使得<strong>任务看上去像是已经完成了</strong>。例如，如果要发送一条推文，推文可能会马上出现在你的时间线上，但是可能需要一些时间才能将你的推文推送到你的所有关注者那里去。</p>
-<p><code>Redis</code> 是一个令人满意的简单的消息代理，但是消息有可能会丢失。</p>
-<p><code>RabbitMQ</code> 很受欢迎但是要求你适应 AMQP 协议，并且管理你自己的节点。</p>
-<p><code>Amazon SQS</code> 是被托管的，但可能具有高延迟，并且消息可能会被传送两次。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/01/17/异步与通讯/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -960,7 +951,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">121</span>
+                <span class="site-state-item-count">122</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
