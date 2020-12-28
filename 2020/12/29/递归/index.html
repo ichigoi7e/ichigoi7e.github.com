@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="SystemDesign,">
+  <meta name="keywords" content="CLRS,">
 
 
 
@@ -87,28 +87,20 @@
 
 
 
-<meta name="description" content="CS75 Lecture 9: Scalability  Vertical ScalingGet more RAM, processors, disks for one machine, but you will exhaust the financial resources/state. Horizontal ScalingPlural number of machines, use mult">
-<meta name="keywords" content="SystemDesign">
+<meta name="description" content="现在很多 App 都有推荐注册返佣金的功能。这个功能中，用户 A 推荐用户 B 来注册，用户 B 又推荐了用户 C 来注册。我们可以说，用户 C 的“最终推荐人”为用户 A，用户 B 的“最终推荐人”也为用户 A，而用户 A 没有“最终推荐人”。一般来说，我们会通过数据库来记录这种推荐关系。在数据库表中，我们可以记录两行数据，其中 actor_id 表示用户 id，referrer_id 表示推荐">
+<meta name="keywords" content="CLRS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Scalability">
-<meta property="og:url" content="http://yoursite.com/2019/12/18/Scalability/index.html">
+<meta property="og:title" content="递归">
+<meta property="og:url" content="http://yoursite.com/2020/12/29/递归/index.html">
 <meta property="og:site_name" content="DevPrepares">
-<meta property="og:description" content="CS75 Lecture 9: Scalability  Vertical ScalingGet more RAM, processors, disks for one machine, but you will exhaust the financial resources/state. Horizontal ScalingPlural number of machines, use mult">
+<meta property="og:description" content="现在很多 App 都有推荐注册返佣金的功能。这个功能中，用户 A 推荐用户 B 来注册，用户 B 又推荐了用户 C 来注册。我们可以说，用户 C 的“最终推荐人”为用户 A，用户 B 的“最终推荐人”也为用户 A，而用户 A 没有“最终推荐人”。一般来说，我们会通过数据库来记录这种推荐关系。在数据库表中，我们可以记录两行数据，其中 actor_id 表示用户 id，referrer_id 表示推荐">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/00/00.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/00/01.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/00/02.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/00/03.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/00/04.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/00/05.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/00/06.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/00/07.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/00/08.jpg">
-<meta property="og:updated_time" content="2020-11-20T15:44:39.000Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/39.png">
+<meta property="og:updated_time" content="2020-12-28T16:40:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Scalability">
-<meta name="twitter:description" content="CS75 Lecture 9: Scalability  Vertical ScalingGet more RAM, processors, disks for one machine, but you will exhaust the financial resources/state. Horizontal ScalingPlural number of machines, use mult">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/00/00.jpg">
+<meta name="twitter:title" content="递归">
+<meta name="twitter:description" content="现在很多 App 都有推荐注册返佣金的功能。这个功能中，用户 A 推荐用户 B 来注册，用户 B 又推荐了用户 C 来注册。我们可以说，用户 C 的“最终推荐人”为用户 A，用户 B 的“最终推荐人”也为用户 A，而用户 A 没有“最终推荐人”。一般来说，我们会通过数据库来记录这种推荐关系。在数据库表中，我们可以记录两行数据，其中 actor_id 表示用户 id，referrer_id 表示推荐">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/39.png">
 
 
 
@@ -136,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/12/18/Scalability/">
+  <link rel="canonical" href="http://yoursite.com/2020/12/29/递归/">
 
 
 
 
 
-  <title> Scalability | DevPrepares </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> 递归 | DevPrepares </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -293,7 +285,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/18/Scalability/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/29/递归/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="was48i">
@@ -314,7 +306,7 @@
             
             
               
-                Scalability
+                递归
               
             
           </h1>
@@ -329,8 +321,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-18T08:54:26+08:00">
-                2019-12-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-12-29T00:15:53+08:00">
+                2020-12-29
               </time>
             
 
@@ -365,37 +357,18 @@
       
 
       
-        <blockquote>
-<p><a href="https://www.youtube.com/watch?v=-W9F__D3oY4" target="_blank" rel="noopener">CS75 Lecture 9: Scalability</a></p>
-</blockquote>
-<h2 id="Vertical-Scaling"><a href="#Vertical-Scaling" class="headerlink" title="Vertical Scaling"></a>Vertical Scaling</h2><p>Get more RAM, processors, disks for one machine, but you will exhaust the financial resources/state.<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/00/00.jpg" alt></p>
-<h2 id="Horizontal-Scaling"><a href="#Horizontal-Scaling" class="headerlink" title="Horizontal Scaling"></a>Horizontal Scaling</h2><p>Plural number of machines, use multiple servers to build the topology.<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/00/01.jpg" alt></p>
+        <p>现在很多 App 都有推荐注册返佣金的功能。这个功能中，用户 A 推荐用户 B 来注册，用户 B 又推荐了用户 C 来注册。我们可以说，用户 C 的“最终推荐人”为用户 A，用户 B 的“最终推荐人”也为用户 A，而用户 A 没有“最终推荐人”。一般来说，我们会<strong>通过数据库来记录这种推荐关系</strong>。在数据库表中，我们可以记录两行数据，其中 actor_id 表示用户 id，referrer_id 表示推荐人 id：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/39.png" alt></p>
+<h2 id="如何理解“递归”？"><a href="#如何理解“递归”？" class="headerlink" title="如何理解“递归”？"></a>如何理解“递归”？</h2><p><code>递归</code>（Recursion）是一种应用非常广泛的算法（或者编程技巧）。很多数据结构和算法的编码实现都要用到递归，比如 DFS 深度优先搜索、前中后序二叉树遍历等等。所以，<strong>搞懂递归非常重要</strong>，否则，复杂一些的数据结构和算法学起来就会比较吃力。</p>
 <a id="more"></a>
-<h2 id="Cache"><a href="#Cache" class="headerlink" title="Cache"></a>Cache</h2><h3 id="html"><a href="#html" class="headerlink" title=".html"></a>.html</h3><p>Requires a lot of work when want to update/redesign the page.</p>
-<h3 id="MySQL-Query-Cache"><a href="#MySQL-Query-Cache" class="headerlink" title="MySQL Query Cache"></a>MySQL Query Cache</h3><p>query_cache_type = 1</p>
-<h3 id="Memcached"><a href="#Memcached" class="headerlink" title="Memcached"></a>Memcached</h3><p>Store whatever you want in RAM.<br><strong>G</strong>arbage <strong>C</strong>ollection: expire objects based on when they are put in.</p>
-<h2 id="Load-Balancing"><a href="#Load-Balancing" class="headerlink" title="Load Balancing"></a>Load Balancing</h2><p><img src="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/00/02.jpg" alt></p>
-<h3 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h3><ul>
-<li>Dedicated servers for images, videos… for different host <strong>HTTP header</strong>.</li>
-<li><strong>Round Robin</strong>. The load balancer can be a DNS setup which returns the IP address of server 1 when the first time someone asks for a URL, then return the IP address of server 2 when the second time someone asks for the same url, then server 3, server 4… eventually wrapping up.<ul>
-<li>Downside: one server may get a really computational heavy user.</li>
-</ul>
-</li>
-<li>Based on the load on a server.</li>
-<li>Have a server specifically for storing sessions. But what if that machine breaks down. Lacks redundancy, can add RAID (<strong>R</strong>edundant <strong>A</strong>rray of <strong>I</strong>ndependent <strong>D</strong>isks).</li>
-</ul>
-<h3 id="Load-Balancers"><a href="#Load-Balancers" class="headerlink" title="Load Balancers"></a>Load Balancers</h3><p><img src="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/00/03.jpg" alt></p>
-<h2 id="Replication"><a href="#Replication" class="headerlink" title="Replication"></a>Replication</h2><h3 id="Master-Slave"><a href="#Master-Slave" class="headerlink" title="Master-Slave"></a>Master-Slave</h3><p><strong>Master</strong>: the main database that you write/read data to/from.<br><strong>Slave</strong>: anytime a query is executed on the master that same query is copied down to one or more slaves and they do the exact same thing.<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/00/04.jpg" alt></p>
-<h4 id="Advantage"><a href="#Advantage" class="headerlink" title="Advantage"></a>Advantage</h4><ul>
-<li>If the <strong>master is down</strong>, promote one of the slaves and do some configuration. (redundancy)</li>
-<li>If there are a lot queries, you could just <strong>load balance across</strong> database servers.</li>
-<li>For read heavy websites, any <code>select</code> can go to all four databases, while any <code>insert/update/delete</code> has to go to server master.</li>
-</ul>
-<h3 id="Master-Master"><a href="#Master-Master" class="headerlink" title="Master-Master"></a>Master-Master</h3><p>You could write to either server one or two and if you happen to write to server 1 that query gets replicated on server 2 and <strong>vice versa</strong>, so now you could keep it simple.<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/00/05.jpg" alt></p>
-<h3 id="Load-Balancing-Replication"><a href="#Load-Balancing-Replication" class="headerlink" title="Load Balancing + Replication"></a>Load Balancing + Replication</h3><p><code>active + passive pair</code> of load balancers, passive promote itself when receives no more packets from the active one, and send packets to each other.<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/00/06.jpg" alt></p>
-<h2 id="Partitioning"><a href="#Partitioning" class="headerlink" title="Partitioning"></a>Partitioning</h2><p>A-M cluster and N-Z cluster:<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/00/07.jpg" alt></p>
-<h3 id="High-Availability"><a href="#High-Availability" class="headerlink" title="High Availability"></a>High Availability</h3><p>One load balancer, two master replicating each other:<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/00/08.jpg" alt></p>
 
+<p>周末你带着女朋友去电影院看电影，女朋友问你，咱们现在坐在第几排啊？于是你就问前面一排的人他是第几排，你想只要在他的数字上加一，就知道自己在哪一排了。但是，前面的人也看不清啊，所以他也问他前面的人。就这样一排一排往前问，直到问到第一排的人，说我在第一排，然后再这样一排一排再把数字传回来。直到你前面的人告诉你他在哪一排，于是你就知道答案了。</p>
+<p>这就是一个非常标准的递归求解问题的分解过程，<strong>去的过程叫递，回来的过程叫归</strong>。基本上，所有的递归问题都可以用<code>递推公式</code>来表示。刚刚这个生活中的例子，我们用递推公式将它表示出来就是这样的：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f(n) = f(n<span class="number">-1</span>) + <span class="number">1</span> <span class="comment">// 其中，f(1)=1</span></span><br></pre></td></tr></table></figure>
+
+<p>f(n) 表示你想知道自己在哪一排，f(n-1) 表示前面一排所在的排数，f(1)=1 表示第一排的人知道自己在第一排。有了这个递推公式，我们就可以很轻松地将它改为递归代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> n)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> f(n<span class="number">-1</span>) + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="递归需要满足的三个条件"><a href="#递归需要满足的三个条件" class="headerlink" title="递归需要满足的三个条件"></a>递归需要满足的三个条件</h2><h2 id="如何编写递归代码？"><a href="#如何编写递归代码？" class="headerlink" title="如何编写递归代码？"></a>如何编写递归代码？</h2><h2 id="递归代码要警惕堆栈溢出"><a href="#递归代码要警惕堆栈溢出" class="headerlink" title="递归代码要警惕堆栈溢出"></a>递归代码要警惕堆栈溢出</h2><h2 id="递归代码要警惕重复计算"><a href="#递归代码要警惕重复计算" class="headerlink" title="递归代码要警惕重复计算"></a>递归代码要警惕重复计算</h2><h2 id="怎么将递归代码改写为非递归代码？"><a href="#怎么将递归代码改写为非递归代码？" class="headerlink" title="怎么将递归代码改写为非递归代码？"></a>怎么将递归代码改写为非递归代码？</h2><h2 id="如何找到“最终推荐人”"><a href="#如何找到“最终推荐人”" class="headerlink" title="如何找到“最终推荐人”"></a>如何找到“最终推荐人”</h2>
       
     </div>
 
@@ -418,7 +391,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/SystemDesign/" rel="tag"># SystemDesign</a>
+            <a href="/tags/CLRS/" rel="tag"># CLRS</a>
           
         </div>
       
@@ -431,8 +404,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/12/05/Telephoning/" rel="next" title="Telephoning">
-                <i class="fa fa-chevron-left"></i> Telephoning
+              <a href="/2020/12/28/队列/" rel="next" title="队列">
+                <i class="fa fa-chevron-left"></i> 队列
               </a>
             
           </div>
@@ -440,10 +413,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/12/18/Scalability-for-Dummies/" rel="prev" title="Scalability for Dummies">
-                Scalability for Dummies <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -575,7 +544,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vertical-Scaling"><span class="nav-number">1.</span> <span class="nav-text">Vertical Scaling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Horizontal-Scaling"><span class="nav-number">2.</span> <span class="nav-text">Horizontal Scaling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cache"><span class="nav-number">3.</span> <span class="nav-text">Cache</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#html"><span class="nav-number">3.1.</span> <span class="nav-text">.html</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL-Query-Cache"><span class="nav-number">3.2.</span> <span class="nav-text">MySQL Query Cache</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Memcached"><span class="nav-number">3.3.</span> <span class="nav-text">Memcached</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Load-Balancing"><span class="nav-number">4.</span> <span class="nav-text">Load Balancing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Implementation"><span class="nav-number">4.1.</span> <span class="nav-text">Implementation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Load-Balancers"><span class="nav-number">4.2.</span> <span class="nav-text">Load Balancers</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Replication"><span class="nav-number">5.</span> <span class="nav-text">Replication</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Master-Slave"><span class="nav-number">5.1.</span> <span class="nav-text">Master-Slave</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Advantage"><span class="nav-number">5.1.1.</span> <span class="nav-text">Advantage</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Master-Master"><span class="nav-number">5.2.</span> <span class="nav-text">Master-Master</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Load-Balancing-Replication"><span class="nav-number">5.3.</span> <span class="nav-text">Load Balancing + Replication</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Partitioning"><span class="nav-number">6.</span> <span class="nav-text">Partitioning</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#High-Availability"><span class="nav-number">6.1.</span> <span class="nav-text">High Availability</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何理解“递归”？"><span class="nav-number">1.</span> <span class="nav-text">如何理解“递归”？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递归需要满足的三个条件"><span class="nav-number">2.</span> <span class="nav-text">递归需要满足的三个条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何编写递归代码？"><span class="nav-number">3.</span> <span class="nav-text">如何编写递归代码？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递归代码要警惕堆栈溢出"><span class="nav-number">4.</span> <span class="nav-text">递归代码要警惕堆栈溢出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递归代码要警惕重复计算"><span class="nav-number">5.</span> <span class="nav-text">递归代码要警惕重复计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎么将递归代码改写为非递归代码？"><span class="nav-number">6.</span> <span class="nav-text">怎么将递归代码改写为非递归代码？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何找到“最终推荐人”"><span class="nav-number">7.</span> <span class="nav-text">如何找到“最终推荐人”</span></a></li></ol></div>
             
 
           </div>
