@@ -115,7 +115,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/58.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/59.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/60.png">
-<meta property="og:updated_time" content="2020-12-30T09:55:32.000Z">
+<meta property="og:updated_time" content="2020-12-30T13:28:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="排序">
 <meta name="twitter:description" content="最经典的、最常用的排序算法：冒泡排序、插入排序、选择排序、归并排序、快速排序、计数排序、基数排序、桶排序。我按照时间复杂度把它们分成了三类：">
@@ -422,7 +422,7 @@
 <h2 id="为什么插入排序要比冒泡排序更受欢迎"><a href="#为什么插入排序要比冒泡排序更受欢迎" class="headerlink" title="为什么插入排序要比冒泡排序更受欢迎"></a>为什么插入排序要比冒泡排序更受欢迎</h2><p>我们前面分析冒泡排序和插入排序的时候讲到，冒泡排序不管怎么优化，元素交换的次数是一个固定值，是原始数据的逆序度。插入排序是同样的，不管怎么优化，元素移动的次数也等于原始数据的逆序度。但是，从代码实现上来看，冒泡排序的数据交换要比插入排序的数据移动要复杂，<strong>冒泡排序需要 3 个赋值操作，而插入排序只需要 1 个</strong>：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 冒泡排序中数据的交换操作</span></span><br><span class="line"><span class="keyword">if</span> (a[j] &gt; a[j+<span class="number">1</span>]) </span><br><span class="line">&#123; </span><br><span class="line">    <span class="comment">// 数据交换</span></span><br><span class="line">    <span class="keyword">int</span> tmp = a[j];</span><br><span class="line">    a[j] = a[j+<span class="number">1</span>];</span><br><span class="line">    a[j+<span class="number">1</span>] = tmp;</span><br><span class="line">    flag = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 插入排序中数据的移动操作</span></span><br><span class="line"><span class="keyword">if</span> (a[j] &gt; value) </span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 数据移动</span></span><br><span class="line">    a[j+<span class="number">1</span>] = a[j];</span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>我们把执行一个赋值语句的时间粗略地计为单位时间（unit_time），然后分别用冒泡排序和插入排序对同一个逆序度是 K 的数组进行排序。用冒泡排序，需要 K 次交换操作，每次需要 3 个赋值语句，所以交换操作总耗时就是 3<em>K 单位时间。而插入排序中数据移动操作只需要 K 个单位时间。所以，虽然冒泡排序和插入排序在时间复杂度上是一样的，都是 O(n^2)，但是*</em>如果我们希望把性能优化做到极致，那肯定首选插入排序**。</p>
+<p>我们把执行一个赋值语句的时间粗略地计为单位时间（unit_time），然后分别用冒泡排序和插入排序对同一个逆序度是 K 的数组进行排序。用冒泡排序，需要 K 次交换操作，每次需要 3 个赋值语句，所以交换操作总耗时就是 3*K 单位时间。而插入排序中数据移动操作只需要 K 个单位时间。所以，虽然冒泡排序和插入排序在时间复杂度上是一样的，都是 O(n^2)，但是<strong>如果我们希望把性能优化做到极致，那肯定首选插入排序</strong>。</p>
 <p>这三种时间复杂度为 O(n^2) 的排序算法中，冒泡排序、选择排序，可能就纯粹停留在理论的层面了，学习的目的也只是为了开拓思维，实际开发中应用并不多，但是插入排序还是挺有用的。<strong>有些编程语言中的排序函数的实现原理会用到插入排序算法</strong>：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/53.png" alt></p>
 <h2 id="归并排序的原理"><a href="#归并排序的原理" class="headerlink" title="归并排序的原理"></a>归并排序的原理</h2><p><code>归并排序</code>（Merge Sort）的核心思想还是蛮简单的。如果要排序一个数组，我们先把数组从中间分成前后两部分，然后对前后两部分分别排序，再将排好序的两部分合并在一起，这样整个数组就都有序了：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/54.png" alt></p>
 <p>归并排序使用的就是<code>分治思想</code>。分治，顾名思义，就是分而治之，将一个大问题分解成小的子问题来解决。小的子问题解决了，大问题也就解决了。分治算法一般都是用递归来实现的，<strong>分治是一种解决问题的处理思想，递归是一种编程技巧</strong>，这两者并不冲突。</p>
@@ -518,6 +518,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2020/12/30/线性排序/" rel="prev" title="线性排序">
+                线性排序 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -586,7 +590,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">124</span>
+                <span class="site-state-item-count">125</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
