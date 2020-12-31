@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="CLRS,">
 
 
 
@@ -87,13 +87,22 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="DevPrepares">
-<meta property="og:url" content="http://yoursite.com/tags/DDIA/index.html">
+<meta name="description" content="二分查找（Binary Search）算法，也叫折半查找算法。二分查找的思想非常简单，很多非计算机专业的同学很容易就能理解，但是看似越简单的东西往往越难掌握好，想要灵活应用就更加困难。 无处不在的二分思想我们现在来做一个猜字游戏：我随机写一个 0 到 99 之间的数字，然后你来猜我写的是什么。猜的过程中，你每猜一次，我就会告诉你猜的大了还是小了，直到猜中为止。假设我写的数字是 23，你可以按照下面">
+<meta name="keywords" content="CLRS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二分查找">
+<meta property="og:url" content="http://yoursite.com/2020/12/31/二分查找/index.html">
 <meta property="og:site_name" content="DevPrepares">
+<meta property="og:description" content="二分查找（Binary Search）算法，也叫折半查找算法。二分查找的思想非常简单，很多非计算机专业的同学很容易就能理解，但是看似越简单的东西往往越难掌握好，想要灵活应用就更加困难。 无处不在的二分思想我们现在来做一个猜字游戏：我随机写一个 0 到 99 之间的数字，然后你来猜我写的是什么。猜的过程中，你每猜一次，我就会告诉你猜的大了还是小了，直到猜中为止。假设我写的数字是 23，你可以按照下面">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/68.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/69.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/69.png">
+<meta property="og:updated_time" content="2020-12-31T06:15:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DevPrepares">
+<meta name="twitter:title" content="二分查找">
+<meta name="twitter:description" content="二分查找（Binary Search）算法，也叫折半查找算法。二分查找的思想非常简单，很多非计算机专业的同学很容易就能理解，但是看似越简单的东西往往越难掌握好，想要灵活应用就更加困难。 无处不在的二分思想我们现在来做一个猜字游戏：我随机写一个 0 到 99 之间的数字，然后你来猜我写的是什么。猜的过程中，你每猜一次，我就会告诉你猜的大了还是小了，直到猜中为止。假设我写的数字是 23，你可以按照下面">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/68.png">
 
 
 
@@ -121,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/DDIA/">
+  <link rel="canonical" href="http://yoursite.com/2020/12/31/二分查找/">
 
 
 
 
 
-  <title> Tag: DDIA | DevPrepares </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> 二分查找 | DevPrepares </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -152,7 +161,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-right  ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -268,44 +277,161 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2>
-        DDIA
-        <small>Tag</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/31/二分查找/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="was48i">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DevPrepares">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                二分查找
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-12-31T00:19:36+08:00">
+                2020-12-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p><code>二分查找</code>（Binary Search）算法，也叫折半查找算法。二分查找的思想非常简单，很多非计算机专业的同学很容易就能理解，但是看似越简单的东西往往越难掌握好，想要灵活应用就更加困难。</p>
+<h2 id="无处不在的二分思想"><a href="#无处不在的二分思想" class="headerlink" title="无处不在的二分思想"></a>无处不在的二分思想</h2><p>我们现在来做一个猜字游戏：我随机写一个 0 到 99 之间的数字，然后你来猜我写的是什么。猜的过程中，你每猜一次，我就会告诉你猜的大了还是小了，直到猜中为止。假设我写的数字是 23，你可以按照下面的步骤来试一试：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/68.png" alt></p>
+<a id="more"></a>
 
-      <h1 class="post-title">
+<p>假设有 1000 条订单数据，已经按照订单金额从小到大排序，每个订单金额都不同，并且最小单位是元。我们现在想知道是否存在金额等于 19 元的订单。如果存在，则返回订单数据，如果不存在则返回 null。为了方便讲解，我们假设只有 10 个订单，订单金额分别是：8, 11, 19, 23, 27, 33, 45, 55, 67, 98。还是利用二分思想，每次都与区间的中间数据比对大小，缩小查找区间的范围。为了更加直观，我画了一张查找过程的图。其中，low 和 high 表示待查找区间的下标，mid 表示待查找区间的中间元素下标：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/69.png" alt></p>
+<p>二分查找针对的是一个<strong>有序的数据集合</strong>，查找思想有点类似分治思想。每次都通过跟区间的中间元素对比，将待查找的区间缩小为之前的一半，<strong>直到找到要查找的元素，或者区间被缩小为 0</strong>。</p>
+<h2 id="O-logn-惊人的查找速度"><a href="#O-logn-惊人的查找速度" class="headerlink" title="O(logn) 惊人的查找速度"></a>O(logn) 惊人的查找速度</h2><p>我们假设数据大小是 n，每次查找后数据都会缩小为原来的一半，也就是会除以 2。最坏情况下，直到查找区间被缩小为空，才停止：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/69.png" alt></p>
+<p>可以看出来，这是一个等比数列。其中 n/2^k=1 时，k 的值就是总共缩小的次数。而每一次缩小操作只涉及两个数据的大小比较，所以，<strong>经过了 k 次区间缩小操作，时间复杂度就是 O(k)</strong>。通过 n/2^k=1，我们可以求得 k=log2n，所以时间复杂度就是 O(logn)。</p>
+<p>logn 是一个非常恐怖的数量级，即便 n 非常非常大，对应的 logn 也很小。比如 n 等于 2 的 32 次方，这个数很大了吧？大约是 42 亿。也就是说，如果我们在 42 亿个数据中用二分查找一个数据，最多需要比较 32 次。我们前面讲过，用大 O 标记法表示时间复杂度的时候，会省略掉常数、系数和低阶。对于常量级时间复杂度的算法来说，O(1) 有可能表示的是一个非常大的常量值，比如 O(1000)、O(10000)。所以，<strong>常量级时间复杂度的算法有时候可能还没有 O(logn) 的算法执行效率高</strong>。</p>
+<blockquote>
+<p>指数时间复杂度的算法在大规模数据面前是无效的</p>
+</blockquote>
+<h2 id="二分查找的递归与非递归实现"><a href="#二分查找的递归与非递归实现" class="headerlink" title="二分查找的递归与非递归实现"></a>二分查找的递归与非递归实现</h2><h2 id="二分查找应用场景的局限性"><a href="#二分查找应用场景的局限性" class="headerlink" title="二分查找应用场景的局限性"></a>二分查找应用场景的局限性</h2><h2 id="如何在-1000-万个整数中快速查找某个整数"><a href="#如何在-1000-万个整数中快速查找某个整数" class="headerlink" title="如何在 1000 万个整数中快速查找某个整数"></a>如何在 1000 万个整数中快速查找某个整数</h2>
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2020/08/09/Reliable-Scalable-and-Maintainable-Applications/" itemprop="url">
-              
-                <span itemprop="name">Reliable, Scalable, and Maintainable Applications</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-08-09T22:27:01+08:00" content="2020-08-09">
-          08-09
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CLRS/" rel="tag"># CLRS</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/12/30/排序优化/" rel="next" title="排序优化">
+                <i class="fa fa-chevron-left"></i> 排序优化
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
           
           </div>
@@ -313,6 +439,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -332,8 +462,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="was48i">
           <p class="site-author-name" itemprop="name">was48i</p>
@@ -357,7 +496,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -398,6 +537,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#无处不在的二分思想"><span class="nav-number">1.</span> <span class="nav-text">无处不在的二分思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#O-logn-惊人的查找速度"><span class="nav-number">2.</span> <span class="nav-text">O(logn) 惊人的查找速度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二分查找的递归与非递归实现"><span class="nav-number">3.</span> <span class="nav-text">二分查找的递归与非递归实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二分查找应用场景的局限性"><span class="nav-number">4.</span> <span class="nav-text">二分查找应用场景的局限性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何在-1000-万个整数中快速查找某个整数"><span class="nav-number">5.</span> <span class="nav-text">如何在 1000 万个整数中快速查找某个整数</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -503,6 +658,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
