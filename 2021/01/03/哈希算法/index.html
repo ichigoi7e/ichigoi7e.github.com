@@ -96,7 +96,7 @@
 <meta property="og:description" content="什么是哈希算法？将任意长度的二进制值串映射为固定长度的二进制值串，这个映射的规则就是哈希算法，而通过原始数据映射之后得到的二进制值串就是哈希值。但是，要想设计一个优秀的哈希算法并不容易，根据我的经验，我总结了需要满足的几点要求：  从哈希值不能反向推导出原始数据（所以哈希算法也叫单向哈希算法）； 对输入数据非常敏感，哪怕原始数据只修改了一个 bit，最后得到的哈希值也大不相同； 散列冲突的概率要很">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/95.png">
-<meta property="og:updated_time" content="2021-01-03T09:58:31.000Z">
+<meta property="og:updated_time" content="2021-01-03T10:02:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="哈希算法">
 <meta name="twitter:description" content="什么是哈希算法？将任意长度的二进制值串映射为固定长度的二进制值串，这个映射的规则就是哈希算法，而通过原始数据映射之后得到的二进制值串就是哈希值。但是，要想设计一个优秀的哈希算法并不容易，根据我的经验，我总结了需要满足的几点要求：  从哈希值不能反向推导出原始数据（所以哈希算法也叫单向哈希算法）； 对输入数据非常敏感，哪怕原始数据只修改了一个 bit，最后得到的哈希值也大不相同； 散列冲突的概率要很">
@@ -386,8 +386,6 @@
 <h2 id="应用三：数据校验"><a href="#应用三：数据校验" class="headerlink" title="应用三：数据校验"></a>应用三：数据校验</h2><p>BT 下载的原理是基于 P2P 协议的。我们从多个机器上并行下载一个 2GB 的电影，这个电影文件可能会被分割成很多文件块（比如可以分成 100 块，每块大约 20MB）。等所有的文件块都下载完成之后，再组装成一个完整的电影文件就行了。我们知道，<strong>网络传输是不安全的</strong>，下载的文件块有可能是被宿主机器恶意修改过的，又或者下载过程中出现了错误，所以下载的文件块可能不是完整的。如果我们没有能力检测这种恶意修改或者文件下载出错，就会导致最终合并后的电影无法观看，甚至导致电脑中毒。</p>
 <p>我们通过哈希算法，对 100 个文件块分别取哈希值，并且保存在种子文件中。我们在前面讲过，哈希算法有一个特点，对数据很敏感。只要文件块的内容有一丁点儿的改变，最后计算出的哈希值就会完全不同。所以，当文件块下载完成之后，我们可以通过相同的哈希算法，<strong>对下载好的文件块逐一求哈希值，然后跟种子文件中保存的哈希值比对</strong>。如果不同，说明这个文件块不完整或者被篡改了，需要再重新从其他宿主机器上下载这个文件块。</p>
 <h2 id="应用四：散列函数"><a href="#应用四：散列函数" class="headerlink" title="应用四：散列函数"></a>应用四：散列函数</h2><p>散列函数是设计一个散列表的关键。它直接决定了散列冲突的概率和散列表的性能。不过，相对哈希算法的其他应用，<strong>散列函数对于散列算法冲突的要求要低很多</strong>。即便出现个别散列冲突，只要不是过于严重，我们都可以通过开放寻址法或者链表法解决。不仅如此，散列函数对于散列算法计算得到的值，是否能反向解密也并不关心。散列函数中用到的散列算法，<strong>更加关注散列后的值是否能平均分布</strong>，也就是，一组数据是否能均匀地散列在各个槽中。除此之外，散列函数执行的快慢，也会影响散列表的性能，所以，<strong>散列函数用的散列算法一般都比较简单，比较追求效率</strong>。</p>
-<h2 id="如何防止数据库中的用户信息被脱库"><a href="#如何防止数据库中的用户信息被脱库" class="headerlink" title="如何防止数据库中的用户信息被脱库"></a>如何防止数据库中的用户信息被脱库</h2><p>如果用户信息被“脱库”，黑客虽然拿到是加密之后的密文，但可以通过“猜”的方式来破解密码，这是因为，有些用户的密码太简单。比如很多人习惯用 00000、123456 这样的简单数字组合做密码，很容易就被猜中。我们<strong>维护一个常用密码的字典表</strong>，把字典中的每个密码用哈希算法计算哈希值，然后拿哈希值跟脱库后的密文比对。如果相同，基本上就可以认为，这个加密之后的密码对应的明文就是字典中的这个密码。</p>
-<p>针对字典攻击，我们可以引入一个<code>盐</code>（Salt），跟用户的密码组合在一起，增加密码的复杂度。我们拿组合之后的字符串来做哈希算法加密，将它存储到数据库中，进一步增加破解的难度。不过我这里想多说一句，我认为安全和攻击是一种博弈关系，不存在绝对的安全。<strong>所有的安全措施，只是增加攻击的成本而已</strong>。</p>
 <h2 id="应用五：负载均衡"><a href="#应用五：负载均衡" class="headerlink" title="应用五：负载均衡"></a>应用五：负载均衡</h2><p>负载均衡算法有很多，比如轮询、随机、加权轮询等。那如何才能实现一个<code>会话粘滞</code>（Session Sticky）的负载均衡算法呢？也就是说，我们需要在同一个客户端上，在一次会话中的所有请求都路由到同一个服务器上。最直接的方法就是，维护一张映射关系表，这张表的内容是客户端 IP 地址或者会话 ID 与服务器编号的映射关系。客户端发出的每次请求，都要先在映射表中查找应该路由到的服务器编号，然后再请求编号对应的服务器。这种方法简单直观，但也有几个弊端：</p>
 <ul>
 <li>如果客户端很多，映射表可能会很大，比较浪费内存空间；</li>
@@ -403,6 +401,8 @@
 <p>但是，如果数据增多，原来的 10 个机器已经无法承受了，我们就需要扩容了，比如扩到 11 个机器，这时候麻烦就来了。因为，这里并不是简单地加个机器就可以了。原来的数据是通过与 10 来取模的。比如 13 这个数据，存储在编号为 3 这台机器上。但是新加了一台机器中，我们对数据按照 11 取模，原来 13 这个数据就被分配到 2 号这台机器上了：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/95.png" alt></p>
 <p>因此，所有的数据都要重新计算哈希值，然后重新搬移到正确的机器上。这样就相当于，缓存中的数据一下子就都失效了。所有的数据请求都会穿透缓存，直接去请求数据库。这样就可能发生<code>雪崩效应</code>，压垮数据库。所以，我们需要一种方法，使得在新加入一个机器后，并不需要做大量的数据搬移。这时候，<code>一致性哈希算法</code>就要登场了。</p>
 <p>假设我们有 k 个机器，数据的哈希值的范围是 [0, MAX]。我们将整个范围划分成 m 个小区间（m 远大于 k），每个机器负责 m/k 个小区间。当有新机器加入的时候，我们就<strong>将某几个小区间的数据，从原来的机器中搬移到新的机器中</strong>。这样，既不用全部重新哈希、搬移数据，也保持了各个机器上数据数量的均衡。除了我们上面讲到的分布式缓存，实际上，一致性哈希算法的应用非常广泛，<strong>在很多分布式存储系统中，都可以见到一致性哈希算法的影子</strong>。</p>
+<h2 id="如何防止数据库中的用户信息被脱库"><a href="#如何防止数据库中的用户信息被脱库" class="headerlink" title="如何防止数据库中的用户信息被脱库"></a>如何防止数据库中的用户信息被脱库</h2><p>如果用户信息被“脱库”，黑客虽然拿到是加密之后的密文，但可以通过“猜”的方式来破解密码，这是因为，有些用户的密码太简单。比如很多人习惯用 00000、123456 这样的简单数字组合做密码，很容易就被猜中。我们<strong>维护一个常用密码的字典表</strong>，把字典中的每个密码用哈希算法计算哈希值，然后拿哈希值跟脱库后的密文比对。如果相同，基本上就可以认为，这个加密之后的密码对应的明文就是字典中的这个密码。</p>
+<p>针对字典攻击，我们可以引入一个<code>盐</code>（Salt），跟用户的密码组合在一起，增加密码的复杂度。我们拿组合之后的字符串来做哈希算法加密，将它存储到数据库中，进一步增加破解的难度。不过我这里想多说一句，我认为安全和攻击是一种博弈关系，不存在绝对的安全。<strong>所有的安全措施，只是增加攻击的成本而已</strong>。</p>
 
       
     </div>
@@ -448,6 +448,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/01/03/二叉树基础/" rel="prev" title="二叉树基础">
+                二叉树基础 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -517,7 +521,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">129</span>
+                <span class="site-state-item-count">130</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -579,7 +583,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是哈希算法？"><span class="nav-number">1.</span> <span class="nav-text">什么是哈希算法？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用一：安全加密"><span class="nav-number">2.</span> <span class="nav-text">应用一：安全加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用二：唯一标识"><span class="nav-number">3.</span> <span class="nav-text">应用二：唯一标识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用三：数据校验"><span class="nav-number">4.</span> <span class="nav-text">应用三：数据校验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用四：散列函数"><span class="nav-number">5.</span> <span class="nav-text">应用四：散列函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何防止数据库中的用户信息被脱库"><span class="nav-number">6.</span> <span class="nav-text">如何防止数据库中的用户信息被脱库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用五：负载均衡"><span class="nav-number">7.</span> <span class="nav-text">应用五：负载均衡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用六：数据分片"><span class="nav-number">8.</span> <span class="nav-text">应用六：数据分片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用七：分布式存储"><span class="nav-number">9.</span> <span class="nav-text">应用七：分布式存储</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是哈希算法？"><span class="nav-number">1.</span> <span class="nav-text">什么是哈希算法？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用一：安全加密"><span class="nav-number">2.</span> <span class="nav-text">应用一：安全加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用二：唯一标识"><span class="nav-number">3.</span> <span class="nav-text">应用二：唯一标识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用三：数据校验"><span class="nav-number">4.</span> <span class="nav-text">应用三：数据校验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用四：散列函数"><span class="nav-number">5.</span> <span class="nav-text">应用四：散列函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用五：负载均衡"><span class="nav-number">6.</span> <span class="nav-text">应用五：负载均衡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用六：数据分片"><span class="nav-number">7.</span> <span class="nav-text">应用六：数据分片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用七：分布式存储"><span class="nav-number">8.</span> <span class="nav-text">应用七：分布式存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何防止数据库中的用户信息被脱库"><span class="nav-number">9.</span> <span class="nav-text">如何防止数据库中的用户信息被脱库</span></a></li></ol></div>
             
 
           </div>
