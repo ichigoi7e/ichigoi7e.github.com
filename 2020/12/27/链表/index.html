@@ -105,7 +105,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/17.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/18.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/19.png">
-<meta property="og:updated_time" content="2020-12-31T06:15:50.000Z">
+<meta property="og:updated_time" content="2021-01-02T15:35:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="链表">
 <meta name="twitter:description" content="缓存是一种提高数据读取性能的技术，在硬件设计、软件开发中都有着非常广泛的应用，比如常见的 CPU 缓存、数据库缓存、浏览器缓存等等。缓存的大小有限，当缓存被用满时，哪些数据应该被清理出去，哪些数据应该被保留？这就需要缓存淘汰策略来决定。常见的策略有三种：  先进先出策略 FIFO（First In，First Out）； 最少使用策略 LFU（Least Frequently Used）； 最近最">
@@ -403,16 +403,8 @@
 <p>数组简单易用，在实现上使用的是连续的内存空间，可以借助 CPU 的缓存机制，预读数组中的数据，所以访问效率更高。而链表在内存中并不是连续存储，所以<strong>对 CPU 缓存不友好，没办法有效预读</strong>。</p>
 <p>数组的缺点是大小固定，一经声明就要占用整块连续内存空间。如果声明的数组过大，系统可能没有足够的连续内存空间分配给它，导致 out of memory。如果声明的数组过小，则可能出现不够用的情况。这时<strong>只能再申请一个更大的内存空间，把原数组拷贝进去，非常费时</strong>。链表本身没有大小的限制，天然地支持动态扩容，我觉得这也是它与数组最大的区别。</p>
 <p>除此之外，如果你的代码对内存的使用非常苛刻，那数组就更适合你。因为链表中的每个结点都需要消耗额外的存储空间去存储一份指向下一个结点的指针，所以内存消耗会翻倍。而且，对链表进行频繁的插入、删除操作，还会导致频繁的内存申请和释放，容易造成内存碎片，如果是 Java 语言，就有<strong>可能会导致频繁的 GC</strong>。</p>
-<h2 id="基于链表实现-LRU-缓存淘汰算法"><a href="#基于链表实现-LRU-缓存淘汰算法" class="headerlink" title="基于链表实现 LRU 缓存淘汰算法"></a>基于链表实现 LRU 缓存淘汰算法</h2><p>我的思路是这样的：我们维护一个有序单链表，<strong>越靠近链表尾部的结点是越早之前访问的</strong>。当有一个新的数据被访问时，我们从链表头开始顺序遍历链表：</p>
-<ol>
-<li>如果此数据之前已经被缓存在链表中了，我们遍历得到这个数据对应的结点，并将其从原来的位置删除，然后再插入到链表的头部；</li>
-<li>如果此数据没有在缓存链表中，又可以分为两种情况：<ol>
-<li>如果此时缓存未满，则将此结点直接插入到链表的头部；</li>
-<li>如果此时缓存已满，则链表尾结点删除，将新的数据结点插入链表的头部；</li>
-</ol>
-</li>
-</ol>
-<p>现在我们来看下缓存访问的时间复杂度是多少。因为不管缓存有没有满，我们都需要遍历一遍链表，所以这种基于链表的实现思路，缓存访问的时间复杂度为 O(n)。实际上，我们可以继续优化这个实现思路，比如引入<code>散列表</code>（Hash Table）来记录每个数据的位置，<strong>将缓存访问的时间复杂度降到 O(1)</strong>。</p>
+<h2 id="基于链表实现-LRU-缓存淘汰算法"><a href="#基于链表实现-LRU-缓存淘汰算法" class="headerlink" title="基于链表实现 LRU 缓存淘汰算法"></a>基于链表实现 LRU 缓存淘汰算法</h2><p>我的思路是这样的：我们需要维护一个<strong>按照访问时间从大到小有序排列的链表结构</strong>。因为缓存大小有限，当缓存空间不够，需要淘汰一个数据的时候，我们就直接将链表头部的结点删除。</p>
+<p><strong>当要缓存某个数据的时候，先在链表中查找这个数据</strong>。如果没有找到，则直接将数据放到链表的尾部；如果找到了，我们就把它移动到链表的尾部。因为查找数据需要遍历链表，所以单纯用链表实现的 LRU 缓存淘汰算法的时间复杂很高，是 O(n)。实际上，我们可以继续优化这个实现思路，比如引入<code>散列表</code>（Hash Table）来记录每个数据的位置，<strong>将缓存访问的时间复杂度降到 O(1)</strong>。</p>
 <h2 id="技巧一：理解指针或引用的含义"><a href="#技巧一：理解指针或引用的含义" class="headerlink" title="技巧一：理解指针或引用的含义"></a>技巧一：理解指针或引用的含义</h2><p>事实上，看懂链表的结构并不是很难，但是一旦把它和指针混在一起，就很容易让人摸不着头脑。所以，<strong>要想写对链表代码，首先就要理解好指针</strong>。有些语言有<code>指针</code>的概念，比如 C 语言；有些语言没有指针，取而代之的是<code>引用</code>，比如 Java、Python。不管是指针还是引用，实际上，它们的意思都是一样的，都是<strong>存储所指对象的内存地址</strong>。</p>
 <blockquote>
 <p>将某个变量赋值给指针，实际上就是将这个变量的地址赋值给指针，或者反过来说，指针中存储了这个变量的内存地址，指向了这个变量，通过指针就能找到这个变量。</p>
