@@ -110,7 +110,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/150.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/151.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/152.png">
-<meta property="og:updated_time" content="2021-01-07T15:54:30.000Z">
+<meta property="og:updated_time" content="2021-01-07T16:04:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="堆和堆排序">
 <meta name="twitter:description" content="如何理解“堆”？堆是一种特殊的树。我罗列了两点要求，只要满足这两点，它就是一个堆：  堆是一个完全二叉树； 堆中每一个节点的值都必须大于等于（或小于等于）其子树中每个节点的值；  对于每个节点的值都大于等于子树中每个节点值的堆，我们叫做大顶堆。对于每个节点的值都小于等于子树中每个节点值的堆，我们叫做小顶堆： 其中第 1 个和第 2 个是大顶堆，第 3 个是小顶堆，第 4 个不是堆。除此之外，从图中">
@@ -407,7 +407,7 @@
 <p>因为叶子节点不需要堆化，所以需要堆化的节点从倒数第二层开始。<strong>每个节点堆化的过程中，需要比较和交换的节点个数，跟这个节点的高度成正比</strong>。我把每一层的节点个数和对应的高度画了出来，你可以看看。我们只需要将每个节点的高度求和，得出的就是建堆的时间复杂度：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/146.png" alt></p>
 <p>我们将每个非叶子节点的高度求和，就是下面这个公式：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/147.png" alt></p>
 <p>这个公式的求解稍微有点技巧：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/148.png" alt></p>
-<p>S 的中间部分是一个等比数列，所以最后可以用等比数列的求和公式来计算，最终的结果就是下面图中画的这个样子：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/149.png" alt></p>
+<p>S 的中间部分是一个等比数列，所以最后可以用等比数列的求和公式来计算：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/149.png" alt></p>
 <p>因为 h=log2​n，代入公式 S，就能得到 S=O(n)，所以，<strong>建堆的时间复杂度就是 O(n)</strong>。</p>
 <h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><p>建堆结束之后，<strong>数组中的数据已经是按照大顶堆的特性来组织的</strong>。数组中的第一个元素就是堆顶，也就是最大的元素。我们把它跟最后一个元素交换，那最大元素就放到了下标为 n 的位置。当堆顶元素移除之后，我们把下标为 n 的元素放到堆顶，然后再通过堆化的方法，将剩下的 n−1 个元素重新构建成堆。堆化完成之后，我们再取堆顶的元素，放到下标是 n−1 的位置，一直重复这个过程，直到最后堆中只剩下标为 1 的一个元素，排序工作就完成了：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/150.png" alt></p>
 <p>堆排序的过程，我也翻译成了代码：</p>
@@ -464,6 +464,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/01/07/堆的应用/" rel="prev" title="堆的应用">
+                堆的应用 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -533,7 +537,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">133</span>
+                <span class="site-state-item-count">135</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
