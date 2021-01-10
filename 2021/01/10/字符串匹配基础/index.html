@@ -101,8 +101,6 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/173.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/174.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/175.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/175.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/175.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/176.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/177.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/178.png">
@@ -115,7 +113,9 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/185.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/186.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/187.png">
-<meta property="og:updated_time" content="2021-01-10T16:04:10.000Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/188.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/189.png">
+<meta property="og:updated_time" content="2021-01-10T16:13:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="字符串匹配基础">
 <meta name="twitter:description" content="BF 算法BF（Brute Force）算法，中文叫作暴力匹配算法，也叫朴素匹配算法。从名字可以看出，这种算法的字符串匹配方式很“暴力”，当然也就会比较简单、好懂，但相应的性能也不高。我们在字符串 A 中查找字符串 B，那字符串 A 就是主串，字符串 B 就是模式串。我们把主串的长度记作 n，模式串的长度记作 m。因为我们是在主串中查找模式串，所以 n&amp;gt;m。 作为最简单、最暴力的字符串匹配算">
@@ -395,23 +395,23 @@
 <p>假设字符串中只包含 a~z 这 26 个英文字母，那我们每个字母对应一个数字，比如 a 对应 1，b 对应 2，以此类推，z 对应 26。我们可以把字符串中每个字母对应的数字相加，最后得到的和作为哈希值。这种哈希算法产生的哈希值的数据范围就相对要小很多了。不过，你也应该发现，这种哈希算法的哈希冲突概率也是挺高的。当然，我只是举了一个最简单的设计方法，还有很多更加优化的方法，比如<strong>将每一个字母从小到大对应一个素数，而不是 1, 2, 3, …这样的自然数</strong>，这样冲突的概率就会降低一些。</p>
 <p>但是，当存在哈希冲突的时候，有可能存在这样的情况，子串和模式串的哈希值虽然是相同的，但是两者本身并不匹配。实际上，解决方法很简单。<strong>当我们发现一个子串的哈希值跟模式串的哈希值相等的时候，我们只需要再对比一下子串和模式串本身就好了</strong>。当然，如果子串的哈希值与模式串的哈希值不相等，那对应的子串和模式串肯定也是不匹配的，就不需要比对子串和模式串本身了。</p>
 <p>所以，哈希算法的冲突概率要相对控制得低一些，如果存在大量冲突，就会导致 RK 算法的时间复杂度退化，效率下降。极端情况下，<strong>如果存在大量的冲突，每次都要再对比子串和模式串本身，那时间复杂度就会退化成 O(n*m)</strong>。但也不要太悲观，一般情况下，冲突不会很多，RK 算法的效率还是比 BF 算法高的。</p>
-<h2 id="BM-算法的核心思想"><a href="#BM-算法的核心思想" class="headerlink" title="BM 算法的核心思想"></a>BM 算法的核心思想</h2><p>我们把模式串和主串的匹配过程，看作模式串在主串中不停地往后滑动。当遇到不匹配的字符时，<strong>BF 算法和 RK 算法的做法是，模式串往后滑动一位</strong>，然后从模式串的第一个字符开始重新匹配：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/175.png" alt></p>
-<p>在这个例子里，主串中的 c，在模式串中是不存在的，所以，模式串向后滑动的时候，只要 c 与模式串有重合，肯定无法匹配。所以，我们可以一次性把模式串往后多滑动几位，把模式串移动到 c 的后面：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/175.png" alt></p>
+<h2 id="BM-算法的核心思想"><a href="#BM-算法的核心思想" class="headerlink" title="BM 算法的核心思想"></a>BM 算法的核心思想</h2><p>我们把模式串和主串的匹配过程，看作模式串在主串中不停地往后滑动。当遇到不匹配的字符时，<strong>BF 算法和 RK 算法的做法是，模式串往后滑动一位</strong>，然后从模式串的第一个字符开始重新匹配：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/176.png" alt></p>
+<p>在这个例子里，主串中的 c，在模式串中是不存在的，所以，模式串向后滑动的时候，只要 c 与模式串有重合，肯定无法匹配。所以，我们可以一次性把模式串往后多滑动几位，把模式串移动到 c 的后面：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/177.png" alt></p>
 <p>BM（Boyer-Moore）算法本质上其实就是在寻找这种规律。借助这种规律，在模式串与主串匹配的过程中，当模式串和主串某个字符不匹配的时候，<strong>能够跳过一些肯定不会匹配的情况，将模式串往后多滑动几位</strong>。</p>
 <h2 id="BM-算法原理分析"><a href="#BM-算法原理分析" class="headerlink" title="BM 算法原理分析"></a>BM 算法原理分析</h2><p>BM 算法包含两部分，分别是<code>坏字符规则</code>（Bad Character Rule）和<code>好后缀规则</code>（Good Suffix Rule）。我们下面依次来看，这两个规则分别都是怎么工作的。</p>
-<h3 id="坏字符规则"><a href="#坏字符规则" class="headerlink" title="坏字符规则"></a>坏字符规则</h3><p>BM 算法的匹配顺序比较特别，它是按照模式串下标从大到小的顺序，倒着匹配的：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/176.png" alt><br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/177.png" alt></p>
-<p>我们从模式串的末尾往前倒着匹配，当我们发现某个字符没法匹配的时候。我们把这个没有匹配的字符叫作<code>坏字符</code>（主串中的字符）：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/178.png" alt></p>
-<p>我们拿坏字符 c 在模式串中查找，发现模式串中并不存在这个字符，也就是说，<strong>字符 c 与模式串中的任何字符都不可能匹配</strong>。这个时候，我们可以将模式串直接往后滑动三位，<strong>将模式串滑动到 c 后面的位置</strong>，再从模式串的末尾字符开始比较：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/179.png" alt></p>
-<p>这个时候，我们发现，模式串中最后一个字符 d，还是无法跟主串中的 a 匹配，这个时候，还能将模式串往后滑动三位吗？答案是不行的。因为这个时候，<strong>坏字符 a 在模式串中是存在的</strong>，模式串中下标是 0 的位置也是字符 a。这种情况下，我们可以<strong>将模式串往后滑动两位，让两个 a 上下对齐</strong>，然后再从模式串的末尾字符开始，重新匹配：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/180.png" alt></p>
-<p>当发生不匹配的时候，我们把坏字符对应的模式串中的字符下标记作 si。如果坏字符在模式串中存在，我们把这个坏字符在模式串中的下标记作 xi；<strong>如果不存在，我们把 xi 记作 -1</strong>。那模式串往后移动的位数就等于 si-xi（注意，这里说的下标，都是字符在模式串的下标）：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/181.png" alt></p>
+<h3 id="坏字符规则"><a href="#坏字符规则" class="headerlink" title="坏字符规则"></a>坏字符规则</h3><p>BM 算法的匹配顺序比较特别，它是按照模式串下标从大到小的顺序，倒着匹配的：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/178.png" alt><br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/179.png" alt></p>
+<p>我们从模式串的末尾往前倒着匹配，当我们发现某个字符没法匹配的时候。我们把这个没有匹配的字符叫作<code>坏字符</code>（主串中的字符）：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/180.png" alt></p>
+<p>我们拿坏字符 c 在模式串中查找，发现模式串中并不存在这个字符，也就是说，<strong>字符 c 与模式串中的任何字符都不可能匹配</strong>。这个时候，我们可以将模式串直接往后滑动三位，<strong>将模式串滑动到 c 后面的位置</strong>，再从模式串的末尾字符开始比较：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/181.png" alt></p>
+<p>这个时候，我们发现，模式串中最后一个字符 d，还是无法跟主串中的 a 匹配，这个时候，还能将模式串往后滑动三位吗？答案是不行的。因为这个时候，<strong>坏字符 a 在模式串中是存在的</strong>，模式串中下标是 0 的位置也是字符 a。这种情况下，我们可以<strong>将模式串往后滑动两位，让两个 a 上下对齐</strong>，然后再从模式串的末尾字符开始，重新匹配：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/182.png" alt></p>
+<p>当发生不匹配的时候，我们把坏字符对应的模式串中的字符下标记作 si。如果坏字符在模式串中存在，我们把这个坏字符在模式串中的下标记作 xi；<strong>如果不存在，我们把 xi 记作 -1</strong>。那模式串往后移动的位数就等于 si-xi（注意，这里说的下标，都是字符在模式串的下标）：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/183.png" alt></p>
 <p>这里我要特别说明一点，如果坏字符在模式串里多处出现，那我们在计算 xi 的时候，<strong>选择最靠后的那个，因为这样不会让模式串滑动过多</strong>，导致本来可能匹配的情况被滑动略过。利用坏字符规则，<strong>BM 算法在最好情况下的时间复杂度非常低，是 O(n/m)</strong>。比如，主串是 aaabaaabaaabaaab，模式串是 aaaa。每次比对，模式串都可以直接后移四位，所以，匹配具有类似特点的模式串和主串的时候，BM 算法非常高效。</p>
 <p>不过，单纯使用坏字符规则还是不够的。因为<strong>根据 si-xi 计算出来的移动位数，有可能是负数</strong>，比如主串是 aaaaaaaaaaaaaaaa，模式串是 baaa。不但不会向后滑动模式串，还有可能倒退。</p>
-<h3 id="好后缀规则"><a href="#好后缀规则" class="headerlink" title="好后缀规则"></a>好后缀规则</h3><p>好后缀规则实际上跟坏字符规则的思路很类似。你看我下面这幅图。当模式串滑动到图中的位置的时候，模式串和主串有 2 个字符是匹配的，倒数第 3 个字符发生了不匹配的情况：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/182.png" alt></p>
-<p>我们把已经匹配的 bc 叫作好后缀，记作 {u}。我们拿它在模式串中查找，如果找到了另一个跟 {u} 相匹配的子串 {u*}，那我们就<strong>将模式串滑动到子串 {u*} 与主串中 {u} 对齐的位置</strong>：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/183.png" alt></p>
-<p>如果在模式串中找不到另一个等于 {u} 的子串，我们就<strong>直接将模式串滑动到主串中 {u} 的后面</strong>，因为之前的任何一次往后滑动，都没有匹配主串中 {u} 的情况：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/184.png" alt></p>
-<p>不过，当模式串中不存在等于 {u} 的子串时，我们直接将模式串滑动到主串 {u} 的后面。这样做是否有点太过头呢？我们来看下面这个例子。这里面 bc 是好后缀，尽管在模式串中没有另外一个相匹配的子串 {u*}，但是如果我们将模式串移动到好后缀的后面，如图所示，那就会错过模式串和主串可以匹配的情况：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/185.png" alt></p>
-<p><strong>当模式串滑动到前缀与主串中 {u} 的后缀有部分重合的时候</strong>，并且重合的部分相等的时候，就有可能会存在完全匹配的情况：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/186.png" alt></p>
-<p>所以，针对这种情况，我们不仅要看好后缀在模式串中，是否有另一个匹配的子串，我们<strong>还要考察好后缀的后缀子串，是否存在跟模式串的前缀子串匹配的</strong>。我们从好后缀的后缀子串中，找一个最长的并且能跟模式串的前缀子串匹配的，假设是 {v}，然后将模式串滑动到如图所示的位置：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/187.png" alt></p>
+<h3 id="好后缀规则"><a href="#好后缀规则" class="headerlink" title="好后缀规则"></a>好后缀规则</h3><p>好后缀规则实际上跟坏字符规则的思路很类似。你看我下面这幅图。当模式串滑动到图中的位置的时候，模式串和主串有 2 个字符是匹配的，倒数第 3 个字符发生了不匹配的情况：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/184.png" alt></p>
+<p>我们把已经匹配的 bc 叫作好后缀，记作 {u}。我们拿它在模式串中查找，如果找到了另一个跟 {u} 相匹配的子串 {u*}，那我们就<strong>将模式串滑动到子串 {u*} 与主串中 {u} 对齐的位置</strong>：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/185.png" alt></p>
+<p>如果在模式串中找不到另一个等于 {u} 的子串，我们就<strong>直接将模式串滑动到主串中 {u} 的后面</strong>，因为之前的任何一次往后滑动，都没有匹配主串中 {u} 的情况：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/186.png" alt></p>
+<p>不过，当模式串中不存在等于 {u} 的子串时，我们直接将模式串滑动到主串 {u} 的后面。这样做是否有点太过头呢？我们来看下面这个例子。这里面 bc 是好后缀，尽管在模式串中没有另外一个相匹配的子串 {u*}，但是如果我们将模式串移动到好后缀的后面，如图所示，那就会错过模式串和主串可以匹配的情况：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/187.png" alt></p>
+<p><strong>当模式串滑动到前缀与主串中 {u} 的后缀有部分重合的时候</strong>，并且重合的部分相等的时候，就有可能会存在完全匹配的情况：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/188.png" alt></p>
+<p>所以，针对这种情况，我们不仅要看好后缀在模式串中，是否有另一个匹配的子串，我们<strong>还要考察好后缀的后缀子串，是否存在跟模式串的前缀子串匹配的</strong>。我们从好后缀的后缀子串中，找一个最长的并且能跟模式串的前缀子串匹配的，假设是 {v}，然后将模式串滑动到如图所示的位置：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/189.png" alt></p>
 <p>我们可以<strong>分别计算好后缀和坏字符往后滑动的位数，然后取两个数中最大的</strong>，作为模式串往后滑动的位数。这种处理方法还可以避免我们前面提到的，根据坏字符规则，计算得到的往后滑动的位数，有可能是负数的情况。</p>
 <h2 id="BM-算法代码实现"><a href="#BM-算法代码实现" class="headerlink" title="BM 算法代码实现"></a>BM 算法代码实现</h2><h2 id="BM-算法的性能分析及优化"><a href="#BM-算法的性能分析及优化" class="headerlink" title="BM 算法的性能分析及优化"></a>BM 算法的性能分析及优化</h2>
       
