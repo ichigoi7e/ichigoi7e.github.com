@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="CLRS,">
 
 
 
@@ -87,13 +87,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="DevPrepares">
-<meta property="og:url" content="http://yoursite.com/archives/2018/07/index.html">
+<meta name="description" content="什么是“Trie 树”？如何实现一棵 Trie 树？Trie 树真的很耗内存吗？Trie 树与散列表、红黑树的比较如何实现搜索关键词的提示功能">
+<meta name="keywords" content="CLRS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Trie 树">
+<meta property="og:url" content="http://yoursite.com/2021/01/12/Trie-树/index.html">
 <meta property="og:site_name" content="DevPrepares">
+<meta property="og:description" content="什么是“Trie 树”？如何实现一棵 Trie 树？Trie 树真的很耗内存吗？Trie 树与散列表、红黑树的比较如何实现搜索关键词的提示功能">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2021-01-11T16:24:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DevPrepares">
+<meta name="twitter:title" content="Trie 树">
+<meta name="twitter:description" content="什么是“Trie 树”？如何实现一棵 Trie 树？Trie 树真的很耗内存吗？Trie 树与散列表、红黑树的比较如何实现搜索关键词的提示功能">
 
 
 
@@ -121,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/07/">
+  <link rel="canonical" href="http://yoursite.com/2021/01/12/Trie-树/">
 
 
 
 
 
-  <title> Archive | DevPrepares </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> Trie 树 | DevPrepares </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -152,7 +157,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-right  page-archive  ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -268,98 +273,149 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-       
-        
-      Great! 138 posts in total. Keep on posting.
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2018">2018</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/10/SLAM：现在与未来/" itemprop="url">
-              
-                <span itemprop="name">SLAM：现在与未来</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-07-10T01:30:35+08:00" content="2018-07-10">
-          07-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/09/ROS-入门/" itemprop="url">
-              
-                <span itemprop="name">ROS 入门</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-07-09T16:08:46+08:00" content="2018-07-09">
-          07-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/12/Trie-树/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="was48i">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DevPrepares">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Trie 树
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-12T00:22:17+08:00">
+                2021-01-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="什么是“Trie-树”？"><a href="#什么是“Trie-树”？" class="headerlink" title="什么是“Trie 树”？"></a>什么是“Trie 树”？</h2><h2 id="如何实现一棵-Trie-树？"><a href="#如何实现一棵-Trie-树？" class="headerlink" title="如何实现一棵 Trie 树？"></a>如何实现一棵 Trie 树？</h2><h2 id="Trie-树真的很耗内存吗？"><a href="#Trie-树真的很耗内存吗？" class="headerlink" title="Trie 树真的很耗内存吗？"></a>Trie 树真的很耗内存吗？</h2><h2 id="Trie-树与散列表、红黑树的比较"><a href="#Trie-树与散列表、红黑树的比较" class="headerlink" title="Trie 树与散列表、红黑树的比较"></a>Trie 树与散列表、红黑树的比较</h2><h2 id="如何实现搜索关键词的提示功能"><a href="#如何实现搜索关键词的提示功能" class="headerlink" title="如何实现搜索关键词的提示功能"></a>如何实现搜索关键词的提示功能</h2>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CLRS/" rel="tag"># CLRS</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/01/10/字符串匹配基础/" rel="next" title="字符串匹配基础">
+                <i class="fa fa-chevron-left"></i> 字符串匹配基础
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
           
           </div>
@@ -367,6 +423,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -386,8 +446,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="was48i">
           <p class="site-author-name" itemprop="name">was48i</p>
@@ -452,6 +521,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是“Trie-树”？"><span class="nav-number">1.</span> <span class="nav-text">什么是“Trie 树”？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何实现一棵-Trie-树？"><span class="nav-number">2.</span> <span class="nav-text">如何实现一棵 Trie 树？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Trie-树真的很耗内存吗？"><span class="nav-number">3.</span> <span class="nav-text">Trie 树真的很耗内存吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Trie-树与散列表、红黑树的比较"><span class="nav-number">4.</span> <span class="nav-text">Trie 树与散列表、红黑树的比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何实现搜索关键词的提示功能"><span class="nav-number">5.</span> <span class="nav-text">如何实现搜索关键词的提示功能</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -557,11 +642,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
 
 
   
