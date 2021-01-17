@@ -280,6 +280,123 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/17/动态规划/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="was48i">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DevPrepares">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2021/01/17/动态规划/" itemprop="url">
+                  动态规划
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-17T16:14:01+08:00">
+                2021-01-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="动态规划学习路线"><a href="#动态规划学习路线" class="headerlink" title="动态规划学习路线"></a>动态规划学习路线</h2><h2 id="0-1-背包问题"><a href="#0-1-背包问题" class="headerlink" title="0-1 背包问题"></a>0-1 背包问题</h2><h2 id="0-1-背包问题升级版"><a href="#0-1-背包问题升级版" class="headerlink" title="0-1 背包问题升级版"></a>0-1 背包问题升级版</h2><h2 id="如何解决购物时的凑单问题"><a href="#如何解决购物时的凑单问题" class="headerlink" title="如何解决购物时的凑单问题"></a>如何解决购物时的凑单问题</h2>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/16/回溯算法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -356,9 +473,16 @@
 
       
         
-          
-            <h2 id="如何理解“回溯算法”？"><a href="#如何理解“回溯算法”？" class="headerlink" title="如何理解“回溯算法”？"></a>如何理解“回溯算法”？</h2><h2 id="两个回溯算法的经典应用"><a href="#两个回溯算法的经典应用" class="headerlink" title="两个回溯算法的经典应用"></a>两个回溯算法的经典应用</h2>
-          
+          <h2 id="如何理解“回溯算法”？"><a href="#如何理解“回溯算法”？" class="headerlink" title="如何理解“回溯算法”？"></a>如何理解“回溯算法”？</h2><p>笼统地讲，<code>回溯算法</code>（Backtracking Algorithm）很多时候都应用在“搜索”这类问题上。不过这里说的搜索，并不是狭义的指我们前面讲过的图的搜索算法，而是<strong>在一组可能的解中，搜索满足期望的解</strong>。回溯的处理思想，有点类似枚举搜索。我们枚举所有的解，找到满足期望的解。为了有规律地枚举所有可能的解，避免遗漏和重复，我们<strong>把问题求解的过程分为多个阶段</strong>。每个阶段，我们都会面对一个岔路口，我们先随意选一条路走，当发现这条路走不通的时候（不符合期望的解），就回退到上一个岔路口，另选一种走法继续走。</p>
+<p>我们有一个 8x8 的棋盘，希望往里放 8 个棋子（皇后），每个棋子所在的行、列、对角线都不能有另一个棋子。你可以看我画的图，第一幅图是满足条件的一种方法，第二幅图是不满足条件的。八皇后问题就是期望找到所有满足这种要求的放棋子方式：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/232.png" alt></p>
+<p>我们<strong>把这个问题划分成 8 个阶段</strong>，依次将 8 个棋子放到第一行, 第二行, 第三行, …, 第八行。在放置的过程中，我们不停地检查当前放法，是否满足要求。如果满足，则跳到下一行继续放置棋子；如果不满足，那就再换一种放法，继续尝试。<strong>回溯算法非常适合用递归代码实现</strong>：</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2021/01/16/回溯算法/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -474,7 +598,7 @@
       
         
           <p>MapReduce 是 Google 大数据处理的三驾马车之一，另外两个是 <code>GFS</code> 和 <code>Bigtable</code>。它在倒排索引、PageRank 计算、网页分析等搜索引擎相关的技术中都有大量的应用。</p>
-<h2 id="如何理解分治算法？"><a href="#如何理解分治算法？" class="headerlink" title="如何理解分治算法？"></a>如何理解分治算法？</h2><p>分治算法（Divide-and-Conquer Algorithm）的核心思想其实就是四个字，分而治之 ，也就是将原问题划分成 n 个规模较小，并且结构与原问题相似的子问题，递归地解决这些子问题，然后再合并其结果，就得到原问题的解。<strong>分治算法是一种处理问题的思想，递归是一种编程技巧</strong>。实际上，分治算法一般都比较适合用递归来实现。分治算法的递归实现中，每一层递归都会涉及这样三个操作：</p>
+<h2 id="如何理解分治算法？"><a href="#如何理解分治算法？" class="headerlink" title="如何理解分治算法？"></a>如何理解分治算法？</h2><p><code>分治算法</code>（Divide-and-Conquer Algorithm）的核心思想其实就是四个字，分而治之 ，也就是将原问题划分成 n 个规模较小，并且结构与原问题相似的子问题，递归地解决这些子问题，然后再合并其结果，就得到原问题的解。<strong>分治算法是一种处理问题的思想，递归是一种编程技巧</strong>。实际上，分治算法一般都比较适合用递归来实现。分治算法的递归实现中，每一层递归都会涉及这样三个操作：</p>
 <ul>
 <li><strong>分解</strong>：将原问题分解成一系列子问题；</li>
 <li><strong>解决</strong>：递归地求解各个子问题，若子问题足够小，则直接求解；</li>
@@ -610,7 +734,7 @@
         
           <h2 id="如何理解“贪心算法”？"><a href="#如何理解“贪心算法”？" class="headerlink" title="如何理解“贪心算法”？"></a>如何理解“贪心算法”？</h2><p>假设我们有一个可以容纳 100kg 物品的背包，可以装各种物品。我们有以下 5 种豆子，每种豆子的总量和总价值都各不相同。为了让背包中所装物品的总价值最大，我们如何选择在背包中装哪些豆子？每种豆子又该装多少呢：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/222.png" alt></p>
 <p>实际上，这个问题很简单，我们只要先算一算每个物品的单价，按照单价由高到低依次来装就好了。单价从高到低排列，依次是：黑豆、绿豆、红豆、青豆、黄豆，所以，我们可以往背包里装 20kg 黑豆、30kg 绿豆、50kg 红豆。这个问题的解决思路显而易见，它本质上借助的就是贪心算法。</p>
-<p>贪心算法（Greedy Algorithm）解决问题的步骤：</p>
+<p><code>贪心算法</code>（Greedy Algorithm）解决问题的步骤：</p>
 <ol>
 <li>针对一组数据，我们定义了<code>限制值</code>和<code>期望值</code>，希望<strong>从中选出几个数据，在满足限制值的情况下，期望值最大</strong>。类比到刚刚的例子，限制值就是重量不能超过 100kg，期望值就是物品的总价值。这组数据就是 5 种豆子。我们从中选出一部分，满足重量不超过 100kg，并且总价值最大；</li>
 <li><strong>每次选择当前情况下，对限制值同等贡献量，并对期望值贡献最大的数据</strong>。类比到刚刚的例子，我们每次都从剩下的豆子里面，选择单价最高的，也就是重量相同的情况下，对价值贡献最大的豆子；</li>
@@ -776,129 +900,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/12/Trie-树/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="was48i">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DevPrepares">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2021/01/12/Trie-树/" itemprop="url">
-                  Trie 树
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-12T00:22:17+08:00">
-                2021-01-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="什么是“Trie-树”？"><a href="#什么是“Trie-树”？" class="headerlink" title="什么是“Trie 树”？"></a>什么是“Trie 树”？</h2><p>Trie 树，也叫“字典树”。顾名思义，它是一个树形结构。它是一种专门处理字符串匹配的数据结构，用来<strong>解决在一组字符串集合中快速查找某个字符串的问题</strong>。我举个简单的例子来说明一下。我们有 6 个字符串，它们分别是：how, hi, her, hello, so, see。我们希望在里面多次查找某个字符串是否存在。如果每次查找，都是拿要查找的字符串跟这 6 个字符串依次进行字符串匹配，那效率就比较低。</p>
-<p>这个时候，我们就可以先对这 6 个字符串做一下预处理，组织成 Trie 树的结构，之后每次查找，都是在 Trie 树中进行匹配查找。Trie 树的本质，就是<strong>利用字符串之间的公共前缀，将重复的前缀合并在一起</strong>。最后构造出来的就是下面这个图中的样子：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/208.png" alt></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2021/01/12/Trie-树/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -946,7 +947,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">142</span>
+                <span class="site-state-item-count">143</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

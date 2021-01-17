@@ -103,7 +103,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/227.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/228.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/229.png">
-<meta property="og:updated_time" content="2021-01-14T16:43:03.000Z">
+<meta property="og:updated_time" content="2021-01-17T07:21:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="贪心算法">
 <meta name="twitter:description" content="如何理解“贪心算法”？假设我们有一个可以容纳 100kg 物品的背包，可以装各种物品。我们有以下 5 种豆子，每种豆子的总量和总价值都各不相同。为了让背包中所装物品的总价值最大，我们如何选择在背包中装哪些豆子？每种豆子又该装多少呢： 实际上，这个问题很简单，我们只要先算一算每个物品的单价，按照单价由高到低依次来装就好了。单价从高到低排列，依次是：黑豆、绿豆、红豆、青豆、黄豆，所以，我们可以往背包里">
@@ -366,7 +366,7 @@
       
         <h2 id="如何理解“贪心算法”？"><a href="#如何理解“贪心算法”？" class="headerlink" title="如何理解“贪心算法”？"></a>如何理解“贪心算法”？</h2><p>假设我们有一个可以容纳 100kg 物品的背包，可以装各种物品。我们有以下 5 种豆子，每种豆子的总量和总价值都各不相同。为了让背包中所装物品的总价值最大，我们如何选择在背包中装哪些豆子？每种豆子又该装多少呢：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/222.png" alt></p>
 <p>实际上，这个问题很简单，我们只要先算一算每个物品的单价，按照单价由高到低依次来装就好了。单价从高到低排列，依次是：黑豆、绿豆、红豆、青豆、黄豆，所以，我们可以往背包里装 20kg 黑豆、30kg 绿豆、50kg 红豆。这个问题的解决思路显而易见，它本质上借助的就是贪心算法。</p>
-<p>贪心算法（Greedy Algorithm）解决问题的步骤：</p>
+<p><code>贪心算法</code>（Greedy Algorithm）解决问题的步骤：</p>
 <ol>
 <li>针对一组数据，我们定义了<code>限制值</code>和<code>期望值</code>，希望<strong>从中选出几个数据，在满足限制值的情况下，期望值最大</strong>。类比到刚刚的例子，限制值就是重量不能超过 100kg，期望值就是物品的总价值。这组数据就是 5 种豆子。我们从中选出一部分，满足重量不超过 100kg，并且总价值最大；</li>
 <li><strong>每次选择当前情况下，对限制值同等贡献量，并对期望值贡献最大的数据</strong>。类比到刚刚的例子，我们每次都从剩下的豆子里面，选择单价最高的，也就是重量相同的情况下，对价值贡献最大的豆子；</li>
@@ -509,7 +509,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">142</span>
+                <span class="site-state-item-count">143</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
