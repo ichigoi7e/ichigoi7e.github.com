@@ -280,6 +280,124 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/23/B-树/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="was48i">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DevPrepares">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2021/01/23/B-树/" itemprop="url">
+                  B+ 树
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-23T16:37:16+08:00">
+                2021-01-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="MySQL-数据库索引是如何实现的"><a href="#MySQL-数据库索引是如何实现的" class="headerlink" title="MySQL 数据库索引是如何实现的"></a>MySQL 数据库索引是如何实现的</h2><p>作为一个软件开发工程师，你对数据库肯定再熟悉不过了。作为主流的数据存储系统，它在我们的业务开发中，有着举足轻重的地位。在工作中，<strong>为了加速数据库中数据的查找速度，我们常用的处理思路是，对表中数据创建索引</strong>。那你是否思考过，数据库索引是如何实现的呢？底层使用的是什么数据结构和算法呢？</p>
+<h2 id="算法解析"><a href="#算法解析" class="headerlink" title="算法解析"></a>算法解析</h2><h2 id="总结引申"><a href="#总结引申" class="headerlink" title="总结引申"></a>总结引申</h2>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/23/向量空间/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -356,9 +474,19 @@
 
       
         
-          
-            <h2 id="如何实现一个简单的音乐推荐系统"><a href="#如何实现一个简单的音乐推荐系统" class="headerlink" title="如何实现一个简单的音乐推荐系统"></a>如何实现一个简单的音乐推荐系统</h2><h2 id="算法解析"><a href="#算法解析" class="headerlink" title="算法解析"></a>算法解析</h2><h2 id="总结引申"><a href="#总结引申" class="headerlink" title="总结引申"></a>总结引申</h2>
-          
+          <h2 id="如何实现一个简单的音乐推荐系统"><a href="#如何实现一个简单的音乐推荐系统" class="headerlink" title="如何实现一个简单的音乐推荐系统"></a>如何实现一个简单的音乐推荐系统</h2><p>很多人都喜爱听歌，以前我们用 MP3 听歌，现在直接通过音乐 App 在线就能听歌。而且，各种音乐 App 的功能越来越强大，不仅可以自己选歌听，还可以根据你听歌的口味偏好，给你推荐可能会喜爱的音乐，而且有时候，推荐的音乐还非常适合你的口味，甚至会惊艳到你！如此智能的一个功能，你知道它是怎么实现的吗？</p>
+<h2 id="算法解析"><a href="#算法解析" class="headerlink" title="算法解析"></a>算法解析</h2><p>实际上，要解决这个问题，并不需要特别高深的理论。解决思路的核心思想非常简单、直白，用两句话就能总结出来：</p>
+<ul>
+<li>找到跟你口味偏好相似的用户，把他们爱听的歌曲推荐给你；</li>
+<li>找出跟你喜爱的歌曲特征相似的歌曲，把这些歌曲推荐给你；</li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2021/01/23/向量空间/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -724,134 +852,11 @@
 
       
         
-          <h2 id="地图软件是如何计算出最优出行路径的"><a href="#地图软件是如何计算出最优出行路径的" class="headerlink" title="地图软件是如何计算出最优出行路径的"></a>地图软件是如何计算出最优出行路径的</h2><p>像 Google 地图、百度地图、高德地图这样的地图软件，我想你应该经常使用吧？如果想从家开车到公司，你只需要输入起始、结束地址，地图就会给你规划一条最优出行路线。<strong>这里的最优，有很多种定义</strong>，比如最短路线、最少用时路线、最少红绿灯路线等等。</p>
+          <h2 id="地图软件是如何计算出最优出行路径的"><a href="#地图软件是如何计算出最优出行路径的" class="headerlink" title="地图软件是如何计算出最优出行路径的"></a>地图软件是如何计算出最优出行路径的</h2><p>像 Google 地图、百度地图、高德地图这样的地图软件，我想你应该经常使用吧？如果想从家开车到公司，你只需要输入起始、结束地址，地图就会给你规划一条最优出行路线。<strong>这里的最优，有很多种定义</strong>，比如最短路线、最少用时路线、最少红绿灯路线等等。作为一名软件开发工程师，你是否思考过，地图软件的最优路线是如何计算出来的吗？底层依赖了什么算法呢？</p>
 <h2 id="算法解析"><a href="#算法解析" class="headerlink" title="算法解析"></a>算法解析</h2><p>解决软件开发中的实际问题，最重要的一点就是<code>建模</code>，也就是<strong>将复杂的场景抽象成具体的数据结构</strong>。我们把每个岔路口看作一个顶点，岔路口与岔路口之间的路看作一条边，路的长度就是边的权重。如果路是单行道，我们就在两个顶点之间画一条有向边；如果路是双行道，我们就在两个顶点之间画两条方向不同的边。这样，整个地图就被抽象成一个有向有权图。于是，我们要求解的问题就转化为，在一个有向有权图中，求两个顶点间的最短路径：</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2021/01/19/最短路径/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/19/拓扑排序/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="was48i">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DevPrepares">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2021/01/19/拓扑排序/" itemprop="url">
-                  拓扑排序
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-19T00:03:31+08:00">
-                2021-01-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="如何确定代码源文件的编译依赖关系"><a href="#如何确定代码源文件的编译依赖关系" class="headerlink" title="如何确定代码源文件的编译依赖关系"></a>如何确定代码源文件的编译依赖关系</h2><p>我们知道，一个完整的项目往往会包含很多代码源文件。编译器在编译整个项目的时候，需要按照依赖关系，依次编译每个源文件。比如，A.cpp 依赖 B.cpp，那在编译的时候，编译器需要先编译 B.cpp，才能编译 A.cpp。编译器通过分析源文件或者程序员事先写好的编译配置文件（比如 Makefile 文件），来获取这种局部的依赖关系。那编译器又该<strong>如何通过源文件两两之间的局部依赖关系，确定一个全局的编译顺序呢</strong>：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/247.png" alt></p>
-<h2 id="算法解析"><a href="#算法解析" class="headerlink" title="算法解析"></a>算法解析</h2><p>我们在穿衣服的时候都有一定的顺序，我们可以把这种顺序想成，衣服与衣服之间有一定的依赖关系。比如说，你必须先穿袜子才能穿鞋，先穿内裤才能穿秋裤。假设我们现在有八件衣服要穿，它们之间的两两依赖关系我们已经很清楚了，那如何安排一个穿衣序列，能够满足所有的两两之间的依赖关系？这就是个<code>拓扑排序</code>（Topological Sorting）问题。从这个例子中，你应该能想到，<strong>在很多时候，拓扑排序的序列并不是唯一的</strong>：<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CLRS/geek/248.png" alt></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2021/01/19/拓扑排序/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -932,7 +937,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">148</span>
+                <span class="site-state-item-count">149</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
