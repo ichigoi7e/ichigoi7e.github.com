@@ -98,7 +98,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/01.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/02.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/03.png">
-<meta property="og:updated_time" content="2021-01-30T05:44:44.000Z">
+<meta property="og:updated_time" content="2021-01-30T07:53:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Load Balancing">
 <meta name="twitter:description" content="Load Balancer (LB) is another critical component of any distributed system. It helps to spread the traffic across a cluster of servers to improve responsiveness and availability of applications, websi">
@@ -378,7 +378,7 @@
 <li>System administrators experience fewer failed or stressed components. Instead of a single device performing a lot of work, load balancing has several devices perform a little bit of work;</li>
 </ul>
 <h2 id="Load-Balancing-Algorithms"><a href="#Load-Balancing-Algorithms" class="headerlink" title="Load Balancing Algorithms"></a>Load Balancing Algorithms</h2><p><strong>How does the load balancer choose the backend server?</strong><br>Load balancers consider two factors before forwarding a request to a backend server. They will first ensure that the server they choose is actually responding appropriately to requests and then use a pre-configured algorithm to select one from the set of healthy servers. We will discuss these algorithms shortly.</p>
-<p><strong>Health Checks</strong>: Load balancers should only forward traffic to “healthy” backend servers. To monitor the health of a backend server, “health checks” regularly attempt to connect to backend servers to ensure that servers are listening. If a server fails a health check, it is automatically removed from the pool, and traffic will not be forwarded to it until it responds to the health checks again.</p>
+<p><strong>Health Checks</strong>: Load balancers should only forward traffic to ‘healthy’ backend servers. To monitor the health of a backend server, ‘health checks’ regularly attempt to connect to backend servers to ensure that servers are listening. If a server fails a health check, it is automatically removed from the pool, and traffic will not be forwarded to it until it responds to the health checks again.</p>
 <p>There is a variety of load balancing methods, which use different algorithms for different needs:</p>
 <ul>
 <li><strong>Least Connection Method</strong>: This method directs traffic to the server with the fewest active connections. This approach is quite useful when there are a large number of persistent client connections which are unevenly distributed between the servers;</li>
@@ -508,7 +508,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">156</span>
+                <span class="site-state-item-count">157</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

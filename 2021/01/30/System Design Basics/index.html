@@ -96,7 +96,7 @@
 <meta property="og:description" content="Whenever we are designing a large system, we need to consider a few things:  What are the different architectural pieces that can be used? How do these pieces work with each other? How can we best uti">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/00.png">
-<meta property="og:updated_time" content="2021-01-30T05:32:17.000Z">
+<meta property="og:updated_time" content="2021-01-30T07:53:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="System Design Basics">
 <meta name="twitter:description" content="Whenever we are designing a large system, we need to consider a few things:  What are the different architectural pieces that can be used? How do these pieces work with each other? How can we best uti">
@@ -385,7 +385,7 @@
 <li>Number of messages globally sent by the nodes of the system regardless of the message size;</li>
 <li>Size of messages representing the volume of data exchanges;</li>
 </ul>
-<p>The complexity of operations supported by distributed data structures (e.g., searching for a specific key in a distributed index) can be characterized as a function of one of these cost units. Generally speaking, the analysis of a distributed structure in terms of “number of messages” is over-simplistic. It ignores the impact of many aspects, including the network topology, the network load, and its variation, the possible heterogeneity of the software and hardware components involved in data processing and routing, etc. However, it is quite difficult to develop a precise cost model that would accurately take into account all these performance factors; therefore, we have to live with rough but robust estimates of the system behavior.</p>
+<p>The complexity of operations supported by distributed data structures (e.g., searching for a specific key in a distributed index) can be characterized as a function of one of these cost units. Generally speaking, the analysis of a distributed structure in terms of ‘number of messages’ is over-simplistic. It ignores the impact of many aspects, including the network topology, the network load, and its variation, the possible heterogeneity of the software and hardware components involved in data processing and routing, etc. However, it is quite difficult to develop a precise cost model that would accurately take into account all these performance factors; therefore, we have to live with rough but robust estimates of the system behavior.</p>
 <h2 id="Serviceability-or-Manageability"><a href="#Serviceability-or-Manageability" class="headerlink" title="Serviceability or Manageability"></a>Serviceability or Manageability</h2><p>Another important consideration while designing a distributed system is how easy it is to operate and maintain. Serviceability or manageability is the simplicity and speed with which a system can be repaired or maintained; if the time to fix a failed system increases, then availability will decrease. Things to consider for manageability are the ease of diagnosing and understanding problems when they occur, ease of making updates or modifications, and how simple the system is to operate (i.e., does it routinely operate without failure or exceptions?).</p>
 <p>Early detection of faults can decrease or avoid system downtime. For example, some enterprise systems can automatically call a service center (without human intervention) when the system experiences a system fault.</p>
 
@@ -506,7 +506,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">156</span>
+                <span class="site-state-item-count">157</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
