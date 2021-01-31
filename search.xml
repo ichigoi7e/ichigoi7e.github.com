@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Topological Sort</title>
+      <link href="2021/01/31/Topological-Sort/"/>
+      <url>2021/01/31/Topological-Sort/</url>
+      
+        <content type="html"><![CDATA[<p>Topological Sort is used to find a linear ordering of elements that have dependencies on each other. For example, if event ‘B’ is dependent on event ‘A’, ‘A’ comes before ‘B’ in topological ordering.</p><p>This pattern defines an easy way to understand the technique for performing topological sorting of a set of elements and then solves a few problems using it.</p><h2 id="LeetCode"><a href="#LeetCode" class="headerlink" title="LeetCode"></a>LeetCode</h2><p><a href="https://leetcode.com/problems/course-schedule/" target="_blank" rel="noopener">Course Schedule</a><br><a href="https://leetcode.com/problems/course-schedule-ii/" target="_blank" rel="noopener">Course Schedule II</a><br><a href="https://leetcode.com/problems/minimum-height-trees/" target="_blank" rel="noopener">Minimum Height Trees</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> CodingInterview </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>K-Way Merge</title>
       <link href="2021/01/31/K-Way-Merge/"/>
       <url>2021/01/31/K-Way-Merge/</url>
