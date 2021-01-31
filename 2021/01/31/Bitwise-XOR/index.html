@@ -87,20 +87,20 @@
 
 
 
-<meta name="description" content="This pattern describes an efficient technique to deal with overlapping intervals. In a lot of problems involving intervals, we either need to find overlapping intervals or merge intervals if they over">
+<meta name="description" content="XOR is a logical bitwise operator that returns 0 (false) if both bits are the same and returns 1 (true) otherwise. In other words, it only returns 1 if exactly one bit is set to 1 out of the two bits">
 <meta name="keywords" content="CodingInterview">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Merge Intervals">
-<meta property="og:url" content="http://yoursite.com/2021/01/30/Merge-Intervals/index.html">
+<meta property="og:title" content="Bitwise XOR">
+<meta property="og:url" content="http://yoursite.com/2021/01/31/Bitwise-XOR/index.html">
 <meta property="og:site_name" content="DevPrepares">
-<meta property="og:description" content="This pattern describes an efficient technique to deal with overlapping intervals. In a lot of problems involving intervals, we either need to find overlapping intervals or merge intervals if they over">
+<meta property="og:description" content="XOR is a logical bitwise operator that returns 0 (false) if both bits are the same and returns 1 (true) otherwise. In other words, it only returns 1 if exactly one bit is set to 1 out of the two bits">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CodingInterview/educative/03.png">
-<meta property="og:updated_time" content="2021-01-30T13:24:04.000Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CodingInterview/educative/04.png">
+<meta property="og:updated_time" content="2021-01-31T14:53:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Merge Intervals">
-<meta name="twitter:description" content="This pattern describes an efficient technique to deal with overlapping intervals. In a lot of problems involving intervals, we either need to find overlapping intervals or merge intervals if they over">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CodingInterview/educative/03.png">
+<meta name="twitter:title" content="Bitwise XOR">
+<meta name="twitter:description" content="XOR is a logical bitwise operator that returns 0 (false) if both bits are the same and returns 1 (true) otherwise. In other words, it only returns 1 if exactly one bit is set to 1 out of the two bits">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/CodingInterview/educative/04.png">
 
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2021/01/30/Merge-Intervals/">
+  <link rel="canonical" href="http://yoursite.com/2021/01/31/Bitwise-XOR/">
 
 
 
 
 
-  <title> Merge Intervals | DevPrepares </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> Bitwise XOR | DevPrepares </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -285,7 +285,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/30/Merge-Intervals/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/31/Bitwise-XOR/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="was48i">
@@ -306,7 +306,7 @@
             
             
               
-                Merge Intervals
+                Bitwise XOR
               
             
           </h1>
@@ -321,8 +321,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-30T16:38:37+08:00">
-                2021-01-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-31T20:56:43+08:00">
+                2021-01-31
               </time>
             
 
@@ -357,10 +357,56 @@
       
 
       
-        <p>This pattern describes an efficient technique to deal with overlapping intervals. In a lot of problems involving intervals, we either need to find overlapping intervals or merge intervals if they overlap.</p>
-<p>Given two intervals (‘a’ and ‘b’), there will be six different ways the two intervals can relate to each other:<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CodingInterview/educative/03.png" alt></p>
-<p>Understanding the above six cases will help us in solving all intervals related problems.</p>
-<h2 id="LeetCode"><a href="#LeetCode" class="headerlink" title="LeetCode"></a>LeetCode</h2><p><a href="https://leetcode.com/problems/merge-intervals/" target="_blank" rel="noopener">Merge Intervals</a><br><a href="https://leetcode.com/problems/insert-interval/" target="_blank" rel="noopener">Insert Interval</a><br><a href="https://leetcode.com/problems/interval-list-intersections/" target="_blank" rel="noopener">Interval List Intersections</a></p>
+        <p>XOR is a logical bitwise operator that returns 0 (false) if both bits are the same and returns 1 (true) otherwise. In other words, it only returns 1 if exactly one bit is set to 1 out of the two bits in comparison:<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CodingInterview/educative/04.png" alt></p>
+<p>It is surprising to know the approaches that the XOR operator enables us to solve certain problems. For example, let’s take a look at the following problem:</p>
+<blockquote>
+<p>Given an array of n-1 integers in the range from 1 to n, find the one number that is missing from the array.</p>
+</blockquote>
+<p>Example:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: <span class="number">1</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">4</span></span><br><span class="line">Answer: <span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<p>A straight forward approach to solve this problem can be:</p>
+<ol>
+<li>Find the sum of all integers from 1 to n; let’s call it <code>s1</code>;</li>
+<li>Subtract all the numbers in the input array from <code>s1</code>; this will give us the missing number;</li>
+</ol>
+<a id="more"></a>
+<p>This is what the algorithm will look like:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_missing_number</span><span class="params">(arr)</span>:</span></span><br><span class="line">    n = len(arr) + <span class="number">1</span></span><br><span class="line">    <span class="comment"># find sum of all numbers from 1 to n.</span></span><br><span class="line">    s1 = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range (<span class="number">1</span>, n + <span class="number">1</span>):</span><br><span class="line">        s1 += i</span><br><span class="line">    <span class="comment"># subtract all numbers in input from sum.</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> arr:</span><br><span class="line">        s1 -= i</span><br><span class="line">    <span class="comment"># s1, now, is the missing number</span></span><br><span class="line">    <span class="keyword">return</span> s1</span><br></pre></td></tr></table></figure>
+
+<p><strong>Time &amp; Space complexity</strong>: The time complexity of the above algorithm is O(n) and the space complexity is O(1).</p>
+<blockquote>
+<p>While finding the sum of numbers from 1 to n, we can get integer overflow when n is large.</p>
+</blockquote>
+<p>Remember the important property of XOR that it returns 0 if both the bits in comparison are the same. In other words, XOR of a number with itself will always result in 0. This means that if we XOR all the numbers in the input array with all numbers from the range 1 to n then each number in the input is going to get zeroed out except the missing number. Following are the set of steps to find the missing number using XOR:</p>
+<ol>
+<li>XOR all the numbers from 1 to n, let’s call it <code>x1</code>;</li>
+<li>XOR all the numbers in the input array, let’s call it <code>x2</code>;</li>
+<li>The missing number can be found by <code>x1 XOR x2</code>;</li>
+</ol>
+<p>Here is what the algorithm will look like:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_missing_number</span><span class="params">(arr)</span>:</span></span><br><span class="line">    n = len(arr) + <span class="number">1</span></span><br><span class="line">    <span class="comment"># x1 represents XOR of all values from 1 to n</span></span><br><span class="line">    x1 = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>, n + <span class="number">1</span>):</span><br><span class="line">        x1 = x1 ^ i</span><br><span class="line">    <span class="comment"># x2 represents XOR of all values in arr</span></span><br><span class="line">    x2 = arr[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, n - <span class="number">1</span>):</span><br><span class="line">        x2 = x2 ^ arr[i]</span><br><span class="line">    <span class="comment"># missing number is the XOR of x1 and x2</span></span><br><span class="line">    <span class="keyword">return</span> x1 ^ x2</span><br></pre></td></tr></table></figure>
+
+<p><strong>Time &amp; Space complexity</strong>: The time complexity of the above algorithm is O(n) and the space complexity is O(1). The time and space complexities are the same as that of the previous solution but, in this algorithm, we will not have any integer overflow problem.</p>
+<p>Following are some important properties of XOR to remember:</p>
+<ul>
+<li>Taking XOR of a number with itself returns 0, e.g.,<ul>
+<li>1 ^ 1 = 0;</li>
+<li>29 ^ 29 = 0;</li>
+</ul>
+</li>
+<li>Taking XOR of a number with 0 returns the same number, e.g.,<ul>
+<li>1 ^ 0 = 1;</li>
+<li>31 ^ 0 = 31;</li>
+</ul>
+</li>
+<li>XOR is Associative &amp; Commutative, which means:<ul>
+<li>(a ^ b) ^ c = a ^ (b ^ c);</li>
+<li>a ^ b = b ^ a;</li>
+</ul>
+</li>
+</ul>
+<h2 id="LeetCode"><a href="#LeetCode" class="headerlink" title="LeetCode"></a>LeetCode</h2><p><a href="https://leetcode.com/problems/single-number/" target="_blank" rel="noopener">Single Number</a><br><a href="https://leetcode.com/problems/single-number-iii/" target="_blank" rel="noopener">Single Number III</a><br><a href="https://leetcode.com/problems/number-complement/" target="_blank" rel="noopener">Number Complement</a><br><a href="https://leetcode.com/problems/flipping-an-image/" target="_blank" rel="noopener">Flipping an Image</a></p>
 
       
     </div>
@@ -397,8 +443,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2021/01/30/Fast-Slow-Pointers/" rel="next" title="Fast & Slow Pointers">
-                <i class="fa fa-chevron-left"></i> Fast & Slow Pointers
+              <a href="/2021/01/31/Modified-Binary-Search/" rel="next" title="Modified Binary Search">
+                <i class="fa fa-chevron-left"></i> Modified Binary Search
               </a>
             
           </div>
@@ -406,10 +452,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2021/01/30/Cyclic-Sort/" rel="prev" title="Cyclic Sort">
-                Cyclic Sort <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
