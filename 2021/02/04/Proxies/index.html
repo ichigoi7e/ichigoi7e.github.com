@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="HANA,">
+  <meta name="keywords" content="SystemDesign,">
 
 
 
@@ -87,22 +87,20 @@
 
 
 
-<meta name="description" content="In-memory database technology is a core feature of the SAP HANA database, which enables new applications that were not possible before. Impact of Modern Hardware on Database System ArchitectureIn the">
-<meta name="keywords" content="HANA">
+<meta name="description" content="A proxy server is an intermediate server between the client and the back-end server. Clients connect to proxy servers to make a request for a service like a web page, file, connection, etc. In short,">
+<meta name="keywords" content="SystemDesign">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Basic In-Memory Database Concepts">
-<meta property="og:url" content="http://yoursite.com/2019/07/01/Basic-In-Memory-Database-Concepts/index.html">
+<meta property="og:title" content="Proxies">
+<meta property="og:url" content="http://yoursite.com/2021/02/04/Proxies/index.html">
 <meta property="og:site_name" content="DevPrepares">
-<meta property="og:description" content="In-memory database technology is a core feature of the SAP HANA database, which enables new applications that were not possible before. Impact of Modern Hardware on Database System ArchitectureIn the">
+<meta property="og:description" content="A proxy server is an intermediate server between the client and the back-end server. Clients connect to proxy servers to make a request for a service like a web page, file, connection, etc. In short,">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/HANA/2-1.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/HANA/2-2.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/HANA/2-3.jpg">
-<meta property="og:updated_time" content="2020-12-31T06:15:50.000Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/05.png">
+<meta property="og:updated_time" content="2021-02-04T12:32:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Basic In-Memory Database Concepts">
-<meta name="twitter:description" content="In-memory database technology is a core feature of the SAP HANA database, which enables new applications that were not possible before. Impact of Modern Hardware on Database System ArchitectureIn the">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/HANA/2-1.jpg">
+<meta name="twitter:title" content="Proxies">
+<meta name="twitter:description" content="A proxy server is an intermediate server between the client and the back-end server. Clients connect to proxy servers to make a request for a service like a web page, file, connection, etc. In short,">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/05.png">
 
 
 
@@ -130,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/01/Basic-In-Memory-Database-Concepts/">
+  <link rel="canonical" href="http://yoursite.com/2021/02/04/Proxies/">
 
 
 
 
 
-  <title> Basic In-Memory Database Concepts | DevPrepares </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> Proxies | DevPrepares </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -287,7 +285,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/01/Basic-In-Memory-Database-Concepts/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/02/04/Proxies/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="was48i">
@@ -308,7 +306,7 @@
             
             
               
-                Basic In-Memory Database Concepts
+                Proxies
               
             
           </h1>
@@ -323,8 +321,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-01T23:50:05+08:00">
-                2019-07-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-02-04T20:12:13+08:00">
+                2021-02-04
               </time>
             
 
@@ -359,47 +357,19 @@
       
 
       
-        <p><code>In-memory database technology</code> is a core feature of the SAP HANA database, which enables new applications that were not possible before.</p>
-<h2 id="Impact-of-Modern-Hardware-on-Database-System-Architecture"><a href="#Impact-of-Modern-Hardware-on-Database-System-Architecture" class="headerlink" title="Impact of Modern Hardware on Database System Architecture"></a>Impact of Modern Hardware on Database System Architecture</h2><p>In the past database management systems were designed for optimizing performance on hardware with limited main memory and with slow disk I/O as the main bottleneck. The focus was on <strong>optimizing disk access</strong>, for example by minimizing the number of disk pages to be read into main memory when processing a query.<br>Today’s computer architectures have changed. With <code>multi-core processors</code>, parallel processing is possible with fast communication between processor cores. Very large main memory configurations are now commercially available and affordable.<br>With all relevant data in memory, disk access is no longer a limiting factor for performance. With the increasing number of cores, CPUs are able to process more and more data per time interval. That means the performance bottleneck is now <strong>between the CPU cache and main memory</strong>.<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/HANA/2-1.jpg" alt><br>A <code>high performance data management system</code> for modern hardware must have the following characteristics:</p>
+        <p>A proxy server is an intermediate server between the client and the back-end server. Clients connect to proxy servers to make a request for a service like a web page, file, connection, etc. In short, a proxy server is a piece of software or hardware that acts as an intermediary for requests from clients seeking resources from other servers:<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/05.png" alt></p>
+<p>Typically, proxies are used to filter requests, log requests, or sometimes transform requests (by adding/removing headers, encrypting/decrypting, or compressing a resource). Another advantage of a proxy server is that its cache can serve a lot of requests. If multiple clients access a particular resource, the proxy server can cache it and serve it to all the clients without going to the remote server.</p>
 <a id="more"></a>
+
+<h2 id="Proxy-Server-Types"><a href="#Proxy-Server-Types" class="headerlink" title="Proxy Server Types"></a>Proxy Server Types</h2><p>Proxies can reside on the client’s local server or anywhere between the client and the remote servers. Here are a few famous types of proxy servers:</p>
 <ul>
-<li>In-memory database<br>All relevant data must be kept in main memory, so read operations can be executed without disk I/O. <strong>Disk storage</strong> is still needed to make changes durable.</li>
-<li>Cache aware memory organization, optimization and execution<br>The design must minimize the number of CPU cache misses and avoid CPU stalls because of memory access. One approach for achieving this goal is using <strong>column-based storage</strong> in memory. This leads to high spatial locality of data and instructions, so the operations can be executed completely in the CPU cache without costly random memory accesses.</li>
-<li>Support for parallel execution<br>In recent years CPUs did not become faster by increasing clock rates. Instead the number of processor cores was increased. For data management systems this means that it must be possible to <strong>partition data in sections</strong> for which the calculations can be executed in parallel.</li>
+<li><strong>Open Proxy</strong>: An open proxy is a proxy server that is accessible by any Internet user. Generally, a proxy server only allows users within a network group (i.e., a closed proxy) to store and forward Internet services such as DNS or web pages to reduce and control the bandwidth used by the group. With an open proxy, however, any user on the Internet is able to use this forwarding service. There two famous open proxy types:<ol>
+<li><strong>Anonymous Proxy</strong>: This proxy reveals іts identity аs а server but does not disclose the іnіtіаl IP address. Though this proxy server cаn be discovered easily іt cаn be beneficial for some users аs іt hides their IP address;</li>
+<li><strong>Transparent Proxy</strong>: Thіs proxy server аgаіn іdentіfіes іtself, аnd wіth the support of HTTP heаders, the fіrst IP аddress cаn be vіewed. The mаіn benefіt of usіng thіs sort of server іs іts аbіlіty to cаche the websіtes;</li>
+</ol>
+</li>
+<li><strong>Reverse Proxy</strong>: A reverse proxy retrieves resources on behalf of a client from one or more servers. These resources are then returned to the client, appearing as if they originated from the proxy server itself;</li>
 </ul>
-<h2 id="Columnar-and-Row-Based-Data-Storage"><a href="#Columnar-and-Row-Based-Data-Storage" class="headerlink" title="Columnar and Row-Based Data Storage"></a>Columnar and Row-Based Data Storage</h2><p>For storing a table in linear memory, two options can be chosen. A row store stores a sequence of records that contains the fields of one row in the table. In a column store, the entries of column are stored in contiguous memory locations.<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/HANA/2-2.jpg" alt></p>
-<h3 id="Choosing-Between-Column-and-Row-Store"><a href="#Choosing-Between-Column-and-Row-Store" class="headerlink" title="Choosing Between Column and Row Store"></a>Choosing Between Column and Row Store</h3><p>Column-based tables have advantages if:</p>
-<ul>
-<li>Calculations are typically executed on single of few columns only.</li>
-<li>The table is searched based on values of a few columns.</li>
-<li>The table has a big number of columns.</li>
-<li>The table has a big number of rows and columnar operations are required (aggregate, scan, …).</li>
-<li><strong>High compression rate</strong> can be achieved because the majority of the columns contain only a few distinct values.</li>
-</ul>
-<p>Row-based tables have advantages if:</p>
-<ul>
-<li>The application needs to process only one single record at one time.</li>
-<li>The application typically needs to <strong>access the complete record</strong>.</li>
-<li>The columns contain mainly distinct values so the data compression rate would be low.</li>
-<li>Neither aggregations nor <strong>fast search</strong> are required.</li>
-<li>The table has a small number of rows.</li>
-</ul>
-<h3 id="Advantages-of-Columnar-Tables"><a href="#Advantages-of-Columnar-Tables" class="headerlink" title="Advantages of Columnar Tables"></a>Advantages of Columnar Tables</h3><h4 id="Higher-Data-Compression-Rates"><a href="#Higher-Data-Compression-Rates" class="headerlink" title="Higher Data Compression Rates"></a>Higher Data Compression Rates</h4><p>The goal to keep all relevant data in main memory can be achieved with lower cost because <strong>data compression</strong> is used. Columnar data storage allows highly efficient compression. Especially if the column is sorted, there will be ranges of the same values in contiguous memory, so compression methods such as run length encoding or cluster encoding can be used more effectively.</p>
-<h4 id="Higher-Performance-for-Column-Operations"><a href="#Higher-Performance-for-Column-Operations" class="headerlink" title="Higher Performance for Column Operations"></a>Higher Performance for Column Operations</h4><p>With columnar data organization, operation on single columns, such as searching or aggregations can be implemented as loops over an array stored in contiguous memory locations.<br>Higher data compression rate not only saves memory but also increases speed for the following reasons:</p>
-<ul>
-<li>Compressed data can be loaded faster into the CPU cache. As the limiting factor is the data transport between memory and CPU cache, the performance gain <strong>exceeds the additional computing time needed for decompression</strong>.</li>
-<li>With <strong>dictionary encoding</strong>, the columns are stored as arrays of bit encoded integers. That means that check for equality can be executed on the integers. This is much faster than comparing for example string values.</li>
-<li>Compression can speed up operations such as scans and aggregations if the operator is aware of the compression. Given a good compression rate, computing the sum of the values in a column will be much faster if many additions of the same value can be <strong>replaced by a single multiplication</strong>.</li>
-</ul>
-<h4 id="Elimination-of-Additional-Indexes"><a href="#Elimination-of-Additional-Indexes" class="headerlink" title="Elimination of Additional Indexes"></a>Elimination of Additional Indexes</h4><p>Storing data in columns already works like having a built-in index for each column. In many cases it will <strong>not be required to have addition index structures</strong>. Eliminating indexes reduces memory size, can improve write performance, and reduces development efforts.</p>
-<h4 id="Elimination-of-Materialized-Aggregates"><a href="#Elimination-of-Materialized-Aggregates" class="headerlink" title="Elimination of Materialized Aggregates"></a>Elimination of Materialized Aggregates</h4><p>Traditional business applications use <code>materialized aggregates</code> to increase read performance. That means that the application developers define additional tables in which the application redundantly stores the results of aggregates computed on other tables.<br>SAP HANA eliminates the need for materialized aggregates in many cases. Financial applications, for instance, can compute totals and balances from the accounting documents when they are queried, <strong>instead of maintaining them as materialized values</strong>.<br>Eliminating materialized aggregates has several advantages:</p>
-<ul>
-<li>It simplifies data model and aggregation logic, which makes development and maintenance <strong>more efficient</strong>.</li>
-<li>It allows for <strong>a higher level of concurrency</strong> because write operations do not require exclusive locks for updating aggregated values.</li>
-<li>It ensures that the aggregated values are <strong>always up-to-date</strong>, while materialized aggregates are sometimes updated only at scheduled times.</li>
-</ul>
-<h4 id="Parallelization"><a href="#Parallelization" class="headerlink" title="Parallelization"></a>Parallelization</h4><p><code>Column-based storage</code> also simplifies parallel execution using multiple processor cores. That means operations on different columns can easily be processed in parallel.<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/HANA/2-3.jpg" alt><br>If multiple columns <strong>need to be searched or aggregated</strong>, each of these operations can be assigned to a different processor core. In addition, the execution of operations on one column can be parallelized by dividing the column into multiple sections that are processed by different processor cores.</p>
-<h2 id="History-Tables"><a href="#History-Tables" class="headerlink" title="History Tables"></a>History Tables</h2><p>SAP HANA supports history tables which allow queries on historical data. Applications may use this feature for example <strong>for time-based reporting and analysis</strong>. Write operations on history tables do not physically overwrite existing records. Instead, write operations always <strong>insert new versions</strong> of the data record into the database. Each row in a history table has <strong>timestamp-like system attributes</strong> that indicate the time period when the record version in this row was the current one.<br>In literature, data with time-based validity or visibility is known as <code>temporal data</code>. The standard distinguishes two levels of temporal data support, which can be characterized as <strong>system-versioned</strong> and as <strong>application-managed</strong>.<br>For system-versioned temporal data, the timestamps are <strong>automatically set</strong> and indicate the so-called transaction time when the data was current. New versions are automatically created by the system during updates. Application-managed is different, the time period indicates the period of validity on <strong>application level</strong>.</p>
 
       
     </div>
@@ -423,7 +393,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/HANA/" rel="tag"># HANA</a>
+            <a href="/tags/SystemDesign/" rel="tag"># SystemDesign</a>
           
         </div>
       
@@ -436,8 +406,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/30/SAP-HANA-Overview/" rel="next" title="SAP HANA Overview">
-                <i class="fa fa-chevron-left"></i> SAP HANA Overview
+              <a href="/2021/02/03/Indexes/" rel="next" title="Indexes">
+                <i class="fa fa-chevron-left"></i> Indexes
               </a>
             
           </div>
@@ -445,10 +415,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/04/SAP-HANA-System-Architecture-Overview/" rel="prev" title="SAP HANA System Architecture Overview">
-                SAP HANA System Architecture Overview <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -580,7 +546,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Impact-of-Modern-Hardware-on-Database-System-Architecture"><span class="nav-number">1.</span> <span class="nav-text">Impact of Modern Hardware on Database System Architecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Columnar-and-Row-Based-Data-Storage"><span class="nav-number">2.</span> <span class="nav-text">Columnar and Row-Based Data Storage</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Choosing-Between-Column-and-Row-Store"><span class="nav-number">2.1.</span> <span class="nav-text">Choosing Between Column and Row Store</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Advantages-of-Columnar-Tables"><span class="nav-number">2.2.</span> <span class="nav-text">Advantages of Columnar Tables</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Higher-Data-Compression-Rates"><span class="nav-number">2.2.1.</span> <span class="nav-text">Higher Data Compression Rates</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Higher-Performance-for-Column-Operations"><span class="nav-number">2.2.2.</span> <span class="nav-text">Higher Performance for Column Operations</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Elimination-of-Additional-Indexes"><span class="nav-number">2.2.3.</span> <span class="nav-text">Elimination of Additional Indexes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Elimination-of-Materialized-Aggregates"><span class="nav-number">2.2.4.</span> <span class="nav-text">Elimination of Materialized Aggregates</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Parallelization"><span class="nav-number">2.2.5.</span> <span class="nav-text">Parallelization</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#History-Tables"><span class="nav-number">3.</span> <span class="nav-text">History Tables</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Proxy-Server-Types"><span class="nav-number">1.</span> <span class="nav-text">Proxy Server Types</span></a></li></ol></div>
             
 
           </div>
