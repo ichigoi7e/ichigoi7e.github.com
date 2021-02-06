@@ -97,7 +97,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/python/python_3.jpeg">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/python/python_4.jpeg">
-<meta property="og:updated_time" content="2020-12-31T06:15:50.000Z">
+<meta property="og:updated_time" content="2021-02-06T11:18:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 语言精要-3">
 <meta name="twitter:description" content="列表、集合以及字典的推导式列表推导式是最受欢迎的 Python 的语言特性之一，只需一条简洁的表达式，即可对一组元素进行过滤，并对得到的元素进行转换变形。基本形式： 1[expr for value in collection if condition]  这相当于下面这段 for 循环： 1234result = []for val in collection:    if condition:">
@@ -427,7 +427,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_counter</span><span class="params">()</span>:</span></span><br><span class="line">    count = [<span class="number">0</span>]</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">counter</span><span class="params">()</span>:</span></span><br><span class="line">        count[<span class="number">0</span>] += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> count[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">return</span> counter</span><br><span class="line"></span><br><span class="line">cnt = make_counter()</span><br></pre></td></tr></table></figure>
 
 <p>可以编写带有大量选项的非常一般化的函数，然后再组装出更简单、更专门化的函数：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">format_and_pad</span><span class="params">(template, space)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">formatter</span><span class="params">(x)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> (template % x).rjust(space)</span><br><span class="line">    <span class="keyword">return</span> formatter</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个始终返回 15 位字符串的浮点数格式化器</span></span><br><span class="line">fmt = format_and_pad(<span class="string">'%.4f'</span>, <span class="number">15</span>)</span><br><span class="line">fmt(<span class="number">1.756</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>’         <span class="number">1.7560</span>‘</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">format_and_pad</span><span class="params">(template, space)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">formatter</span><span class="params">(x)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> (template % x).rjust(space)</span><br><span class="line">    <span class="keyword">return</span> formatter</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个始终返回 15 位字符串的浮点数格式化器</span></span><br><span class="line">fmt = format_and_pad(<span class="string">'%.4f'</span>, <span class="number">15</span>)</span><br><span class="line">fmt(<span class="number">1.756</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'         1.7560'</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>通过面向对象编程，这种模式也能用类来实现。</p>
@@ -588,7 +588,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">176</span>
+                <span class="site-state-item-count">177</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
