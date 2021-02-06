@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="SLAM,">
+  <meta name="keywords" content="SystemDesign,">
 
 
 
@@ -87,18 +87,24 @@
 
 
 
-<meta name="description" content="本书讲什么SLAM 是 Simultaneous Localization And Mapping 的缩写，中文译作：同时定位与地图构建。SLAM 的目的是解决定位与地图构建，希望实时地、在没有先验知识的情况下进行 SLAM。我们眼中的花草树木、虫鱼鸟兽，在计算机中只是一个个由数字排列而成的矩阵。与人工智能和机器学习所用的方式——概率学建模是不同的。与 SLAM 相关的应用点：在许多地方，我们都希">
-<meta name="keywords" content="SLAM">
+<meta name="description" content="Distributed Hash Table (DHT) is one of the fundamental components used in distributed scalable systems. Hash Tables need a key, a value, and a hash function where hash function maps the key to a locat">
+<meta name="keywords" content="SystemDesign">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SLAM">
-<meta property="og:url" content="http://yoursite.com/2017/11/29/SLAM/index.html">
+<meta property="og:title" content="Consistent Hashing">
+<meta property="og:url" content="http://yoursite.com/2021/02/06/Consistent-Hashing/index.html">
 <meta property="og:site_name" content="DevPrepares">
-<meta property="og:description" content="本书讲什么SLAM 是 Simultaneous Localization And Mapping 的缩写，中文译作：同时定位与地图构建。SLAM 的目的是解决定位与地图构建，希望实时地、在没有先验知识的情况下进行 SLAM。我们眼中的花草树木、虫鱼鸟兽，在计算机中只是一个个由数字排列而成的矩阵。与人工智能和机器学习所用的方式——概率学建模是不同的。与 SLAM 相关的应用点：在许多地方，我们都希">
+<meta property="og:description" content="Distributed Hash Table (DHT) is one of the fundamental components used in distributed scalable systems. Hash Tables need a key, a value, and a hash function where hash function maps the key to a locat">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-12-31T06:15:50.000Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/08.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/09.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/10.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/11.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/12.png">
+<meta property="og:updated_time" content="2021-02-06T13:59:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SLAM">
-<meta name="twitter:description" content="本书讲什么SLAM 是 Simultaneous Localization And Mapping 的缩写，中文译作：同时定位与地图构建。SLAM 的目的是解决定位与地图构建，希望实时地、在没有先验知识的情况下进行 SLAM。我们眼中的花草树木、虫鱼鸟兽，在计算机中只是一个个由数字排列而成的矩阵。与人工智能和机器学习所用的方式——概率学建模是不同的。与 SLAM 相关的应用点：在许多地方，我们都希">
+<meta name="twitter:title" content="Consistent Hashing">
+<meta name="twitter:description" content="Distributed Hash Table (DHT) is one of the fundamental components used in distributed scalable systems. Hash Tables need a key, a value, and a hash function where hash function maps the key to a locat">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/08.png">
 
 
 
@@ -126,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/29/SLAM/">
+  <link rel="canonical" href="http://yoursite.com/2021/02/06/Consistent-Hashing/">
 
 
 
 
 
-  <title> SLAM | DevPrepares </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> Consistent Hashing | DevPrepares </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -283,7 +289,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/29/SLAM/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/02/06/Consistent-Hashing/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="was48i">
@@ -304,7 +310,7 @@
             
             
               
-                SLAM
+                Consistent Hashing
               
             
           </h1>
@@ -319,8 +325,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-29T21:25:46+08:00">
-                2017-11-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-02-06T20:07:23+08:00">
+                2021-02-06
               </time>
             
 
@@ -355,14 +361,35 @@
       
 
       
-        <h2 id="本书讲什么"><a href="#本书讲什么" class="headerlink" title="本书讲什么"></a>本书讲什么</h2><p>SLAM 是 <strong>S</strong>imultaneous <strong>L</strong>ocalization <strong>A</strong>nd <strong>M</strong>apping 的缩写，中文译作：同时定位与地图构建。<br>SLAM 的目的是解决<code>定位</code>与<code>地图构建</code>，希望<strong>实时地</strong>、在<strong>没有先验知识</strong>的情况下进行 SLAM。<br>我们眼中的花草树木、虫鱼鸟兽，在计算机中只是一个个由数字排列而成的矩阵。<br>与人工智能和机器学习所用的方式——<strong>概率学建模</strong>是不同的。<br>与 SLAM 相关的应用点：在许多地方，我们都希望知道自身的位置。<br>虽然 SLAM 的理论框架基本趋于稳定，但其编程实现仍然较为复杂。<br>我们会详细地介绍 SLAM 的理论背景、系统架构，以及各个模块的主流做法。<br>经典书籍：《概率机器人》（Probabilistic robotics）、《计算机视觉中的多视图几何》（Multiple View Geometry in Computer Vision）、《机器人学中的状态估计》（State Estimation for Robotics: A Matrix-Lie-Group Approach）</p>
-<ul>
-<li>目的在于介绍基础理论，SLAM 只是其应用之一；</li>
-<li>内容偏重于数学理论，基本不涉及编程实现。</li>
-</ul>
+        <p><code>Distributed Hash Table</code> (DHT) is one of the fundamental components used in distributed scalable systems. Hash Tables need a key, a value, and a hash function where hash function maps the key to a location where the value is stored:</p>
+<blockquote>
+<p>index = hash_function(key)</p>
+</blockquote>
+<p>Suppose we are designing a distributed caching system. Given ‘n’ cache servers, an intuitive hash function would be ‘key % n’. It is simple and commonly used. But it has two major drawbacks:</p>
+<ol>
+<li>It is NOT horizontally scalable. Whenever a new cache host is added to the system, all existing mappings are broken. It will be a pain point in maintenance if the caching system contains lots of data. Practically, it becomes difficult to schedule a downtime to update all caching mappings;</li>
+<li>It may NOT be load balanced, especially for non-uniformly distributed data. In practice, it can be easily assumed that the data will not be distributed uniformly. For the caching system, it translates into some caches becoming hot and saturated while the others idle and are almost empty;</li>
+</ol>
+<p>In such situations, consistent hashing is a good way to improve the caching system.</p>
+<h2 id="What-is-Consistent-Hashing"><a href="#What-is-Consistent-Hashing" class="headerlink" title="What is Consistent Hashing?"></a>What is Consistent Hashing?</h2><p>Consistent hashing is a very useful strategy for distributed caching systems and DHTs. It allows us to distribute data across a cluster in such a way that will minimize reorganization when nodes are added or removed. Hence, the caching system will be easier to scale up or scale down.</p>
+<p>In Consistent Hashing, when the hash table is resized (e.g., a new cache host is added to the system), only ‘k/n’ keys need to be remapped where ‘k’ is the total number of keys and ‘n’ is the total number of servers. Recall that in a caching system using the ‘mod’ as the hash function, all keys need to be remapped.</p>
+<p>In Consistent Hashing, objects are mapped to the same host if possible. When a host is removed from the system, the objects on that host are shared by other hosts; when a new host is added, it takes its share from a few hosts without touching other’s shares.</p>
 <a id="more"></a>
-<h2 id="如何使用本书"><a href="#如何使用本书" class="headerlink" title="如何使用本书"></a>如何使用本书</h2><h3 id="组织方式"><a href="#组织方式" class="headerlink" title="组织方式"></a>组织方式</h3><p>某些做法只要经验上够用，没必要非得在数学上追求完备。<br><strong>数学基础</strong>篇+<strong>SLAM 技术</strong>篇</p>
-<h3 id="风格约定"><a href="#风格约定" class="headerlink" title="风格约定"></a>风格约定</h3><p>各种程序库在 Linux 下的配置都非常便捷。<br>标量使用斜体字，向量和矩阵使用粗斜体，空心粗体代表特殊集合。<br>可以在终端中输入 vimtutor 阅读一遍所有内容。不要想着把 Vim 用成 IDE，我们只用它做文本编辑的工作。</p>
+
+<h2 id="How-does-It-Work"><a href="#How-does-It-Work" class="headerlink" title="How does It Work?"></a>How does It Work?</h2><p>As a typical hash function, consistent hashing maps a key to an integer. Suppose the output of the hash function is in the range of [0, 256]. Imagine that the integers in the range are placed on a ring such that the values are wrapped around.</p>
+<p>Here’s how consistent hashing works:</p>
+<ol>
+<li>Given a list of cache servers, hash them to integers in the range;</li>
+<li>To map a key to a server,<ul>
+<li>Hash it to a single integer;</li>
+<li>Move clockwise on the ring until finding the first cache it encounters;</li>
+<li>That cache is the one that contains the key. See animation below as an example: key1 maps to cache A; key2 maps to cache C;</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/08.png" alt><br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/09.png" alt><br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/10.png" alt><br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/11.png" alt><br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/12.png" alt></p>
+<p>To add a new server, say D, keys that were originally residing at C will be split. Some of them will be shifted to D, while other keys will not be touched.<br>To remove a cache or, if a cache fails, say A, all keys that were originally mapped to A will fall into B, and only those keys need to be moved to B; other keys will not be affected.</p>
+<p>For load balancing, as we discussed in the beginning, the real data is essentially randomly distributed and thus may not be uniform. It may make the keys on caches unbalanced.<br>To handle this issue, we add ‘virtual replicas’ for caches. Instead of mapping each cache to a single point on the ring, we map it to multiple points on the ring, i.e., replicas. This way, each cache is associated with multiple portions of the ring.<br>If the hash function ‘mixes well’, as the number of replicas increases, the keys will be more balanced.</p>
 
       
     </div>
@@ -386,7 +413,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/SLAM/" rel="tag"># SLAM</a>
+            <a href="/tags/SystemDesign/" rel="tag"># SystemDesign</a>
           
         </div>
       
@@ -399,8 +426,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/28/面试题-9：用两个栈实现队列/" rel="next" title="面试题 9：用两个栈实现队列">
-                <i class="fa fa-chevron-left"></i> 面试题 9：用两个栈实现队列
+              <a href="/2021/02/06/CAP-Theorem/" rel="next" title="CAP Theorem">
+                <i class="fa fa-chevron-left"></i> CAP Theorem
               </a>
             
           </div>
@@ -408,10 +435,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/08/初识-SLAM/" rel="prev" title="初识 SLAM">
-                初识 SLAM <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -543,7 +566,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本书讲什么"><span class="nav-number">1.</span> <span class="nav-text">本书讲什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用本书"><span class="nav-number">2.</span> <span class="nav-text">如何使用本书</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#组织方式"><span class="nav-number">2.1.</span> <span class="nav-text">组织方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#风格约定"><span class="nav-number">2.2.</span> <span class="nav-text">风格约定</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-Consistent-Hashing"><span class="nav-number">1.</span> <span class="nav-text">What is Consistent Hashing?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-does-It-Work"><span class="nav-number">2.</span> <span class="nav-text">How does It Work?</span></a></li></ol></div>
             
 
           </div>
