@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Designing a URL Shortening Service Like TinyURL</title>
+      <link href="2021/02/08/Designing-a-URL-Shortening-Service-Like-TinyURL/"/>
+      <url>2021/02/08/Designing-a-URL-Shortening-Service-Like-TinyURL/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Why-do-We-Need-URL-Shortening"><a href="#Why-do-We-Need-URL-Shortening" class="headerlink" title="Why do We Need URL Shortening?"></a>Why do We Need URL Shortening?</h2><p>URL shortening is used to create shorter aliases for long URLs. We call these shortened aliases ‘short links’. Users are redirected to the original URL when they hit these short links. Short links save a lot of space when displayed, printed, messaged, or tweeted. Additionally, users are less likely to mistype shorter URLs.</p><p>For example, if we shorten this page through TinyURL:</p><blockquote><p><a href="https://www.educative.io/collection/page/5668639101419520/5649050225344512/5668600916475904/" target="_blank" rel="noopener">https://www.educative.io/collection/page/5668639101419520/5649050225344512/5668600916475904/</a></p></blockquote><p>We would get:</p><blockquote><p><a href="http://tinyurl.com/jlg8zpc" target="_blank" rel="noopener">http://tinyurl.com/jlg8zpc</a></p></blockquote><p>The shortened URL is nearly one-third the size of the actual URL.<br>URL shortening is used to optimize links across devices, track individual links to analyze audience, measure ad campaigns’ performance, or hide affiliated original URLs.</p><h2 id="Requirements-and-Goals-of-the-System"><a href="#Requirements-and-Goals-of-the-System" class="headerlink" title="Requirements and Goals of the System"></a>Requirements and Goals of the System</h2><blockquote><p>You should always clarify requirements at the beginning of the interview. Be sure to ask questions to find the exact scope of the system that the interviewer has in mind.</p></blockquote><a id="more"></a><p>Our URL shortening system should meet the following requirements:</p><ul><li><strong>Functional Requirements</strong>:<ol><li>Given a URL, our service should generate a shorter and unique alias of it. This is called a short link. This link should be short enough to be easily copied and pasted into applications;</li><li>When users access a short link, our service should redirect them to the original link;</li><li>Users should optionally be able to pick a custom short link for their URL;</li><li>Links will expire after a standard default time span. Users should be able to specify the expiration time;</li></ol></li><li><strong>Non-Functional Requirements</strong>:<ol><li>The system should be highly available. This is required because, if our service is down, all the URL redirections will start failing;</li><li>URL redirection should happen in real-time with minimal latency;</li><li>Shortened links should not be guessable (not predictable);</li></ol></li><li><strong>Extended Requirements</strong>:<ol><li>Analytics ,e.g., how many times a redirection happened?</li><li>Our service should also be accessible through RESTful APIs by other services;</li></ol></li></ul><h2 id="Capacity-Estimation-and-Constraints"><a href="#Capacity-Estimation-and-Constraints" class="headerlink" title="Capacity Estimation and Constraints"></a>Capacity Estimation and Constraints</h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> SystemDesign </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>A Step by Step Guide</title>
       <link href="2021/02/07/A-Step-by-Step-Guide/"/>
       <url>2021/02/07/A-Step-by-Step-Guide/</url>
