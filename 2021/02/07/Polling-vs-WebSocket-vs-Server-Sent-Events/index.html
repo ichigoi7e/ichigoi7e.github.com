@@ -100,7 +100,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/15.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/16.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/17.png">
-<meta property="og:updated_time" content="2021-02-07T06:11:37.000Z">
+<meta property="og:updated_time" content="2021-02-11T04:48:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Polling vs. WebSocket vs. Server-Sent Events">
 <meta name="twitter:description" content="Polling, WebSocket, and Server-Sent Events are popular communication protocols between a client like a web browser and a web server. First, let’s start with understanding what a standard HTTP web requ">
@@ -379,7 +379,7 @@
 <p>The problem with Polling is that the client has to keep asking the server for any new data. As a result, a lot of responses are empty, creating HTTP overhead.</p>
 <a id="more"></a>
 
-<h2 id="HTTP-Long-Polling"><a href="#HTTP-Long-Polling" class="headerlink" title="HTTP Long-Polling"></a>HTTP Long-Polling</h2><p>This is a variation of the traditional polling technique that allows the server to push information to a client whenever the data is available. With Long-Polling, the client requests information from the server exactly as in normal polling, but with the expectation that the server may not respond immediately. That’s why this technique is sometimes referred to as a ‘Hanging GET’:</p>
+<h2 id="HTTP-Long-Polling"><a href="#HTTP-Long-Polling" class="headerlink" title="HTTP Long-Polling"></a>HTTP Long-Polling</h2><p>This is a variation of the traditional polling technique that allows the server to push information to a client whenever the data is available. With Long-Polling, the client requests information from the server exactly as in normal polling, but with the expectation that the server may not respond immediately. That’s why this technique is sometimes referred to as a “Hanging GET”:</p>
 <ul>
 <li>If the server does not have any data available for the client, instead of sending an empty response, the server holds the request and waits until some data becomes available;</li>
 <li>Once the data becomes available, a full response is sent to the client. The client then immediately re-request information from the server so that the server will almost always have an available waiting request that it can use to deliver data in response to an event;</li>

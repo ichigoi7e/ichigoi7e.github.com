@@ -479,9 +479,9 @@
           
             <p>This pattern describes an interesting approach to deal with problems involving arrays containing numbers in a given range. For example, take the following problem:</p>
 <blockquote>
-<p>You are given an unsorted array containing numbers taken from the range 1 to ‘n’. The array can have duplicates, which means that some numbers will be missing. Find all the missing numbers.</p>
+<p>You are given an unsorted array containing numbers taken from the range 1 to “n”. The array can have duplicates, which means that some numbers will be missing. Find all the missing numbers.</p>
 </blockquote>
-<p>To efficiently solve this problem, we can use the fact that the input array contains numbers in the range of 1 to ‘n’. For example, to efficiently sort the array, we can try placing each number in its correct place, i.e., placing ‘1’ at index ‘0’, placing ‘2’ at index ‘1’, and so on. Once we are done with the sorting, we can iterate the array to find all indices that are missing the correct numbers. These will be our required numbers.</p>
+<p>To efficiently solve this problem, we can use the fact that the input array contains numbers in the range of 1 to “n”. For example, to efficiently sort the array, we can try placing each number in its correct place, i.e., placing “1” at index “0”, placing “2” at index “1”, and so on. Once we are done with the sorting, we can iterate the array to find all indices that are missing the correct numbers. These will be our required numbers.</p>
 <h2 id="LeetCode"><a href="#LeetCode" class="headerlink" title="LeetCode"></a>LeetCode</h2><p><a href="https://leetcode.com/problems/missing-number/" target="_blank" rel="noopener">Missing Number</a><br><a href="https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/" target="_blank" rel="noopener">Find All Numbers Disappeared in an Array</a><br><a href="https://leetcode.com/problems/find-the-duplicate-number/" target="_blank" rel="noopener">Find the Duplicate Number</a><br><a href="https://leetcode.com/problems/find-all-duplicates-in-an-array/" target="_blank" rel="noopener">Find All Duplicates in an Array</a><br><a href="https://leetcode.com/problems/set-mismatch/" target="_blank" rel="noopener">Set Mismatch</a><br><a href="https://leetcode.com/problems/first-missing-positive/" target="_blank" rel="noopener">First Missing Positive</a></p>
 
           
@@ -601,7 +601,7 @@
         
           
             <p>This pattern describes an efficient technique to deal with overlapping intervals. In a lot of problems involving intervals, we either need to find overlapping intervals or merge intervals if they overlap.</p>
-<p>Given two intervals (‘a’ and ‘b’), there will be six different ways the two intervals can relate to each other:<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CodingInterview/educative/03.png" alt></p>
+<p>Given two intervals (“a” and “b”), there will be six different ways the two intervals can relate to each other:<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/CodingInterview/educative/03.png" alt></p>
 <p>Understanding the above six cases will help us in solving all intervals related problems.</p>
 <h2 id="LeetCode"><a href="#LeetCode" class="headerlink" title="LeetCode"></a>LeetCode</h2><p><a href="https://leetcode.com/problems/merge-intervals/" target="_blank" rel="noopener">Merge Intervals</a><br><a href="https://leetcode.com/problems/insert-interval/" target="_blank" rel="noopener">Insert Interval</a><br><a href="https://leetcode.com/problems/interval-list-intersections/" target="_blank" rel="noopener">Interval List Intersections</a></p>
 
@@ -844,7 +844,7 @@
 <blockquote>
 <p>Given an array of sorted numbers and a target sum, find a pair in the array whose sum is equal to the given target.</p>
 </blockquote>
-<p>To solve this problem, we can consider each element one by one (pointed out by the first pointer) and iterate through the remaining elements (pointed out by the second pointer) to find a pair with the given sum. The time complexity of this algorithm will be O(N^2) where ‘N’ is the number of elements in the input array.</p>
+<p>To solve this problem, we can consider each element one by one (pointed out by the first pointer) and iterate through the remaining elements (pointed out by the second pointer) to find a pair with the given sum. The time complexity of this algorithm will be O(N^2) where “N” is the number of elements in the input array.</p>
 <p>Given that the input array is sorted, an efficient way would be to start with one pointer in the beginning and another pointer at the end. At every step, we will see if the numbers pointed by the two pointers add up to the target sum. If they do not, we will do one of two things:</p>
 <ol>
 <li>If the sum of the two numbers pointed by the two pointers is greater than the target sum, this means that we need a pair with a smaller sum. So, to try more pairs, we can decrement the end-pointer;</li>
