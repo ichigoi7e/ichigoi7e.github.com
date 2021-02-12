@@ -101,7 +101,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/22.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/23.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/24.png">
-<meta property="og:updated_time" content="2021-02-11T05:50:58.000Z">
+<meta property="og:updated_time" content="2021-02-12T16:31:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Designing a URL Shortening Service Like TinyURL">
 <meta name="twitter:description" content="Why do We Need URL Shortening?URL shortening is used to create shorter aliases for long URLs. We call these shortened aliases “short links”. Users are redirected to the original URL when they hit thes">
@@ -372,31 +372,29 @@
 <p><a href="http://tinyurl.com/jlg8zpc" target="_blank" rel="noopener">http://tinyurl.com/jlg8zpc</a></p>
 </blockquote>
 <p>The shortened URL is nearly one-third the size of the actual URL.<br>URL shortening is used to optimize links across devices, track individual links to analyze audience, measure ad campaigns’ performance, or hide affiliated original URLs.</p>
+<p>If you haven’t used <a href="https://tinyurl.com/app" target="_blank" rel="noopener">tinyurl.com</a> before, please try creating a new shortened URL and spend some time going through the various options their service offers. This will help you a lot in understanding this chapter.</p>
 <h2 id="Requirements-and-Goals-of-the-System"><a href="#Requirements-and-Goals-of-the-System" class="headerlink" title="Requirements and Goals of the System"></a>Requirements and Goals of the System</h2><blockquote>
 <p>You should always clarify requirements at the beginning of the interview. Be sure to ask questions to find the exact scope of the system that the interviewer has in mind.</p>
 </blockquote>
 <a id="more"></a>
-<p>Our URL shortening system should meet the following requirements:</p>
-<ul>
-<li><strong>Functional Requirements</strong>:<ol>
+<p>Our URL shortening system should meet the following requirements:<br><strong>Functional Requirements</strong>:</p>
+<ol>
 <li>Given a URL, our service should generate a shorter and unique alias of it. This is called a short link. This link should be short enough to be easily copied and pasted into applications;</li>
 <li>When users access a short link, our service should redirect them to the original link;</li>
 <li>Users should optionally be able to pick a custom short link for their URL;</li>
 <li>Links will expire after a standard default time span. Users should be able to specify the expiration time;</li>
 </ol>
-</li>
-<li><strong>Non-Functional Requirements</strong>:<ol>
+<p><strong>Non-Functional Requirements</strong>:</p>
+<ol>
 <li>The system should be highly available. This is required because, if our service is down, all the URL redirections will start failing;</li>
 <li>URL redirection should happen in real-time with minimal latency;</li>
 <li>Shortened links should not be guessable (not predictable);</li>
 </ol>
-</li>
-<li><strong>Extended Requirements</strong>:<ol>
+<p><strong>Extended Requirements</strong>:</p>
+<ol>
 <li>Analytics ,e.g., how many times a redirection happened?</li>
 <li>Our service should also be accessible through REST APIs by other services;</li>
 </ol>
-</li>
-</ul>
 <h2 id="Capacity-Estimation-and-Constraints"><a href="#Capacity-Estimation-and-Constraints" class="headerlink" title="Capacity Estimation and Constraints"></a>Capacity Estimation and Constraints</h2><p>Our system will be read-heavy. There will be lots of redirection requests compared to new URL shortenings. Let’s assume a 100:1 ratio between read and write.</p>
 <p><strong>Traffic estimates</strong>: Assuming, we will have 500M new URL shortenings per month, with 100:1 read/write ratio, we can expect 50B redirections during the same period:</p>
 <blockquote>
@@ -444,11 +442,11 @@
 
 <p><strong>Parameters</strong>: </p>
 <ul>
-<li>api_dev_key (string): The API developer key of a registered account. This will be used to, among other things, throttle users based on their allocated quota;</li>
-<li>original_url (string): Original URL to be shortened;</li>
-<li>custom_alias (string): Optional custom key for the URL;</li>
-<li>user_name (string): Optional user name to be used in the encoding;</li>
-<li>expire_date (string): Optional expiration date for the shortened URL;</li>
+<li>api_dev_key: The API developer key of a registered account. This will be used to, among other things, throttle users based on their allocated quota;</li>
+<li>original_url: Original URL to be shortened;</li>
+<li>custom_alias: Optional custom key for the URL;</li>
+<li>user_name: Optional user name to be used in the encoding;</li>
+<li>expire_date: Optional expiration date for the shortened URL;</li>
 </ul>
 <p><strong>Returns</strong>: A successful insertion returns the shortened URL; otherwise, it returns an error code.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deleteURL(api_dev_key, url_key)</span><br></pre></td></tr></table></figure>
@@ -564,6 +562,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2021/02/12/Designing-Pastebin/" rel="prev" title="Designing Pastebin">
+                Designing Pastebin <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -632,7 +634,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">181</span>
+                <span class="site-state-item-count">182</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
