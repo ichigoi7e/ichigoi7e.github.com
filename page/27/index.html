@@ -280,6 +280,141 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/29/数据抽象/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="was48i">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DevPrepares">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2019/08/29/数据抽象/" itemprop="url">
+                  数据抽象
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-29T23:32:23+08:00">
+                2019-08-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><code>数据类型</code>指的是一组值和一组对这些值的<strong>操作的集合</strong>。原则上所有程序都只需要使用原始数据类型即可，但为了在<strong>更高层次的抽象</strong>上编写程序更加方便，重点学习定义和使用数据类型，这个过程也被称为<code>数据抽象</code>。</p>
+<p>Java 编程的基础主要是使用 class 关键字构造被称为<code>引用类型</code>的数据类型。这种编程风格称为<code>面向对象编程</code>，因为它的核心概念是对象，即<strong>保存了某个数据类型的值的实体</strong>。</p>
+<p>抽象数据类型（ADT）是一种能够对使用者<strong>隐藏数据表示</strong>的数据类型：</p>
+<ul>
+<li>在使用 ADT 时，我们的注意力集中在 API 描述的操作上，而不会去关心数据的表示；</li>
+<li>在实现 ADT 时，我们的注意力集中在数据本身，并将实现对该数据的各种操作；</li>
+</ul>
+<p>在程序设计上，<strong>ADT 支持封装</strong>：</p>
+<ul>
+<li>以适用于各种用途的 API 形式，准确地定义问题；</li>
+<li>用 API 的实现描述算法和数据结构；</li>
+</ul>
+<h2 id="使用抽象数据类型"><a href="#使用抽象数据类型" class="headerlink" title="使用抽象数据类型"></a>使用抽象数据类型</h2><p>要使用一种数据类型<strong>并不一定非得知道它是如何实现的</strong>，所以我们首先来编写一个使用一种名为 Counter 的简单数据类型的程序。</p>
+<p>要使用 Counter 对象，首先需要了解应该如何定义数据类型的操作，以及在 Java 语言中应该如何创建和使用某个数据类型的对象。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/29/数据抽象/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/25/分布式处理与大数据平台/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -357,7 +492,7 @@
       
         
           <p>分布式系统和大数据处理平台是目前业界关注的热门技术。三大重量级武器：<strong>Hadoop、Spark、Storm</strong>，以及新一代的数据采集和分析引擎 Elasticsearch。<br>实际上，摩尔定律的失效，必将导致越来越多的复杂任务必须<strong>采用分布式架构进行处理</strong>。已有的开源平台提供了很好的实现参考，方便用户将更多的精力放到核心业务的维护上。</p>
-<h2 id="Hadoop"><a href="#Hadoop" class="headerlink" title="Hadoop"></a>Hadoop</h2><p>Hadoop 是 Apache 软件基金会旗下的一个开源<strong>分布式计算平台</strong>，基于 Java 语言实现，由三个核心子系统组成：<strong>HDFS、YARN、MapReduce</strong>。其中，HDFS 是一套分布式文件系统；YARN 是资源管理系统，MapReduce 是<strong>运行在 YARN 上的应用</strong>，负责分布式处理管理。<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/Apache/02/01.jpg" alt><br>核心子系统说明如下：</p>
+<h2 id="Hadoop"><a href="#Hadoop" class="headerlink" title="Hadoop"></a>Hadoop</h2><p>Hadoop 是 Apache 软件基金会旗下的一个开源<strong>分布式计算平台</strong>，基于 Java 语言实现，由三个核心子系统组成：<strong>HDFS、YARN、MapReduce</strong>。其中，HDFS 是一套分布式文件系统；YARN 是资源管理系统，MapReduce 是<strong>运行在 YARN 上的应用</strong>，负责分布式处理管理。<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/OpenSource/02/01.jpg" alt><br>核心子系统说明如下：</p>
 <ul>
 <li>HDFS：一个<strong>高度容错性的分布式文件系统</strong>，适合部署在大量廉价的机器上，提供高吞吐量的数据访问；</li>
 <li>YARN：<strong>资源管理器</strong>，可为上层应用提供统一的资源管理和调度，兼容多计算框架；</li>
@@ -493,7 +628,7 @@
 <blockquote>
 <p>需要注意<strong>数据的持久化</strong>。对于程序代码、资源目录、日志、数据库、文件等需要实时更新和保存的数据，一定要启动数据持久化机制，避免发生数据丢失。</p>
 </blockquote>
-<h2 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h2><p>Apache 是一个高稳定性的、商业级别的开源 Web 服务器，是目前世界使用排名第一的 <strong>Web 服务器软件</strong>。<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/Apache/01/01.jpg" alt><br>在使用 Dockerfile 创建镜像时，会继承父镜像的开放端口，但却<strong>不会继承启动命令</strong>。因此，需要在 run.sh 脚本中添加启动 sshd 的服务的命令。</p>
+<h2 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h2><p>Apache 是一个高稳定性的、商业级别的开源 Web 服务器，是目前世界使用排名第一的 <strong>Web 服务器软件</strong>。<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/OpenSource/01/01.jpg" alt><br>在使用 Dockerfile 创建镜像时，会继承父镜像的开放端口，但却<strong>不会继承启动命令</strong>。因此，需要在 run.sh 脚本中添加启动 sshd 的服务的命令。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/08/24/Web-服务与应用/#more" rel="contents">
@@ -801,140 +936,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/12/Mesos-优秀的集群资源调度平台/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="was48i">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DevPrepares">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2019/08/12/Mesos-优秀的集群资源调度平台/" itemprop="url">
-                  Mesos - 优秀的集群资源调度平台
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-12T21:37:29+08:00">
-                2019-08-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Mesos 项目是源自 UC Berkeley 的对集群资源进行抽象和管理的开源项目，类似于操作系统内核，使用它可以很容易地<strong>实现分布式应用的自动化调度</strong>。同时，Mesos 自身也很好地结合和支持了 Docker 等相关容器技术，基于 Mesos 已有的大量应用框架，可以是实现用户应用的快速上线。</p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Mesos 可以将整个数据中心的<code>资源</code>（包括 CPU、内存、存储、网络等）进行抽象和调度，使得多个应用同时运行在集群中分享资源，并无须关心资源的物理分布情况。<br>如果把数据中心的集群资源看作一台服务器，那么 Mesos 要做的事情，其实就是今天操作系统内核的职责：<strong>抽象资源 + 调度任务</strong>；Mesos 拥有许多引人注目的特性，包括：</p>
-<ul>
-<li>支持数万个节点的<strong>大规模场景</strong>（Apple、Twitter、eBay 等公司使用）；</li>
-<li>支持多种应用框架，包括 Marathon、Singularity、Aurora 等；</li>
-<li>支持 <code>HA</code>（基于 ZooKeeper 实现）；</li>
-<li>支持 Docker、LXC 等容器机制进行任务隔离；</li>
-<li>提供了多个流行语言的 API，包括 Python、Java、C++ 等；</li>
-<li>自带了简洁易用的 <code>WebUI</code>，方便用户直接进行操作。</li>
-</ul>
-<blockquote>
-<p>Mesos 自身只是一个资源抽象的平台，要使用它往往需要结合运行在其上的分布式应用（<code>framework</code>）。</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/12/Mesos-优秀的集群资源调度平台/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -982,7 +983,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">184</span>
+                <span class="site-state-item-count">185</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
