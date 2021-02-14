@@ -280,6 +280,139 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/09/使用-Docker-镜像/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="was48i">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DevPrepares">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2019/06/09/使用-Docker-镜像/" itemprop="url">
+                  使用 Docker 镜像
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-09T13:09:58+08:00">
+                2019-06-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><strong>镜像</strong>是 Docker 三大核心概念中最重要的。</p>
+<h2 id="获取镜像"><a href="#获取镜像" class="headerlink" title="获取镜像"></a>获取镜像</h2><p>可以使用 <strong>docker pull 命令</strong>直接从 Docker Hub 镜像源来下载镜像，描述一个镜像需要包括“名称+标签”信息（NAME[:TAG]）。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull ubuntu:18.04</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果不显式指定 TAG，则默认会选择 latest 标签。从稳定性上考虑，不要在生产环境中忽略镜像的标签信息或使用默认的 lastest 标记的镜像。</p>
+</blockquote>
+<p>镜像文件一般由若干层（layer）组成，当不同的镜像包括相同的层时，本地仅存储了层的一份内容，减少了存储空间。<br>如果从非官方的仓库下载镜像，则需要在仓库名称前指定完整的仓库地址：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull hub.c.163.com/public/ubuntu:18.04</span><br></pre></td></tr></table></figure>
+
+<p>下载镜像到本地后，即可随时使用该镜像了：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run -it ubuntu:18.04 /bin/bash</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/06/09/使用-Docker-镜像/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/08/核心概念与安装配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -767,134 +900,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/温故而知新/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="was48i">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DevPrepares">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2018/11/11/温故而知新/" itemprop="url">
-                  温故而知新
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-11T01:32:57+08:00">
-                2018-11-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="从-Hello-World-说起"><a href="#从-Hello-World-说起" class="headerlink" title="从 Hello World 说起"></a>从 Hello World 说起</h2><p>很多问题看似很简单，但实际上我们并没有一个非常清晰的思路；或者在我们脑海里有着模糊的印象，但真正到某些细节的时候可能又模糊不清了。<br>从基本的编译、静态链接到操作系统如何装载程序、动态链接及运行库和标准库的实现，甚至一些操作系统的机制，力争深入浅出地将这些问题层层剥开，最终使得这些程序运行背后的机制形成一个<strong>非常清晰而流畅的脉络</strong>。</p>
-<h2 id="万变不离其宗"><a href="#万变不离其宗" class="headerlink" title="万变不离其宗"></a>万变不离其宗</h2><p>将计算机的范围限定在：采用兼容 x86 指令集的 32 位 CPU 的个人计算机。</p>
-<ul>
-<li>系统程序开发者：多如牛毛的硬件设备中，三个部件最为关键：CPU、内存和 I/O 控制芯片。</li>
-<li>普通应用程序开发者：关心 CPU，其他的硬件细节基本不用关心。</li>
-<li>高级平台开发者：连 CPU 都不需要关心，平台（Java、.NET 等）提供了一个通用的抽象的计算机。</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/11/温故而知新/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -942,7 +947,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">183</span>
+                <span class="site-state-item-count">184</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
