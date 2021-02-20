@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Designing an API Rate Limiter</title>
+      <link href="2021/02/20/Designing-an-API-Rate-Limiter/"/>
+      <url>2021/02/20/Designing-an-API-Rate-Limiter/</url>
+      
+        <content type="html"><![CDATA[<h2 id="What-is-a-Rate-Limiter"><a href="#What-is-a-Rate-Limiter" class="headerlink" title="What is a Rate Limiter?"></a>What is a Rate Limiter?</h2><h2 id="Why-do-We-Need-API-Rate-Limiting"><a href="#Why-do-We-Need-API-Rate-Limiting" class="headerlink" title="Why do We Need API Rate Limiting?"></a>Why do We Need API Rate Limiting?</h2><h2 id="Requirements-and-Goals-of-the-System"><a href="#Requirements-and-Goals-of-the-System" class="headerlink" title="Requirements and Goals of the System"></a>Requirements and Goals of the System</h2><h2 id="How-to-Do-Rate-Limiting"><a href="#How-to-Do-Rate-Limiting" class="headerlink" title="How to Do Rate Limiting?"></a>How to Do Rate Limiting?</h2><h2 id="What-are-Different-Types-of-Throttling"><a href="#What-are-Different-Types-of-Throttling" class="headerlink" title="What are Different Types of Throttling?"></a>What are Different Types of Throttling?</h2><h2 id="What-are-Different-Types-of-Algorithms-Used-for-Rate-Limiting"><a href="#What-are-Different-Types-of-Algorithms-Used-for-Rate-Limiting" class="headerlink" title="What are Different Types of Algorithms Used for Rate Limiting?"></a>What are Different Types of Algorithms Used for Rate Limiting?</h2><h2 id="High-Level-Design-for-Rate-Limiter"><a href="#High-Level-Design-for-Rate-Limiter" class="headerlink" title="High Level Design for Rate Limiter"></a>High Level Design for Rate Limiter</h2><h2 id="Basic-System-Design-and-Algorithm"><a href="#Basic-System-Design-and-Algorithm" class="headerlink" title="Basic System Design and Algorithm"></a>Basic System Design and Algorithm</h2><h2 id="Sliding-Window-Algorithm"><a href="#Sliding-Window-Algorithm" class="headerlink" title="Sliding Window Algorithm"></a>Sliding Window Algorithm</h2><h2 id="Sliding-Window-with-Counters"><a href="#Sliding-Window-with-Counters" class="headerlink" title="Sliding Window with Counters"></a>Sliding Window with Counters</h2><h2 id="Data-Sharding-and-Caching"><a href="#Data-Sharding-and-Caching" class="headerlink" title="Data Sharding and Caching"></a>Data Sharding and Caching</h2><h2 id="Should-We-Rate-Limit-by-IP-or-by-User"><a href="#Should-We-Rate-Limit-by-IP-or-by-User" class="headerlink" title="Should We Rate Limit by IP or by User?"></a>Should We Rate Limit by IP or by User?</h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> SystemDesign </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Designing Typeahead Suggestion</title>
       <link href="2021/02/18/Designing-Typeahead-Suggestion/"/>
       <url>2021/02/18/Designing-Typeahead-Suggestion/</url>
