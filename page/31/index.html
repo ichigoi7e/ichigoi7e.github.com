@@ -280,6 +280,133 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/08/核心概念与安装配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="was48i">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DevPrepares">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2019/06/08/核心概念与安装配置/" itemprop="url">
+                  核心概念与安装配置
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-08T21:39:19+08:00">
+                2019-06-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><strong>镜像</strong>（image）、<strong>容器</strong>（container）、<strong>仓库</strong>（repository），只有理解了这三个核心概念，才能顺利的理解 Docker 容器的整个生命周期。</p>
+<h2 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h2><h3 id="Docker-镜像"><a href="#Docker-镜像" class="headerlink" title="Docker 镜像"></a>Docker 镜像</h3><p>Docker 镜像类似于虚拟机镜像，可以将他理解为一个只读的模版。<br>通过<code>版本管理</code>和<code>增量的文件系统</code>，Docker 提供了一套十分简单的机制来创建和更新现有的镜像，用户甚至可以从网上下载一个已经做好的应用镜像，并直接使用。</p>
+<h3 id="Docker-容器"><a href="#Docker-容器" class="headerlink" title="Docker 容器"></a>Docker 容器</h3><p>Docker 容器类似于一个轻量级的沙箱，Docker 利用容器来运行和隔离应用。</p>
+<blockquote>
+<p>镜像自身是只读的。容器从镜像启动的时候，会在镜像的最上层创建一个可写层。</p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/06/08/核心概念与安装配置/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/07/初识-Docker-与容器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -768,129 +895,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/10/SLAM：现在与未来/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="was48i">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DevPrepares">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2018/07/10/SLAM：现在与未来/" itemprop="url">
-                  SLAM：现在与未来
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-10T01:30:35+08:00">
-                2018-07-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>除了经典 V-SLAM 框架之外，也积累了许多优秀的开源 SLAM 方案，大部分实现都比较复杂，不适合作为初学者的上手材料。</p>
-<h2 id="当前的开源方案"><a href="#当前的开源方案" class="headerlink" title="当前的开源方案"></a>当前的开源方案</h2><p>在 SLAM 研究领域，能见到开源方案是很不容易的。论文中，往往介绍理论只占 20% 的内容，其他 80% 都写在代码中。<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/SLAM/14_1.jpeg" alt></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/10/SLAM：现在与未来/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -938,7 +942,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">187</span>
+                <span class="site-state-item-count">188</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
