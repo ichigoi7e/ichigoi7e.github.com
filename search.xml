@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Designing Twitter Search</title>
+      <link href="2021/02/24/Designing-Twitter-Search/"/>
+      <url>2021/02/24/Designing-Twitter-Search/</url>
+      
+        <content type="html"><![CDATA[<h2 id="What-is-Twitter-Search"><a href="#What-is-Twitter-Search" class="headerlink" title="What is Twitter Search?"></a>What is Twitter Search?</h2><p>Twitter users can update their status whenever they like. Each status (called tweet) consists of plain text and our goal is to design a system that allows searching over all the user tweets.</p><h2 id="Requirements-and-Goals-of-the-System"><a href="#Requirements-and-Goals-of-the-System" class="headerlink" title="Requirements and Goals of the System"></a>Requirements and Goals of the System</h2><p>We need to design a system that can efficiently store and query tweets:</p><ul><li>Let’s assume Twitter has 1.5 billion total users with 800 million daily active users;</li><li>On average Twitter gets 400 million tweets every day;</li><li>The average size of a tweet is 300 bytes;</li><li>Let’s assume there will be 500M searches every day;</li><li>The search query will consist of multiple words combined with AND/OR;</li></ul><a id="more"></a><h2 id="Capacity-Estimation-and-Constraints"><a href="#Capacity-Estimation-and-Constraints" class="headerlink" title="Capacity Estimation and Constraints"></a>Capacity Estimation and Constraints</h2><p>Since we have 400 million new tweets every day and each tweet on average is 300 bytes, the total storage we need, will be:</p><blockquote><p>400M * 300 = 120 GB/day</p></blockquote><p>Total storage per second:</p><blockquote><p>120GB / 24hours / 3600sec ≈ 1.38 MB/second</p></blockquote><h2 id="System-APIs"><a href="#System-APIs" class="headerlink" title="System APIs"></a>System APIs</h2><p>We can have SOAP or REST APIs to expose the functionality of our service; following could be the definition of the search API:</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">search(api_dev_key, search_terms, maximum_results_to_return, sort, page_token)</span><br></pre></td></tr></table></figure><p><strong>Parameters</strong>:</p><ul><li>api_dev_key: The API developer key of a registered account. This will be used to, among other things, throttle users based on their allocated quota;</li><li>search_terms: A string containing the search terms;</li><li>maximum_results_to_return: Number of tweets to return;</li><li>sort: Latest first (0 - default), Best matched (1), Most liked (2);</li><li>page_token: This token will specify a page in the result set that should be returned;</li></ul><p><strong>Return</strong>: A JSON containing information about a list of tweets matching the search query. Each result entry can have the user ID &amp; name, tweet text, tweet ID, creation time, number of likes, etc.</p><h2 id="High-Level-Design"><a href="#High-Level-Design" class="headerlink" title="High Level Design"></a>High Level Design</h2><p>At the high level, we need to store all the tweets in a database and also build an index that can keep track of which word appears in which tweet. This index will help us quickly find tweets that the users are trying to search for:<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/56.png" alt></p><h2 id="Detailed-Component-Design"><a href="#Detailed-Component-Design" class="headerlink" title="Detailed Component Design"></a>Detailed Component Design</h2><h2 id="Fault-Tolerance"><a href="#Fault-Tolerance" class="headerlink" title="Fault Tolerance"></a>Fault Tolerance</h2><h2 id="Cache"><a href="#Cache" class="headerlink" title="Cache"></a>Cache</h2><h2 id="Load-Balancing"><a href="#Load-Balancing" class="headerlink" title="Load Balancing"></a>Load Balancing</h2><h2 id="Ranking"><a href="#Ranking" class="headerlink" title="Ranking"></a>Ranking</h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> SystemDesign </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Designing an API Rate Limiter</title>
       <link href="2021/02/20/Designing-an-API-Rate-Limiter/"/>
       <url>2021/02/20/Designing-an-API-Rate-Limiter/</url>
