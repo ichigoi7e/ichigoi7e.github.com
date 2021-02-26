@@ -356,8 +356,7 @@
 
       
         
-          
-            <h2 id="What-is-Facebook’s-Newsfeed"><a href="#What-is-Facebook’s-Newsfeed" class="headerlink" title="What is Facebook’s Newsfeed?"></a>What is Facebook’s Newsfeed?</h2><p>A Newsfeed is the constantly updating list of stories in the middle of Facebook’s homepage. It includes status updates, photos, videos, links, app activity, and “likes” from people, pages, and groups that a user follows on Facebook. In other words, it is a compilation of a complete scrollable version of your friends’ and your life story from photos, videos, locations, status updates, and other activities.<br>For any social media site you design - Twitter, Instagram, or Facebook - you will need a newsfeed system to display updates from friends and followers.</p>
+          <h2 id="What-is-Facebook’s-Newsfeed"><a href="#What-is-Facebook’s-Newsfeed" class="headerlink" title="What is Facebook’s Newsfeed?"></a>What is Facebook’s Newsfeed?</h2><p>A Newsfeed is the constantly updating list of stories in the middle of Facebook’s homepage. It includes status updates, photos, videos, links, app activity, and “likes” from people, pages, and groups that a user follows on Facebook. In other words, it is a compilation of a complete scrollable version of your friends’ and your life story from photos, videos, locations, status updates, and other activities.<br>For any social media site you design - Twitter, Instagram, or Facebook - you will need a newsfeed system to display updates from friends and followers.</p>
 <h2 id="Requirements-and-Goals-of-the-System"><a href="#Requirements-and-Goals-of-the-System" class="headerlink" title="Requirements and Goals of the System"></a>Requirements and Goals of the System</h2><p>Let’s design a newsfeed for Facebook with the following requirements:</p>
 <ul>
 <li><strong>Functional Requirements</strong>:<ol>
@@ -373,11 +372,13 @@
 </ol>
 </li>
 </ul>
-<h2 id="Capacity-Estimation-and-Constraints"><a href="#Capacity-Estimation-and-Constraints" class="headerlink" title="Capacity Estimation and Constraints"></a>Capacity Estimation and Constraints</h2><p>Let’s assume on average a user has 300 friends and follows 200 pages.</p>
-<p><strong>Traffic estimates</strong>: Let’s assume 300M daily active users with each user fetching their timeline an average of five times a day. This will result in 1.5B newsfeed requests per day or approximately 17,500 requests per second.</p>
-<p><strong>Storage estimates</strong>: On average, let’s assume we need to have around 500 posts in every user’s feed that we want to keep in memory for a quick fetch. Let’s also assume that on average each post would be 1KB in size. This would mean that we need to store roughly 500KB of data per user. To store all this data for all the active users we would need 150TB of memory. If a server can hold 100GB we would need around 1500 machines to keep the top 500 posts in memory for all active users.</p>
-<h2 id="System-APIs"><a href="#System-APIs" class="headerlink" title="System APIs"></a>System APIs</h2><h2 id="Database-Design"><a href="#Database-Design" class="headerlink" title="Database Design"></a>Database Design</h2><h2 id="High-Level-System-Design"><a href="#High-Level-System-Design" class="headerlink" title="High-Level System Design"></a>High-Level System Design</h2><h2 id="Detailed-Component-Design"><a href="#Detailed-Component-Design" class="headerlink" title="Detailed Component Design"></a>Detailed Component Design</h2><h2 id="Feed-Ranking"><a href="#Feed-Ranking" class="headerlink" title="Feed Ranking"></a>Feed Ranking</h2><h2 id="Data-Partitioning"><a href="#Data-Partitioning" class="headerlink" title="Data Partitioning"></a>Data Partitioning</h2>
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2021/02/26/Designing-Facebook-s-Newsfeed/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

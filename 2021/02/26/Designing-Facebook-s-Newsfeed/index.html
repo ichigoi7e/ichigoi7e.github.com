@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="DevPrepares">
 <meta property="og:description" content="What is Facebook’s Newsfeed?A Newsfeed is the constantly updating list of stories in the middle of Facebook’s homepage. It includes status updates, photos, videos, links, app activity, and “likes” fro">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-02-26T13:39:50.000Z">
+<meta property="og:updated_time" content="2021-02-26T18:20:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Designing Facebook&#39;s Newsfeed">
 <meta name="twitter:description" content="What is Facebook’s Newsfeed?A Newsfeed is the constantly updating list of stories in the middle of Facebook’s homepage. It includes status updates, photos, videos, links, app activity, and “likes” fro">
@@ -371,10 +371,27 @@
 </ol>
 </li>
 </ul>
+<a id="more"></a>
 <h2 id="Capacity-Estimation-and-Constraints"><a href="#Capacity-Estimation-and-Constraints" class="headerlink" title="Capacity Estimation and Constraints"></a>Capacity Estimation and Constraints</h2><p>Let’s assume on average a user has 300 friends and follows 200 pages.</p>
 <p><strong>Traffic estimates</strong>: Let’s assume 300M daily active users with each user fetching their timeline an average of five times a day. This will result in 1.5B newsfeed requests per day or approximately 17,500 requests per second.</p>
 <p><strong>Storage estimates</strong>: On average, let’s assume we need to have around 500 posts in every user’s feed that we want to keep in memory for a quick fetch. Let’s also assume that on average each post would be 1KB in size. This would mean that we need to store roughly 500KB of data per user. To store all this data for all the active users we would need 150TB of memory. If a server can hold 100GB we would need around 1500 machines to keep the top 500 posts in memory for all active users.</p>
-<h2 id="System-APIs"><a href="#System-APIs" class="headerlink" title="System APIs"></a>System APIs</h2><h2 id="Database-Design"><a href="#Database-Design" class="headerlink" title="Database Design"></a>Database Design</h2><h2 id="High-Level-System-Design"><a href="#High-Level-System-Design" class="headerlink" title="High-Level System Design"></a>High-Level System Design</h2><h2 id="Detailed-Component-Design"><a href="#Detailed-Component-Design" class="headerlink" title="Detailed Component Design"></a>Detailed Component Design</h2><h2 id="Feed-Ranking"><a href="#Feed-Ranking" class="headerlink" title="Feed Ranking"></a>Feed Ranking</h2><h2 id="Data-Partitioning"><a href="#Data-Partitioning" class="headerlink" title="Data Partitioning"></a>Data Partitioning</h2>
+<h2 id="System-APIs"><a href="#System-APIs" class="headerlink" title="System APIs"></a>System APIs</h2><blockquote>
+<p>Once we have finalized the requirements, it’s always a good idea to define the system APIs. This should explicitly state what is expected from the system.</p>
+</blockquote>
+<p>We can have SOAP or REST APIs to expose the functionality of our service. The following could be the definition of the API for getting the newsfeed:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getUserFeed(api_dev_key, user_id, since_id, count, max_id, exclude_replies)</span><br></pre></td></tr></table></figure>
+
+<p><strong>Parameters</strong>:</p>
+<ul>
+<li>api_dev_key: The API developer key of a registered can be used to, among other things, throttle users based on their allocated quota;</li>
+<li>user_id: The ID of the user for whom the system will generate the newsfeed;</li>
+<li>since_id: Optional; returns results with an ID higher than (that is, more recent than) the specified ID;</li>
+<li>count: Optional; specifies the number of feed items to try and retrieve up to a maximum of 200 per distinct request;</li>
+<li>max_id: Optional; returns results with an ID less than (that is, older than) or equal to the specified ID;</li>
+<li>exclude_replies: Optional; this parameter will prevent replies from appearing in the returned timeline;</li>
+</ul>
+<p><strong>Returns</strong>: Returns a JSON object containing a list of feed items.</p>
+<h2 id="Database-Design"><a href="#Database-Design" class="headerlink" title="Database Design"></a>Database Design</h2><h2 id="High-Level-System-Design"><a href="#High-Level-System-Design" class="headerlink" title="High-Level System Design"></a>High-Level System Design</h2><h2 id="Detailed-Component-Design"><a href="#Detailed-Component-Design" class="headerlink" title="Detailed Component Design"></a>Detailed Component Design</h2><h2 id="Feed-Ranking"><a href="#Feed-Ranking" class="headerlink" title="Feed Ranking"></a>Feed Ranking</h2><h2 id="Data-Partitioning"><a href="#Data-Partitioning" class="headerlink" title="Data Partitioning"></a>Data Partitioning</h2>
       
     </div>
 
