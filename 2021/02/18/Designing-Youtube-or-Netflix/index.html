@@ -97,7 +97,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/44.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/45.png">
-<meta property="og:updated_time" content="2021-02-18T08:11:14.000Z">
+<meta property="og:updated_time" content="2021-02-26T13:39:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Designing Youtube or Netflix">
 <meta name="twitter:description" content="Why Youtube?Youtube is one of the most popular video sharing websites in the world. Users of the service can upload, view, share, rate, and report videos as well as add comments on videos. Requirement">
@@ -432,7 +432,7 @@
 <li>codec &amp; resolution: We should send the codec and resolution info in the API from the client to support play/pause from multiple devices. Imagine you are watching a video on your TV’s Netflix app, paused it, and started watching it on your phone’s Netflix app. In this case, you would need codec and resolution, as both these devices have a different resolution and use a different codec.</li>
 </ul>
 <p><strong>Returns</strong>: A media stream (a video chunk) from the given offset;</p>
-<h2 id="High-Level-Design"><a href="#High-Level-Design" class="headerlink" title="High Level Design"></a>High Level Design</h2><p>At a high-level we would need the following components:</p>
+<h2 id="High-Level-Design"><a href="#High-Level-Design" class="headerlink" title="High-Level Design"></a>High-Level Design</h2><p>At a high-level we would need the following components:</p>
 <ol>
 <li><strong>Processing Queue</strong>: Each uploaded video will be pushed to a processing queue to be de-queued later for encoding, thumbnail generation, and storage;</li>
 <li><strong>Encoder</strong>: To encode each uploaded video into multiple formats;</li>
@@ -624,7 +624,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">190</span>
+                <span class="site-state-item-count">192</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -686,7 +686,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Why-Youtube"><span class="nav-number">1.</span> <span class="nav-text">Why Youtube?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Requirements-and-Goals-of-the-System"><span class="nav-number">2.</span> <span class="nav-text">Requirements and Goals of the System</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Capacity-Estimation-and-Constraints"><span class="nav-number">3.</span> <span class="nav-text">Capacity Estimation and Constraints</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#System-APIs"><span class="nav-number">4.</span> <span class="nav-text">System APIs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#High-Level-Design"><span class="nav-number">5.</span> <span class="nav-text">High Level Design</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Database-Schema"><span class="nav-number">6.</span> <span class="nav-text">Database Schema</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Detailed-Component-Design"><span class="nav-number">7.</span> <span class="nav-text">Detailed Component Design</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Metadata-Sharding"><span class="nav-number">8.</span> <span class="nav-text">Metadata Sharding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Video-Deduplication"><span class="nav-number">9.</span> <span class="nav-text">Video Deduplication</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Load-Balancing"><span class="nav-number">10.</span> <span class="nav-text">Load Balancing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cache"><span class="nav-number">11.</span> <span class="nav-text">Cache</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Content-Delivery-Network"><span class="nav-number">12.</span> <span class="nav-text">Content Delivery Network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fault-Tolerance"><span class="nav-number">13.</span> <span class="nav-text">Fault Tolerance</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Why-Youtube"><span class="nav-number">1.</span> <span class="nav-text">Why Youtube?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Requirements-and-Goals-of-the-System"><span class="nav-number">2.</span> <span class="nav-text">Requirements and Goals of the System</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Capacity-Estimation-and-Constraints"><span class="nav-number">3.</span> <span class="nav-text">Capacity Estimation and Constraints</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#System-APIs"><span class="nav-number">4.</span> <span class="nav-text">System APIs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#High-Level-Design"><span class="nav-number">5.</span> <span class="nav-text">High-Level Design</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Database-Schema"><span class="nav-number">6.</span> <span class="nav-text">Database Schema</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Detailed-Component-Design"><span class="nav-number">7.</span> <span class="nav-text">Detailed Component Design</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Metadata-Sharding"><span class="nav-number">8.</span> <span class="nav-text">Metadata Sharding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Video-Deduplication"><span class="nav-number">9.</span> <span class="nav-text">Video Deduplication</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Load-Balancing"><span class="nav-number">10.</span> <span class="nav-text">Load Balancing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cache"><span class="nav-number">11.</span> <span class="nav-text">Cache</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Content-Delivery-Network"><span class="nav-number">12.</span> <span class="nav-text">Content Delivery Network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fault-Tolerance"><span class="nav-number">13.</span> <span class="nav-text">Fault Tolerance</span></a></li></ol></div>
             
 
           </div>

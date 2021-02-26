@@ -99,7 +99,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/37.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/38.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/39.png">
-<meta property="og:updated_time" content="2021-02-20T10:40:42.000Z">
+<meta property="og:updated_time" content="2021-02-26T13:39:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Designing Facebook Messenger">
 <meta name="twitter:description" content="What is Facebook Messenger?Facebook Messenger is a software application which provides text-based instant messaging services to its users. Messenger users can chat with their Facebook friends both fro">
@@ -380,7 +380,7 @@
 </ol>
 <a id="more"></a>
 <h2 id="Capacity-Estimation-and-Constraints"><a href="#Capacity-Estimation-and-Constraints" class="headerlink" title="Capacity Estimation and Constraints"></a>Capacity Estimation and Constraints</h2><p>Let’s assume that we have 500 million daily active users and on average each user sends 40 messages daily; this gives us 20 billion messages per day.</p>
-<p><strong>Storage Estimation</strong>: Let’s assume that on average a message is 100 bytes, so to store all the messages for one day we would need 2TB of storage:</p>
+<p><strong>Storage estimates</strong>: Let’s assume that on average a message is 100 bytes, so to store all the messages for one day we would need 2TB of storage:</p>
 <blockquote>
 <p>20 billion messages * 100 bytes = 2 TB/day</p>
 </blockquote>
@@ -389,13 +389,13 @@
 <p>2 TB * 365 days * 5 years ≈ 3.6 PB</p>
 </blockquote>
 <p>Other than the chat messages, we would also need to store users’ information, messages’ metadata (ID, Timestamp, etc.). Not to mention, the above calculation doesn’t take data compression and replication into consideration.</p>
-<p><strong>Bandwidth Estimation</strong>: If our service is getting 2TB of data every day, this will give us 25MB of incoming data for each second:</p>
+<p><strong>Bandwidth estimates</strong>: If our service is getting 2TB of data every day, this will give us 25MB of incoming data for each second:</p>
 <blockquote>
 <p>2 TB / 86400 sec ≈ 25 MB/s</p>
 </blockquote>
 <p>Since each incoming message needs to go out to another user, we will need the same amount of bandwidth 25MB/s for both upload and download.</p>
-<p><strong>High level estimates</strong>:<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/36.png" alt></p>
-<h2 id="High-Level-Design"><a href="#High-Level-Design" class="headerlink" title="High Level Design"></a>High Level Design</h2><p>At a high-level, we will need a chat server that will be the central piece, orchestrating all the communications between users. When a user wants to send a message to another user, they will connect to the chat server and send the message to the server; the server then passes that message to the other user and also stores it in the database:<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/37.png" alt></p>
+<p><strong>High-level estimates</strong>:<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/36.png" alt></p>
+<h2 id="High-Level-Design"><a href="#High-Level-Design" class="headerlink" title="High-Level Design"></a>High-Level Design</h2><p>At a high-level, we will need a chat server that will be the central piece, orchestrating all the communications between users. When a user wants to send a message to another user, they will connect to the chat server and send the message to the server; the server then passes that message to the other user and also stores it in the database:<br><img src="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/educative/37.png" alt></p>
 <p>The detailed workflow would look like this:</p>
 <ol>
 <li>User A sends a message to User B through the chat server;</li>
@@ -592,7 +592,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">190</span>
+                <span class="site-state-item-count">192</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -654,7 +654,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-Facebook-Messenger"><span class="nav-number">1.</span> <span class="nav-text">What is Facebook Messenger?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Requirements-and-Goals-of-the-System"><span class="nav-number">2.</span> <span class="nav-text">Requirements and Goals of the System</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Capacity-Estimation-and-Constraints"><span class="nav-number">3.</span> <span class="nav-text">Capacity Estimation and Constraints</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#High-Level-Design"><span class="nav-number">4.</span> <span class="nav-text">High Level Design</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Detailed-Component-Design"><span class="nav-number">5.</span> <span class="nav-text">Detailed Component Design</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Messages-Handling"><span class="nav-number">5.1.</span> <span class="nav-text">Messages Handling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Storing-and-Retrieving-the-Messages-from-the-Database"><span class="nav-number">5.2.</span> <span class="nav-text">Storing and Retrieving the Messages from the Database</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Managing-User’s-Status"><span class="nav-number">5.3.</span> <span class="nav-text">Managing User’s Status</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Partitioning"><span class="nav-number">6.</span> <span class="nav-text">Data Partitioning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cache"><span class="nav-number">7.</span> <span class="nav-text">Cache</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Load-Balancing"><span class="nav-number">8.</span> <span class="nav-text">Load Balancing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fault-Tolerance-and-Replication"><span class="nav-number">9.</span> <span class="nav-text">Fault Tolerance and Replication</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Extended-Requirements"><span class="nav-number">10.</span> <span class="nav-text">Extended Requirements</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-Facebook-Messenger"><span class="nav-number">1.</span> <span class="nav-text">What is Facebook Messenger?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Requirements-and-Goals-of-the-System"><span class="nav-number">2.</span> <span class="nav-text">Requirements and Goals of the System</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Capacity-Estimation-and-Constraints"><span class="nav-number">3.</span> <span class="nav-text">Capacity Estimation and Constraints</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#High-Level-Design"><span class="nav-number">4.</span> <span class="nav-text">High-Level Design</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Detailed-Component-Design"><span class="nav-number">5.</span> <span class="nav-text">Detailed Component Design</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Messages-Handling"><span class="nav-number">5.1.</span> <span class="nav-text">Messages Handling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Storing-and-Retrieving-the-Messages-from-the-Database"><span class="nav-number">5.2.</span> <span class="nav-text">Storing and Retrieving the Messages from the Database</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Managing-User’s-Status"><span class="nav-number">5.3.</span> <span class="nav-text">Managing User’s Status</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Partitioning"><span class="nav-number">6.</span> <span class="nav-text">Data Partitioning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cache"><span class="nav-number">7.</span> <span class="nav-text">Cache</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Load-Balancing"><span class="nav-number">8.</span> <span class="nav-text">Load Balancing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fault-Tolerance-and-Replication"><span class="nav-number">9.</span> <span class="nav-text">Fault Tolerance and Replication</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Extended-Requirements"><span class="nav-number">10.</span> <span class="nav-text">Extended Requirements</span></a></li></ol></div>
             
 
           </div>
