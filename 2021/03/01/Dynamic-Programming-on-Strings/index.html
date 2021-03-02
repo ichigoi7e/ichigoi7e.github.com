@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="DevPrepares">
 <meta property="og:description" content="StatementGiven two strings s1 and s2, return some result. ApproachMost of the problems on this pattern requires a solution that can be accepted in O(n^2) complexity: 123456789for (int i = 1; i &amp;lt;= n">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-03-02T15:07:20.000Z">
+<meta property="og:updated_time" content="2021-03-02T15:13:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dynamic Programming on Strings">
 <meta name="twitter:description" content="StatementGiven two strings s1 and s2, return some result. ApproachMost of the problems on this pattern requires a solution that can be accepted in O(n^2) complexity: 123456789for (int i = 1; i &amp;lt;= n">
@@ -361,6 +361,8 @@
 
 <p>If you are given one string s the approach may little vary:</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> l = <span class="number">1</span>; l &lt; n; ++l) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n-l; ++i) &#123;</span><br><span class="line">        <span class="keyword">int</span> j = i + l;</span><br><span class="line">        <span class="keyword">if</span> (s[i] == s[j]) &#123;</span><br><span class="line">            dp[i][j] = <span class="comment">/* code */</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            dp[i][j] = <span class="comment">/* code */</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
 
 <h2 id="LeetCode"><a href="#LeetCode" class="headerlink" title="LeetCode"></a>LeetCode</h2><p><a href="https://leetcode.com/problems/longest-common-subsequence/" target="_blank" rel="noopener">Longest Common Subsequence</a><br><a href="https://leetcode.com/problems/palindromic-substrings/" target="_blank" rel="noopener">Palindromic Substrings</a><br><a href="https://leetcode.com/problems/longest-palindromic-subsequence/" target="_blank" rel="noopener">Longest Palindromic Subsequence</a><br><a href="https://leetcode.com/problems/shortest-common-supersequence/" target="_blank" rel="noopener">Shortest Common Supersequence</a><br><a href="https://leetcode.com/problems/edit-distance/" target="_blank" rel="noopener">Edit Distance</a><br><a href="https://leetcode.com/problems/distinct-subsequences/" target="_blank" rel="noopener">Distinct Subsequences</a><br><a href="https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/" target="_blank" rel="noopener">Minimum ASCII Delete Sum for Two Strings</a><br><a href="https://leetcode.com/problems/longest-palindromic-substring/" target="_blank" rel="noopener">Longest Palindromic Substring</a></p>
 
