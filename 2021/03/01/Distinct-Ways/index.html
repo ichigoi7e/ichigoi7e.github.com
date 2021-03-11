@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="DevPrepares">
 <meta property="og:description" content="StatementGiven a target find a number of distinct ways to reach the target. ApproachSum all possible ways to reach the current state:  routes[i] = routes[i-1] + routes[i-2] + … + routes[i-k]  Generate">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-03-09T14:38:16.000Z">
+<meta property="og:updated_time" content="2021-03-11T12:51:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Distinct Ways">
 <meta name="twitter:description" content="StatementGiven a target find a number of distinct ways to reach the target. ApproachSum all possible ways to reach the current state:  routes[i] = routes[i-1] + routes[i-2] + … + routes[i-k]  Generate">
@@ -361,7 +361,7 @@
 <p>routes[i] = routes[i-1] + routes[i-2] + … + routes[i-k]</p>
 </blockquote>
 <p>Generate sum for all values in the target and return the value for the target:</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= target; ++i) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; ways.size(); ++j) &#123;</span><br><span class="line">        <span class="keyword">if</span> (ways[j] &lt;= i) &#123;</span><br><span class="line">            dp[i] += dp[i-ways[j]];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">return</span> dp[target];</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= target; ++i) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; ways.size(); ++j) &#123;</span><br><span class="line">        <span class="keyword">if</span> (ways[j] &lt;= i) &#123;</span><br><span class="line">            dp[i] += dp[i-ways[j]];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> dp[target];</span><br></pre></td></tr></table></figure>
 
 <p><strong>Note</strong>:</p>
 <blockquote>
