@@ -95,12 +95,12 @@
 <meta property="og:site_name" content="DevPrepares">
 <meta property="og:description" content="Just recently I was asked what it would take to make a web service massively scalable. My answer was lengthy and maybe it is also for other people interesting. So I share it with you here in my blog a">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/01/00.jpg">
-<meta property="og:updated_time" content="2021-03-11T12:51:32.000Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/snlndod/mPOST/master/SystemDesign/01/00.jpg">
+<meta property="og:updated_time" content="2021-03-12T14:30:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Scalability for Dummies">
 <meta name="twitter:description" content="Just recently I was asked what it would take to make a web service massively scalable. My answer was lengthy and maybe it is also for other people interesting. So I share it with you here in my blog a">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/01/00.jpg">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/snlndod/mPOST/master/SystemDesign/01/00.jpg">
 
 
 
@@ -288,7 +288,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/18/Scalability-for-Dummies/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="was48i">
+      <meta itemprop="name" content="snlndod">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.png">
     </span>
@@ -357,7 +357,7 @@
       
 
       
-        <p><img src="https://raw.githubusercontent.com/was48i/mPOST/master/SystemDesign/01/00.jpg" alt><br>Just recently I was asked what it would take to <strong>make a web service massively scalable</strong>. My answer was lengthy and maybe it is also for other people interesting. So I share it with you here in my blog and split it into parts to make it easier to read. New parts are released on a regular basis. Have fun and your comments are always welcomed!</p>
+        <p><img src="https://raw.githubusercontent.com/snlndod/mPOST/master/SystemDesign/01/00.jpg" alt><br>Just recently I was asked what it would take to <strong>make a web service massively scalable</strong>. My answer was lengthy and maybe it is also for other people interesting. So I share it with you here in my blog and split it into parts to make it easier to read. New parts are released on a regular basis. Have fun and your comments are always welcomed!</p>
 <h2 id="Clones"><a href="#Clones" class="headerlink" title="Clones"></a>Clones</h2><p>Public servers of a scalable web service are hidden <strong>behind a load balancer</strong>. This load balancer <strong>evenly distributes</strong> load (requests from your users) onto your group/cluster of application servers. That means that if, for example, user Steve interacts with your service, he may be served at his first request by server 2, then with his second request by server 9 and then maybe again by server 2 on his third request. </p>
 <p>Steve should always get the same results of his request back, independent what server he “landed on”. That leads to the first golden rule for scalability: every server contains exactly the same codebase and <strong>does not store any user-related data</strong>, like sessions or profile pictures, on local disc or memory. </p>
 <p>Sessions need to be stored in a centralized data store which is accessible to all your application servers. It can be an <code>external database</code> or an <code>external persistent cache</code>, like Redis. An external persistent cache will have better performance than an external database. By external I mean that the data store does not reside on the application servers. Instead, it is somewhere in or <strong>near the data center</strong> of your application servers.</p>
@@ -511,8 +511,8 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="was48i">
-          <p class="site-author-name" itemprop="name">was48i</p>
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="snlndod">
+          <p class="site-author-name" itemprop="name">snlndod</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
           
@@ -611,7 +611,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">was48i</span>
+  <span class="author" itemprop="copyrightHolder">snlndod</span>
 </div>
 
 
